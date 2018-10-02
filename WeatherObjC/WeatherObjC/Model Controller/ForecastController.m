@@ -12,7 +12,7 @@
 @implementation ForecastController
 
 static NSString * const bastURLString = @"https://api.openweathermap.org/data/2.5/forecast/daily";
-static NSString * const apiKeyString = @"0f71747cf580477afbb3af0f07b51f28";
+static NSString * const apiKeyString = @"1340d66bb372ff93adebd79d41eea048";
 
 - (instancetype)init
 {
