@@ -7,6 +7,7 @@
 //
 
 #import "CGAForecastController.h"
+#import "CGAForecast.h"
 
 @implementation CGAForecastController
 
@@ -25,7 +26,8 @@
     
     NSURLQueryItem *zipcodeItem = [NSURLQueryItem queryItemWithName:@"zip" value:zipcode];
     NSURLQueryItem *apiKeyItem = [NSURLQueryItem queryItemWithName:@"appid" value:apiKey];
-    [components setQueryItems:@[zipcodeItem, apiKeyItem]];
+    NSURLQueryItem *imperialUnitItem = [NSURLQueryItem queryItemWithName:@"units" value:@"imperial"];
+    [components setQueryItems:@[zipcodeItem, apiKeyItem, imperialUnitItem]];
     
     NSURL *url = [components URL];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -38,7 +40,26 @@
         }
         
         NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
-        NSLog(@"%@", dictionary);
+        if (![dictionary isKindOfClass:[NSDictionary class]]) {
+            NSLog(@"JSON is not a dictionary");
+            completion(nil, [[NSError alloc] init]);
+            return;
+        }
+        
+        NSString *cityName = dictionary[@"city"][@"name"];
+        NSArray *forecasts = dictionary[@"list"];
+        
+        for (NSDictionary *forecastTemp in forecasts) {
+            NSString *forecastIconId = forecastTemp[@"weather"][0][@"icon"];
+            NSString *forecastDayTemp = forecastTemp[@"temp"][@"day"];
+            CGAForecast *forecast = [[CGAForecast alloc]
+                                     initWithCity:cityName
+                                     temperature:forecastDayTemp
+                                     forecastIcon: [UIImage imageNamed: forecastIconId]];
+            [[self forecasts] addObject:forecast];
+        }
+        
+        completion([self forecasts], nil);
         
     }] resume];
     

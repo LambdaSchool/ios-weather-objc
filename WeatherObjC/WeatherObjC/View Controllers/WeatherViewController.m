@@ -41,7 +41,7 @@
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     [[self forecastController] searchForForecastWithZipcode:[searchBar text] completion:^(NSMutableArray *forecastsFromZipcode, NSError *error) {
-        NSLog(@"Hi!");
+        NSLog(@"%@", forecastsFromZipcode);
     }];
 }
 
