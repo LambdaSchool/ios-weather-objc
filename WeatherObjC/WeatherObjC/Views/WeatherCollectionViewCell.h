@@ -12,6 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WeatherCollectionViewCell : UICollectionViewCell
 
+@property (strong, nonatomic) IBOutlet UIImageView *weatherImageIcon;
+@property (strong, nonatomic) IBOutlet UILabel *weatherTempLabel;
+@property (strong, nonatomic) IBOutlet UILabel *weatherCityLabel;
+
 @end
 
 NS_ASSUME_NONNULL_END

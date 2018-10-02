@@ -55,6 +55,11 @@
                                                 </label>
                                             </subviews>
                                         </view>
+                                        <connections>
+                                            <outlet property="weatherCityLabel" destination="HgR-Pj-LDK" id="3OG-dx-4aN"/>
+                                            <outlet property="weatherImageIcon" destination="dA5-UX-lu6" id="Ujl-80-743"/>
+                                            <outlet property="weatherTempLabel" destination="MvY-z3-vHO" id="sVa-eT-M23"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
