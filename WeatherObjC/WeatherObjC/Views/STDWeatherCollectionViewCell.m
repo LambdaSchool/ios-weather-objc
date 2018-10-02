@@ -14,6 +14,7 @@
 {
     [_weatherImageView setImage:_forecast.image];
     [_weatherTextLabel setText:[NSString stringWithFormat:@"%.2f", _forecast.temperature]];
+    [_dayTextLabel setText:_forecast.date];
 }
 
 @end
