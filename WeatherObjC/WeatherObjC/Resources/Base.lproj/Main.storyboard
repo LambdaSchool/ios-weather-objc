@@ -21,36 +21,36 @@
                                 <rect key="frame" x="0.0" y="172" width="375" height="495"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OUr-0s-IEL">
-                                    <size key="itemSize" width="168" height="217"/>
+                                    <size key="itemSize" width="182" height="217"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WeatherCell" id="vmM-Cv-Ntq" customClass="STDWeatherCollectionViewCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="168" height="217"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="182" height="217"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="168" height="217"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="182" height="217"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="evd-fU-kCP">
-                                                    <rect key="frame" x="0.0" y="0.0" width="168" height="217"/>
+                                                    <rect key="frame" x="16" y="8" width="150" height="201"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="ZT6-9T-GGe">
-                                                            <rect key="frame" x="0.0" y="0.0" width="168" height="217"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="150" height="201"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nW8-Co-yON">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="168" height="39.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IvR-Hm-mbS">
-                                                                    <rect key="frame" x="0.0" y="39.5" width="168" height="138"/>
+                                                                    <rect key="frame" x="0.0" y="20.5" width="150" height="160"/>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3WK-ls-tmr">
-                                                                    <rect key="frame" x="0.0" y="177.5" width="168" height="39.5"/>
+                                                                    <rect key="frame" x="0.0" y="180.5" width="150" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -69,13 +69,14 @@
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="evd-fU-kCP" secondAttribute="bottom" id="2ge-cF-7Ct"/>
-                                            <constraint firstItem="evd-fU-kCP" firstAttribute="top" secondItem="vmM-Cv-Ntq" secondAttribute="top" id="3JD-zw-zo3"/>
-                                            <constraint firstItem="evd-fU-kCP" firstAttribute="leading" secondItem="vmM-Cv-Ntq" secondAttribute="leading" id="Tbo-aV-Eki"/>
-                                            <constraint firstAttribute="trailing" secondItem="evd-fU-kCP" secondAttribute="trailing" id="r3Y-VC-az9"/>
+                                            <constraint firstAttribute="bottom" secondItem="evd-fU-kCP" secondAttribute="bottom" constant="8" id="2ge-cF-7Ct"/>
+                                            <constraint firstItem="evd-fU-kCP" firstAttribute="top" secondItem="vmM-Cv-Ntq" secondAttribute="top" constant="8" id="3JD-zw-zo3"/>
+                                            <constraint firstItem="evd-fU-kCP" firstAttribute="leading" secondItem="vmM-Cv-Ntq" secondAttribute="leading" constant="16" id="Tbo-aV-Eki"/>
+                                            <constraint firstAttribute="trailing" secondItem="evd-fU-kCP" secondAttribute="trailing" constant="16" id="r3Y-VC-az9"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="dayTextLabel" destination="nW8-Co-yON" id="IKl-uV-sMa"/>
+                                            <outlet property="view" destination="evd-fU-kCP" id="UJx-XU-eh9"/>
                                             <outlet property="weatherImageView" destination="IvR-Hm-mbS" id="QDE-zj-D9L"/>
                                             <outlet property="weatherTextLabel" destination="3WK-ls-tmr" id="fVX-PL-02o"/>
                                         </connections>

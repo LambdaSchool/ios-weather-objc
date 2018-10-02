@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property STDWeather *forecast;
 @property (weak, nonatomic) IBOutlet UIImageView *weatherImageView;
 @property (weak, nonatomic) IBOutlet UILabel *weatherTextLabel;
+@property (weak, nonatomic) IBOutlet UIView *view;
 @property (weak, nonatomic) IBOutlet UILabel *dayTextLabel;
 - (void) updateViews;
 
