@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3DA9309B2163FCE100EC13EE /* STDWeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DA9309A2163FCE100EC13EE /* STDWeatherViewController.m */; };
+		3DA9309F2163FD0E00EC13EE /* STDWeatherCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DA9309E2163FD0E00EC13EE /* STDWeatherCollectionViewCell.m */; };
 		467D7F682163766F00E7FF73 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 467D7F672163766F00E7FF73 /* AppDelegate.m */; };
-		467D7F6B2163766F00E7FF73 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 467D7F6A2163766F00E7FF73 /* ViewController.m */; };
 		467D7F6E2163766F00E7FF73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 467D7F6C2163766F00E7FF73 /* Main.storyboard */; };
 		467D7F702163767000E7FF73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 467D7F6F2163767000E7FF73 /* Assets.xcassets */; };
 		467D7F732163767000E7FF73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 467D7F712163767000E7FF73 /* LaunchScreen.storyboard */; };
@@ -16,11 +17,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3DA930992163FCE100EC13EE /* STDWeatherViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STDWeatherViewController.h; sourceTree = "<group>"; };
+		3DA9309A2163FCE100EC13EE /* STDWeatherViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STDWeatherViewController.m; sourceTree = "<group>"; };
+		3DA9309D2163FD0E00EC13EE /* STDWeatherCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STDWeatherCollectionViewCell.h; sourceTree = "<group>"; };
+		3DA9309E2163FD0E00EC13EE /* STDWeatherCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STDWeatherCollectionViewCell.m; sourceTree = "<group>"; };
 		467D7F632163766F00E7FF73 /* WeatherObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		467D7F662163766F00E7FF73 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		467D7F672163766F00E7FF73 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		467D7F692163766F00E7FF73 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		467D7F6A2163766F00E7FF73 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		467D7F6D2163766F00E7FF73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		467D7F6F2163767000E7FF73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		467D7F722163767000E7FF73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -39,6 +42,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3DA930962163FAAD00EC13EE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				467D7F662163766F00E7FF73 /* AppDelegate.h */,
+				467D7F672163766F00E7FF73 /* AppDelegate.m */,
+				467D7F6C2163766F00E7FF73 /* Main.storyboard */,
+				467D7F6F2163767000E7FF73 /* Assets.xcassets */,
+				467D7F712163767000E7FF73 /* LaunchScreen.storyboard */,
+				467D7F742163767000E7FF73 /* Info.plist */,
+				467D7F752163767000E7FF73 /* main.m */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3DA930972163FAE800EC13EE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3DA930992163FCE100EC13EE /* STDWeatherViewController.h */,
+				3DA9309A2163FCE100EC13EE /* STDWeatherViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		3DA930982163FAEE00EC13EE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3DA9309C2163FCFC00EC13EE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3DA9309D2163FD0E00EC13EE /* STDWeatherCollectionViewCell.h */,
+				3DA9309E2163FD0E00EC13EE /* STDWeatherCollectionViewCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		467D7F5A2163766F00E7FF73 = {
 			isa = PBXGroup;
 			children = (
@@ -58,15 +100,10 @@
 		467D7F652163766F00E7FF73 /* WeatherObjC */ = {
 			isa = PBXGroup;
 			children = (
-				467D7F662163766F00E7FF73 /* AppDelegate.h */,
-				467D7F672163766F00E7FF73 /* AppDelegate.m */,
-				467D7F692163766F00E7FF73 /* ViewController.h */,
-				467D7F6A2163766F00E7FF73 /* ViewController.m */,
-				467D7F6C2163766F00E7FF73 /* Main.storyboard */,
-				467D7F6F2163767000E7FF73 /* Assets.xcassets */,
-				467D7F712163767000E7FF73 /* LaunchScreen.storyboard */,
-				467D7F742163767000E7FF73 /* Info.plist */,
-				467D7F752163767000E7FF73 /* main.m */,
+				3DA9309C2163FCFC00EC13EE /* Views */,
+				3DA930972163FAE800EC13EE /* ViewControllers */,
+				3DA930982163FAEE00EC13EE /* Model */,
+				3DA930962163FAAD00EC13EE /* Resources */,
 			);
 			path = WeatherObjC;
 			sourceTree = "<group>";
@@ -97,6 +134,7 @@
 		467D7F5B2163766F00E7FF73 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = STD;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Lambda School";
 				TargetAttributes = {
@@ -141,9 +179,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				467D7F6B2163766F00E7FF73 /* ViewController.m in Sources */,
+				3DA9309B2163FCE100EC13EE /* STDWeatherViewController.m in Sources */,
 				467D7F762163767000E7FF73 /* main.m in Sources */,
 				467D7F682163766F00E7FF73 /* AppDelegate.m in Sources */,
+				3DA9309F2163FD0E00EC13EE /* STDWeatherCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,7 +325,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = WeatherObjC/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/WeatherObjC/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,7 +341,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = WeatherObjC/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/WeatherObjC/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
