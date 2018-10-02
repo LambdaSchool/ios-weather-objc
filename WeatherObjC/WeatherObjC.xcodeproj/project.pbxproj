@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		39034EF12163FC8300A249E3 /* ForecastCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39034EF02163FC8300A249E3 /* ForecastCollectionViewCell.m */; };
 		39034EF42163FCD300A249E3 /* WeatherCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39034EF32163FCD300A249E3 /* WeatherCollectionViewController.m */; };
+		39034EF9216401E200A249E3 /* Forecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 39034EF8216401E200A249E3 /* Forecast.m */; };
+		39034EFC216401F000A249E3 /* ForecastController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39034EFB216401F000A249E3 /* ForecastController.m */; };
 		467D7F682163766F00E7FF73 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 467D7F672163766F00E7FF73 /* AppDelegate.m */; };
 		467D7F6E2163766F00E7FF73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 467D7F6C2163766F00E7FF73 /* Main.storyboard */; };
 		467D7F702163767000E7FF73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 467D7F6F2163767000E7FF73 /* Assets.xcassets */; };
@@ -21,6 +23,10 @@
 		39034EF02163FC8300A249E3 /* ForecastCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForecastCollectionViewCell.m; sourceTree = "<group>"; };
 		39034EF22163FCD300A249E3 /* WeatherCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherCollectionViewController.h; sourceTree = "<group>"; };
 		39034EF32163FCD300A249E3 /* WeatherCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherCollectionViewController.m; sourceTree = "<group>"; };
+		39034EF7216401E200A249E3 /* Forecast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Forecast.h; sourceTree = "<group>"; };
+		39034EF8216401E200A249E3 /* Forecast.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Forecast.m; sourceTree = "<group>"; };
+		39034EFA216401F000A249E3 /* ForecastController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForecastController.h; sourceTree = "<group>"; };
+		39034EFB216401F000A249E3 /* ForecastController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForecastController.m; sourceTree = "<group>"; };
 		467D7F632163766F00E7FF73 /* WeatherObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		467D7F662163766F00E7FF73 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		467D7F672163766F00E7FF73 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -88,6 +94,24 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		39034EF5216401A000A249E3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				39034EF7216401E200A249E3 /* Forecast.h */,
+				39034EF8216401E200A249E3 /* Forecast.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		39034EF6216401AF00A249E3 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				39034EFA216401F000A249E3 /* ForecastController.h */,
+				39034EFB216401F000A249E3 /* ForecastController.m */,
+			);
+			path = "Model Controller";
+			sourceTree = "<group>";
+		};
 		467D7F5A2163766F00E7FF73 = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +132,8 @@
 			isa = PBXGroup;
 			children = (
 				39034EEA2163F85200A249E3 /* App Lifecycle */,
+				39034EF5216401A000A249E3 /* Model */,
+				39034EF6216401AF00A249E3 /* Model Controller */,
 				39034EEE2163FC5200A249E3 /* View */,
 				39034EE92163F84600A249E3 /* View Controllers */,
 				39034EE72163F82B00A249E3 /* Storyboards */,
@@ -188,7 +214,9 @@
 			files = (
 				467D7F762163767000E7FF73 /* main.m in Sources */,
 				39034EF42163FCD300A249E3 /* WeatherCollectionViewController.m in Sources */,
+				39034EF9216401E200A249E3 /* Forecast.m in Sources */,
 				467D7F682163766F00E7FF73 /* AppDelegate.m in Sources */,
+				39034EFC216401F000A249E3 /* ForecastController.m in Sources */,
 				39034EF12163FC8300A249E3 /* ForecastCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
