@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CGAForecastController : NSObject
 
+- (void)searchForForecastWithZipcode:(NSString *)zipcode completion:(void (^)(NSMutableArray *forecasts, NSError *))completion;
+
 @property NSMutableArray *forecasts;
 
 @end
