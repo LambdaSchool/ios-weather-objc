@@ -72,6 +72,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="qos-tg-AuU"/>
                     </view>
+                    <connections>
+                        <outlet property="searchBar" destination="xEM-Ey-dGv" id="9ct-L1-ywX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kV4-Ai-bZW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -7,8 +7,11 @@
 //
 
 #import "WeatherViewController.h"
+#import "CGAForecastController.h"
 
 @interface WeatherViewController ()
+
+@property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @end
 
@@ -16,17 +19,30 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [[self searchBar] setDelegate:self];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        _forecastController = [[CGAForecastController alloc] init];
+    }
+    return self;
 }
-*/
+
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        _forecastController = [[CGAForecastController alloc] init];
+    }
+    return self;
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [[self forecastController] searchForForecastWithZipcode:[searchBar text] completion:^(NSMutableArray *forecastsFromZipcode, NSError *error) {
+        NSLog(@"Hi!");
+    }];
+}
 
 @end

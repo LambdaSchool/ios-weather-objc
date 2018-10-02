@@ -24,12 +24,13 @@
     NSURLComponents *components = [NSURLComponents componentsWithURL:baseURL resolvingAgainstBaseURL:YES];
     
     NSURLQueryItem *zipcodeItem = [NSURLQueryItem queryItemWithName:@"zip" value:zipcode];
-    [components setQueryItems:@[zipcodeItem]];
+    NSURLQueryItem *apiKeyItem = [NSURLQueryItem queryItemWithName:@"appid" value:apiKey];
+    [components setQueryItems:@[zipcodeItem, apiKeyItem]];
     
     NSURL *url = [components URL];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
-    [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if (error) {
             NSLog(@"Error fetching data from weather API: %@", error);
             completion(nil, error);
@@ -44,6 +45,6 @@
 }
 
 static NSString * const baseURLString = @"https://api.openweathermap.org/data/2.5/forecast/daily";
-static NSString * const apiKey = @"cec488a8c7c5da5bd1d463abe40c1dd3";
+static NSString * const apiKey = @"a1fc2c19d548237a56e0edd7b79b3ebc";
 
 @end

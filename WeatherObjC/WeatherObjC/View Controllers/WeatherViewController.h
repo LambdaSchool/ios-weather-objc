@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@class CGAForecastController;
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface WeatherViewController : UIViewController
+@interface WeatherViewController : UIViewController <UISearchBarDelegate>
+
+@property CGAForecastController *forecastController;
 
 @end
 
