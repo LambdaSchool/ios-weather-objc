@@ -17,9 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VaT-65-aN5">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VaT-65-aN5">
                                 <rect key="frame" x="0.0" y="126" width="375" height="541"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="diA-j2-yAD">
                                     <size key="itemSize" width="144" height="160"/>
@@ -35,26 +34,35 @@
                                             <rect key="frame" x="0.0" y="0.0" width="144" height="160"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dA5-UX-lu6">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dA5-UX-lu6">
                                                     <rect key="frame" x="0.0" y="0.0" width="144" height="108"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="45F" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MvY-z3-vHO">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="45F" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MvY-z3-vHO">
                                                     <rect key="frame" x="0.0" y="114" width="144" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Denver, CO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HgR-Pj-LDK">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Denver, CO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HgR-Pj-LDK">
                                                     <rect key="frame" x="0.0" y="134" width="144" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="dA5-UX-lu6" firstAttribute="top" secondItem="XWf-5q-uih" secondAttribute="top" id="39A-mv-U0u"/>
+                                            <constraint firstItem="MvY-z3-vHO" firstAttribute="trailing" secondItem="HgR-Pj-LDK" secondAttribute="trailing" id="3Cx-jp-Bse"/>
+                                            <constraint firstItem="HgR-Pj-LDK" firstAttribute="top" secondItem="dA5-UX-lu6" secondAttribute="bottom" constant="26" id="6FB-zt-Ivv"/>
+                                            <constraint firstItem="MvY-z3-vHO" firstAttribute="leading" secondItem="HgR-Pj-LDK" secondAttribute="leading" id="Rgc-so-2CT"/>
+                                            <constraint firstItem="dA5-UX-lu6" firstAttribute="trailing" secondItem="MvY-z3-vHO" secondAttribute="trailing" id="dbb-7f-X0h"/>
+                                            <constraint firstItem="MvY-z3-vHO" firstAttribute="top" secondItem="dA5-UX-lu6" secondAttribute="bottom" constant="6" id="jdr-dS-t6o"/>
+                                            <constraint firstItem="dA5-UX-lu6" firstAttribute="leading" secondItem="XWf-5q-uih" secondAttribute="leading" id="kNi-16-frm"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="HgR-Pj-LDK" secondAttribute="bottom" constant="5" id="rFV-bo-xh4"/>
+                                            <constraint firstItem="dA5-UX-lu6" firstAttribute="leading" secondItem="MvY-z3-vHO" secondAttribute="leading" id="sKc-Qo-1bK"/>
+                                            <constraint firstAttribute="trailing" secondItem="dA5-UX-lu6" secondAttribute="trailing" id="wou-ji-trd"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="weatherCityLabel" destination="HgR-Pj-LDK" id="3OG-dx-4aN"/>
                                             <outlet property="weatherImageIcon" destination="dA5-UX-lu6" id="Ujl-80-743"/>
@@ -63,16 +71,25 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xEM-Ey-dGv">
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="xEM-Ey-dGv">
                                 <rect key="frame" x="0.0" y="70" width="375" height="56"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="VaT-65-aN5" firstAttribute="top" secondItem="xEM-Ey-dGv" secondAttribute="bottom" id="7zm-q1-4p0"/>
+                            <constraint firstItem="xEM-Ey-dGv" firstAttribute="trailing" secondItem="VaT-65-aN5" secondAttribute="trailing" id="8D4-10-ZF4"/>
+                            <constraint firstItem="xEM-Ey-dGv" firstAttribute="top" secondItem="qos-tg-AuU" secondAttribute="top" constant="50" id="GHN-hw-uqV"/>
+                            <constraint firstItem="VaT-65-aN5" firstAttribute="trailing" secondItem="qos-tg-AuU" secondAttribute="trailing" id="I0M-If-keX"/>
+                            <constraint firstItem="xEM-Ey-dGv" firstAttribute="leading" secondItem="VaT-65-aN5" secondAttribute="leading" id="dL4-Pj-u7Q"/>
+                            <constraint firstItem="VaT-65-aN5" firstAttribute="bottom" secondItem="qos-tg-AuU" secondAttribute="bottom" id="oO2-4K-pOv"/>
+                            <constraint firstItem="VaT-65-aN5" firstAttribute="leading" secondItem="qos-tg-AuU" secondAttribute="leading" id="yE0-nZ-HDE"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="qos-tg-AuU"/>
                     </view>
                     <connections>
+                        <outlet property="collectionView" destination="VaT-65-aN5" id="EcG-1o-YTv"/>
                         <outlet property="searchBar" destination="xEM-Ey-dGv" id="9ct-L1-ywX"/>
                     </connections>
                 </viewController>

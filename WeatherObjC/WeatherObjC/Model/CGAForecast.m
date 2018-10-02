@@ -10,9 +10,9 @@
 
 @implementation CGAForecast
 
-- (instancetype)initWithCity:(NSString *)cityName temperature:(NSString *)temperature forecastIcon:(UIImage *)forecastIcon {
+- (instancetype)initWithCity:(NSString *)cityName temperature:(NSNumber *)temperature forecastIcon:(UIImage *)forecastIcon {
     self = [super init];
-    if (self) {
+    if (self != nil) {
         _cityName = cityName;
         _temperature = temperature;
         _forecastIcon = forecastIcon;
@@ -20,11 +20,11 @@
     return self;
 }
 
-- (instancetype)initWithDictionary:(NSDictionary *)dictionary city:(NSString *)city {
-    NSString *cityName = city;
-    NSString *temperature = dictionary[@"temperature"];
-    UIImage *forecastIcon = [UIImage imageNamed:dictionary[@"icon"]];
-    return [self initWithCity:cityName temperature:temperature forecastIcon:forecastIcon];
-}
+//- (instancetype)initWithDictionary:(NSDictionary *)dictionary city:(NSString *)city {
+//    NSString *cityName = city;
+//    NSString *temperature = dictionary[@"temperature"];
+//    UIImage *forecastIcon = [UIImage imageNamed:dictionary[@"icon"]];
+//    return [self initWithCity:cityName temperature:temperature forecastIcon:forecastIcon];
+//}
 
 @end

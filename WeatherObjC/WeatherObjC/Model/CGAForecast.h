@@ -12,12 +12,12 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CGAForecast : NSObject
-- (instancetype)initWithCity:(NSString *)cityName temperature:(NSString *)temperature forecastIcon:(UIImage *)forecastIcon;
-- (instancetype)initWithDictionary:(NSDictionary *)dictionary city:(NSString *)city;
+- (instancetype)initWithCity:(NSString *)cityName temperature:(NSNumber *)temperature forecastIcon:(UIImage *)forecastIcon;
+//- (instancetype)initWithDictionary:(NSDictionary *)dictionary city:(NSString *)city;
 
-@property (nonatomic, copy, readonly) NSString *cityName;
-@property (nonatomic, copy, readonly) NSString *temperature;
-@property (nonatomic, copy, readonly) UIImage *forecastIcon;
+@property NSString *cityName;
+@property NSNumber *temperature;
+@property UIImage *forecastIcon;
 
 @end
 

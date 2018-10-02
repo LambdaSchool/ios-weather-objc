@@ -12,7 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface WeatherViewController : UIViewController <UISearchBarDelegate>
+@interface WeatherViewController : UIViewController <UISearchBarDelegate, UICollectionViewDataSource>
 
 @property CGAForecastController *forecastController;
 

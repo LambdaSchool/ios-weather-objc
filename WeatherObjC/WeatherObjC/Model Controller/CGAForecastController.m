@@ -51,11 +51,8 @@
         
         for (NSDictionary *forecastTemp in forecasts) {
             NSString *forecastIconId = forecastTemp[@"weather"][0][@"icon"];
-            NSString *forecastDayTemp = forecastTemp[@"temp"][@"day"];
-            CGAForecast *forecast = [[CGAForecast alloc]
-                                     initWithCity:cityName
-                                     temperature:forecastDayTemp
-                                     forecastIcon: [UIImage imageNamed: forecastIconId]];
+            NSNumber *forecastDayTemp = forecastTemp[@"temp"][@"day"];
+            CGAForecast *forecast = [[CGAForecast alloc] initWithCity:cityName temperature:forecastDayTemp forecastIcon: [UIImage imageNamed: forecastIconId]];
             [[self forecasts] addObject:forecast];
         }
         
