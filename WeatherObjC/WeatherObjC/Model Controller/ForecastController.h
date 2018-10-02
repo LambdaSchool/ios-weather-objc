@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy) NSArray *forecasts;
 
-- (void)loadForecastsForZipcode:(NSString *)zipcode completion:(void (^)(NSArray *forecasts, NSError *))completion;
+- (void)loadForecastsForZipcode:(NSString *)zipcode completion:(void (^)(NSArray *forecasts, NSError *error))completion;
 
 @end
 

@@ -22,7 +22,7 @@ static NSString * const apiKeyString = @"0f71747cf580477afbb3af0f07b51f28";
     return self;
 }
 
-- (void)loadForecastsForZipcode:(NSString *)zipcode completion:(void (^)(NSArray *forecasts, NSError *))completion
+- (void)loadForecastsForZipcode:(NSString *)zipcode completion:(void (^)(NSArray *forecasts, NSError *error))completion
 {
     NSURL *baseURL = [NSURL URLWithString:bastURLString];
     

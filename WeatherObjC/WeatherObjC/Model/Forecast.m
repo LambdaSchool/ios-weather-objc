@@ -13,7 +13,7 @@
 - (instancetype)initWithName:(NSString *)name temperature:(double)temperature imageName:(NSString *)imageName
 {
     if (self = [super init]) {
-        _name = name.copy;
+        _name = name.copy; // if do self.name = name, it does the copy for you
         _temperature = temperature; // no .copy b/c its not a class, anything with * is a class
         _imageName = imageName.copy;
     }
