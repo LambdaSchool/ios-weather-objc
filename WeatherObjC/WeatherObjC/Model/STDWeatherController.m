@@ -52,10 +52,13 @@
         
         NSString *city = dict[@"city"][@"name"];
         NSArray *forecasts = dict[@"list"];
+        
         for (NSDictionary *forecast in forecasts) {
             STDWeather *weatherForecast = [[STDWeather alloc] initWithDict:forecast city:city];
             [self->_internalArray addObject:weatherForecast];
         }
+        
+        self->_forecasts = self->_internalArray;
         
         completion(nil);
         
@@ -63,7 +66,7 @@
     
 }
 
-static NSString * const apiKey = @"394594a0d18fdce87655ab070146a70d";
-static NSString * const baseURLString = @"https://samples.openweathermap.org/data/2.5/forecast/daily";
+static NSString * const apiKey = @"1340d66bb372ff93adebd79d41eea048";
+static NSString * const baseURLString = @"https://api.openweathermap.org/data/2.5/forecast/daily";
 
 @end

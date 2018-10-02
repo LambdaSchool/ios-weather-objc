@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "STDWeather.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface STDWeatherCollectionViewCell : UICollectionViewCell
 
+@property STDWeather *forecast;
 @property (weak, nonatomic) IBOutlet UIImageView *weatherImageView;
 @property (weak, nonatomic) IBOutlet UILabel *weatherTextLabel;
 - (void) updateViews;

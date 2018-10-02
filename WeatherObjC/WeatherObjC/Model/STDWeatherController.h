@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface STDWeatherController : NSObject
 
+- (instancetype)initWithArray:(NSMutableArray *)array;
+- (void)getWeatherDataForZipCode:(NSString *)zipCode completion:(void (^)(NSError *))completion;
 @property NSArray *forecasts;
 
 @end

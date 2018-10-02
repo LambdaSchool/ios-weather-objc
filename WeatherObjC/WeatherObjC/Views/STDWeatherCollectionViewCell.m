@@ -12,7 +12,8 @@
 
 - (void) updateViews
 {
-    
+    [_weatherImageView setImage:_forecast.image];
+    [_weatherTextLabel setText:[NSString stringWithFormat:@"%.2f", _forecast.temperature]];
 }
 
 @end

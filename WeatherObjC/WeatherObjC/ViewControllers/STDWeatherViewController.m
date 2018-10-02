@@ -8,6 +8,7 @@
 
 #import "STDWeatherViewController.h"
 #import "STDWeatherCollectionViewCell.h"
+#import "STDWeatherController.h"
 
 @interface STDWeatherViewController ()
 
@@ -15,31 +16,53 @@
 
 @implementation STDWeatherViewController
 
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        NSMutableArray *array = [[NSMutableArray alloc] init];
+        _weatherController = [[STDWeatherController alloc] initWithArray:array];
+    }
+    return self;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        NSMutableArray *array = [[NSMutableArray alloc] init];
+        _weatherController = [[STDWeatherController alloc] initWithArray:array];
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [_collectionView setDataSource:self];
-    [_collectionView setDelegate:self];
+    [_searchBar setDelegate:self];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 1;
+    return [_weatherController.forecasts count];
 }
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     STDWeatherCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"WeatherCell" forIndexPath:indexPath];
+    
+    STDWeather *forecast = [[_weatherController forecasts] objectAtIndex:indexPath.row];
+    cell.forecast = forecast;
+    [cell updateViews];
+    
     return cell;
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [_weatherController getWeatherDataForZipCode:[searchBar text] completion:^(NSError * _Nonnull error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[self collectionView] reloadData];
+        });
+        
+    }];
 }
 
 @end
