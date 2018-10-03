@@ -10,14 +10,14 @@
 
 @implementation Weather
 
--(instancetype)initWithName:(NSString *)cityName temperature:(NSString *)temperature imageName:(NSString *)imageName
+-(instancetype)initWithName:(NSString *)cityName temperature:(double)temperature imageName:(NSString *)imageName
 {
     self = [super init];
     if (self)
     {
         _cityName = [cityName copy];
-        _temperature = [temperature copy];
-        _imageName = [imageName copy];
+        _temperature = temperature;
+        _image = [UIImage imageNamed:imageName];
     }
     
     return  self;
@@ -25,13 +25,13 @@
 
 -(instancetype)initWithDictionary: (NSDictionary *)dictionary city: (NSString *)city
 {
-    self = [super init];
-    if (self)
-    {
-        _cityName = city;
-    }
+    NSDictionary *tempDict = dictionary[@"temp"];
+    double temperature = [tempDict[@"day"]doubleValue];
     
-    return [self initWithDictionary:dictionary city:city];
+    NSArray *weatherArray = dictionary[@"weather"];
+    NSDictionary *weatherDictionary = [weatherArray firstObject];
+    NSString *imageName = weatherDictionary[@"icon"];
+    return [self initWithName:city temperature:temperature imageName:imageName];
 }
 
 @end

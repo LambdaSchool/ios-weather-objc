@@ -7,7 +7,17 @@
 //
 
 #import "WeatherCollectionViewCell.h"
+#import "Weather.h"
 
 @implementation WeatherCollectionViewCell
+
+- (void)updateViews
+{
+    if (self.weather != nil)
+    {
+        self.weatherImageView.image = self.weather.image;
+        self.temperatureLabel.text = [NSString stringWithFormat:@"%.f", self.weather.temperature];
+    }
+}
 
 @end

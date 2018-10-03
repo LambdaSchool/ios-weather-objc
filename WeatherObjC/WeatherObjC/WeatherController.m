@@ -9,63 +9,93 @@
 #import "WeatherController.h"
 #import "Weather.h"
 
+@interface WeatherController ()
+
+@property (nonatomic, copy) NSMutableArray *internalForecasts;
+
+@end
+
 @implementation WeatherController
 
 static NSString * const baseURLString = @"https://api.openweathermap.org/data/2.5/forecast/daily";
-static NSString * const apiKeyString = @"ea518a0fc823cdf7dbdbd63b9e86469d";
+static NSString * const apiKeyString = @"1340d66bb372ff93adebd79d41eea048";
 
 -(instancetype)init
 {
     self = [super init];
     if (self)
     {
-        _forecasts = [[NSMutableArray alloc] init];
-        _apiId = [[NSString alloc] init];
+        _internalForecasts = [[NSMutableArray alloc] init];
     }
     
     return self;
 }
 
--(void)searchForWeatherWithZipCode:(NSString *)zipCode appID: (NSString *)apiId completion:(void (^)(NSArray *forcasts, NSError *))completion
+- (NSArray *)forecasts
 {
-    _apiId = apiKeyString;
-    apiId = _apiId;
+    return self.internalForecasts;
+}
+
+-(void)searchForWeatherWithZipCode:(int)zipCode completion:(void (^)(NSError *))completion
+{
+    NSString *zipCodeString = [NSString stringWithFormat:@"%d", zipCode];
     NSURL *baseURL = [NSURL URLWithString:baseURLString];
-    NSURLComponents *components = [NSURLComponents componentsWithURL: baseURL resolvingAgainstBaseURL: YES];
-    NSURLQueryItem *searchItem = [NSURLQueryItem queryItemWithName: @"zip" value:zipCode];
-    NSURLQueryItem *api = [NSURLQueryItem queryItemWithName:@"appid" value:apiId];
-    [components setQueryItems: @[searchItem, api]];
-    NSURL *url = [components URL];
-    NSURLRequest *request = [NSURLRequest requestWithURL: url];
+    NSURLComponents *components = [[NSURLComponents alloc] initWithURL:baseURL resolvingAgainstBaseURL:true];
+    NSURLQueryItem *searchItem = [[NSURLQueryItem alloc] initWithName:@"zip" value: zipCodeString];
+    NSURLQueryItem *api = [[NSURLQueryItem alloc] initWithName:@"appid" value:apiKeyString];
+    NSURLQueryItem *units = [[NSURLQueryItem alloc] initWithName:@"units" value:@"imperial"];
+    [components setQueryItems: @[searchItem, api, units]];
     
-    [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error){
-        if (error != nil)
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL: components.URL];
+    
+    NSURLSessionDataTask *dataTask = [NSURLSession.sharedSession dataTaskWithRequest: request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (error)
         {
-            NSLog(@"Error fetching data: %@", error);
-            completion(nil, error);
+            NSLog(@"Error fetching forecasts at %d: %@.", zipCode, error);
+            completion(error);
             return;
         }
         
-        NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data  options:0 error:NULL];
-        if (![dictionary isKindOfClass:[NSDictionary class]])
+        if (!data)
         {
-            NSLog(@"JSON was not a dictionary");
-            completion(nil, [[NSError alloc] init]);
+            NSLog(@"No data returned from data task");
+            completion([[NSError alloc] init]);
             return;
         }
         
+        NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
         
-        NSArray *forecastDictionaries = dictionary[@"list"];
+        if (!dictionary || ![dictionary isKindOfClass:[NSDictionary class]])
+        {
+            NSLog(@"Error deserializing JSON: %@", error);
+            completion(error);
+            return;
+        }
+        
         NSMutableArray *forecasts = [[NSMutableArray alloc] init];
-        for (NSDictionary *dictionary in forecastDictionaries)
+        
+        NSDictionary *cityDictionary = dictionary[@"city"];
+        NSString *cityName = cityDictionary[@"name"];
+        
+        NSArray *listDictionaries = dictionary[@"list"];
+        
+        for (int i = 0; i < listDictionaries.count; i++)
         {
-            Weather *weather = [[Weather alloc] initWithDictionary:dictionary city:zipCode];
-            [forecasts addObject: weather];
             
+            NSDictionary *forecastDictionary = listDictionaries[i];
+            
+            Weather *forecast = [[Weather alloc] initWithDictionary:forecastDictionary city:cityName];
+            
+            [forecasts addObject:forecast];
         }
-        completion(forecasts, nil);
-        NSLog(@"%@", forecasts);
-    }] resume];
+        
+        self.internalForecasts = forecasts;
+        completion(nil);
+        
+    }];
+    [dataTask resume];
+     
+     
 }
 
 @end

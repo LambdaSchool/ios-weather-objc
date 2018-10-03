@@ -12,9 +12,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WeatherController : NSObject
 
-@property NSArray *forecasts;
-@property NSString *apiId;
--(void)searchForWeatherWithZipCode: (NSString *)zipCode appID: (NSString *)apiId completion: (void (^)(NSArray *forecasts, NSError *))completion;
+@property (nonatomic, copy, readonly) NSArray *forecasts;
+
+//@property NSString *apiId;
+
+-(void)searchForWeatherWithZipCode: (int)zipCode completion: (void (^)(NSError *))completion;
+
+-(instancetype)init;
 
 @end
 

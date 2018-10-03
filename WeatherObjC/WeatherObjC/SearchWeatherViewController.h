@@ -11,9 +11,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SearchWeatherViewController : UIViewController <UISearchBarDelegate, UICollectionViewDataSource>
+@interface SearchWeatherViewController : UIViewController <UISearchBarDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 
-@property WeatherController *weatherController;
+@property (nonatomic, copy, readonly) WeatherController *weatherController;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 

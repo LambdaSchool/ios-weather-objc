@@ -8,10 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@class Weather;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface WeatherCollectionViewCell : UICollectionViewCell 
 
+-(void)updateViews;
+
+@property (nonatomic, strong) Weather *weather;
 @property (weak, nonatomic) IBOutlet UIImageView *weatherImageView;
 @property (weak, nonatomic) IBOutlet UILabel *temperatureLabel;
 

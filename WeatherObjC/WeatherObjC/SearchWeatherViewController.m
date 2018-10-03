@@ -8,6 +8,7 @@
 
 #import "SearchWeatherViewController.h"
 #import "WeatherCollectionViewCell.h"
+#import "WeatherController.h"
 
 @interface SearchWeatherViewController ()
 
@@ -40,31 +41,36 @@
 {
     [super viewDidLoad];
     self.searchBar.delegate = self;
+    self.collectionView.dataSource = self;
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
-    [self.weatherController searchForWeatherWithZipCode: searchBar.text appID: _weatherController.apiId completion:^(NSArray *forecasts, NSError *error) {
-        dispatch_async(dispatch_get_main_queue(), ^{
+    int zipCode = [searchBar.text intValue];
+    
+    if (zipCode)
+    {
+        [self.weatherController searchForWeatherWithZipCode:zipCode completion:^(NSError * _Nonnull error) {
             
-            [self.collectionView reloadData];
-        });
-    }];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                [self.collectionView reloadData];
+            });
+        }];
+    }
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    //return _weatherController.forecasts.count;
-    return 7;
+    return _weatherController.forecasts.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     WeatherCollectionViewCell *cell = (WeatherCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"WeatherCell" forIndexPath:indexPath];
     
-    
-    cell.weatherImageView.image = [UIImage imageNamed:@"01d"];
-    cell.temperatureLabel.text  = @"100";
+    cell.weather = self.weatherController.forecasts[indexPath.row];
+    [cell updateViews];
     return cell;
 }
 

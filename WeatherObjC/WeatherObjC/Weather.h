@@ -6,17 +6,17 @@
 //  Copyright © 2018 Lambda School. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Weather : NSObject
 
 @property (nonatomic, copy, readonly) NSString *cityName;
-@property (nonatomic, copy, readonly) NSString *temperature;
-@property (nonatomic, copy, readonly) NSString *imageName;
+@property (nonatomic, readonly) double temperature;
+@property (nonatomic, copy, readonly) UIImage *image;
 
--(instancetype)initWithName: (NSString *)cityName temperature: (NSString *)temperature imageName: (NSString *)imageName;
+-(instancetype)initWithName: (NSString *)cityName temperature: (double)temperature imageName: (NSString *)imageName;
 
 -(instancetype)initWithDictionary: (NSDictionary *)dictionary city: (NSString *)city;
 
