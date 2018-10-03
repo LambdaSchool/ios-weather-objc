@@ -20,11 +20,4 @@
     return self;
 }
 
-//- (instancetype)initWithDictionary:(NSDictionary *)dictionary city:(NSString *)city {
-//    NSString *cityName = city;
-//    NSString *temperature = dictionary[@"temperature"];
-//    UIImage *forecastIcon = [UIImage imageNamed:dictionary[@"icon"]];
-//    return [self initWithCity:cityName temperature:temperature forecastIcon:forecastIcon];
-//}
-
 @end

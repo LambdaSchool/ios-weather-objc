@@ -13,7 +13,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CGAForecast : NSObject
 - (instancetype)initWithCity:(NSString *)cityName temperature:(NSNumber *)temperature forecastIcon:(UIImage *)forecastIcon;
-//- (instancetype)initWithDictionary:(NSDictionary *)dictionary city:(NSString *)city;
 
 @property NSString *cityName;
 @property NSNumber *temperature;
