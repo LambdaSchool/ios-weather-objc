@@ -28,10 +28,10 @@
     
     NSURLQueryItem *apiKeyItem = [[NSURLQueryItem alloc] initWithName:@"appid" value:APIKey];
     
-    NSURLQueryItem *unitsItem = [[NSURLQueryItem alloc] initWithName:@"units" value:@"imperial"];
+//    NSURLQueryItem *unitsItem = [[NSURLQueryItem alloc] initWithName:@"units" value:@"imperial"];
     
     NSURLComponents *components = [NSURLComponents componentsWithURL:baseURL resolvingAgainstBaseURL:YES];
-    [components setQueryItems:@[searchItem, apiKeyItem, unitsItem]];
+    [components setQueryItems:@[searchItem, apiKeyItem]];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:components.URL];
     
@@ -76,8 +76,8 @@
     }] resume];
 }
 
-static NSString * const baseURLString = @"https://samples.openweathermap.org/data/2.5/forecast/daily";
+static NSString * const baseURLString = @"https://api.openweathermap.org/data/2.5/forecast/daily";
 
-static NSString * const APIKey = @"1a5791217ce93886ef63386d3a79891c";
+static NSString * const APIKey = @"aa6a6d62970f29dd136de1c0e889adad";
 
 @end
