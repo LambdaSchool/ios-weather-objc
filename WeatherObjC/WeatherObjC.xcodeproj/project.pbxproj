@@ -8,24 +8,33 @@
 
 /* Begin PBXBuildFile section */
 		467D7F682163766F00E7FF73 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 467D7F672163766F00E7FF73 /* AppDelegate.m */; };
-		467D7F6B2163766F00E7FF73 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 467D7F6A2163766F00E7FF73 /* ViewController.m */; };
 		467D7F6E2163766F00E7FF73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 467D7F6C2163766F00E7FF73 /* Main.storyboard */; };
 		467D7F702163767000E7FF73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 467D7F6F2163767000E7FF73 /* Assets.xcassets */; };
 		467D7F732163767000E7FF73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 467D7F712163767000E7FF73 /* LaunchScreen.storyboard */; };
 		467D7F762163767000E7FF73 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 467D7F752163767000E7FF73 /* main.m */; };
+		A162F16C219B9747003B61E9 /* MUForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = A162F16B219B9747003B61E9 /* MUForecast.m */; };
+		A162F16F219B9765003B61E9 /* MUForecastController.m in Sources */ = {isa = PBXBuildFile; fileRef = A162F16E219B9765003B61E9 /* MUForecastController.m */; };
+		A162F172219B98F1003B61E9 /* MUForecastCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A162F171219B98F1003B61E9 /* MUForecastCollectionViewController.m */; };
+		A162F175219B9999003B61E9 /* MUForecastCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A162F174219B9999003B61E9 /* MUForecastCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		467D7F632163766F00E7FF73 /* WeatherObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		467D7F662163766F00E7FF73 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		467D7F672163766F00E7FF73 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		467D7F692163766F00E7FF73 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		467D7F6A2163766F00E7FF73 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		467D7F6D2163766F00E7FF73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		467D7F6F2163767000E7FF73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		467D7F722163767000E7FF73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		467D7F742163767000E7FF73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		467D7F752163767000E7FF73 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A162F16A219B9747003B61E9 /* MUForecast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MUForecast.h; sourceTree = "<group>"; };
+		A162F16B219B9747003B61E9 /* MUForecast.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MUForecast.m; sourceTree = "<group>"; };
+		A162F16D219B9765003B61E9 /* MUForecastController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MUForecastController.h; sourceTree = "<group>"; };
+		A162F16E219B9765003B61E9 /* MUForecastController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MUForecastController.m; sourceTree = "<group>"; };
+		A162F170219B98F1003B61E9 /* MUForecastCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MUForecastCollectionViewController.h; sourceTree = "<group>"; };
+		A162F171219B98F1003B61E9 /* MUForecastCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MUForecastCollectionViewController.m; sourceTree = "<group>"; };
+		A162F173219B9999003B61E9 /* MUForecastCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MUForecastCollectionViewCell.h; sourceTree = "<group>"; };
+		A162F174219B9999003B61E9 /* MUForecastCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MUForecastCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +67,11 @@
 		467D7F652163766F00E7FF73 /* WeatherObjC */ = {
 			isa = PBXGroup;
 			children = (
+				A162F169219B9710003B61E9 /* Model Controllers */,
+				A162F167219B968D003B61E9 /* View Controllers */,
+				A162F166219B9683003B61E9 /* Models */,
 				467D7F662163766F00E7FF73 /* AppDelegate.h */,
 				467D7F672163766F00E7FF73 /* AppDelegate.m */,
-				467D7F692163766F00E7FF73 /* ViewController.h */,
-				467D7F6A2163766F00E7FF73 /* ViewController.m */,
 				467D7F6C2163766F00E7FF73 /* Main.storyboard */,
 				467D7F6F2163767000E7FF73 /* Assets.xcassets */,
 				467D7F712163767000E7FF73 /* LaunchScreen.storyboard */,
@@ -69,6 +79,35 @@
 				467D7F752163767000E7FF73 /* main.m */,
 			);
 			path = WeatherObjC;
+			sourceTree = "<group>";
+		};
+		A162F166219B9683003B61E9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A162F16A219B9747003B61E9 /* MUForecast.h */,
+				A162F16B219B9747003B61E9 /* MUForecast.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A162F167219B968D003B61E9 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A162F170219B98F1003B61E9 /* MUForecastCollectionViewController.h */,
+				A162F171219B98F1003B61E9 /* MUForecastCollectionViewController.m */,
+				A162F173219B9999003B61E9 /* MUForecastCollectionViewCell.h */,
+				A162F174219B9999003B61E9 /* MUForecastCollectionViewCell.m */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		A162F169219B9710003B61E9 /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A162F16D219B9765003B61E9 /* MUForecastController.h */,
+				A162F16E219B9765003B61E9 /* MUForecastController.m */,
+			);
+			path = "Model Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,7 +180,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				467D7F6B2163766F00E7FF73 /* ViewController.m in Sources */,
+				A162F16C219B9747003B61E9 /* MUForecast.m in Sources */,
+				A162F175219B9999003B61E9 /* MUForecastCollectionViewCell.m in Sources */,
+				A162F172219B98F1003B61E9 /* MUForecastCollectionViewController.m in Sources */,
+				A162F16F219B9765003B61E9 /* MUForecastController.m in Sources */,
 				467D7F762163767000E7FF73 /* main.m in Sources */,
 				467D7F682163766F00E7FF73 /* AppDelegate.m in Sources */,
 			);
@@ -286,12 +328,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7WH6XTF8JG;
 				INFOPLIST_FILE = WeatherObjC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.LambdaSchool.WeatherObjC;
+				PRODUCT_BUNDLE_IDENTIFIER = com.moinuddin.WeatherObjC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -302,12 +345,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7WH6XTF8JG;
 				INFOPLIST_FILE = WeatherObjC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.LambdaSchool.WeatherObjC;
+				PRODUCT_BUNDLE_IDENTIFIER = com.moinuddin.WeatherObjC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
