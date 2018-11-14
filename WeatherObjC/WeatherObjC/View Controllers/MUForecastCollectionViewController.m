@@ -70,9 +70,9 @@ static NSString * const reuseIdentifier = @"ForecastCell";
         MUForecastCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ForecastCell" forIndexPath:indexPath];
     
         MUForecast *forecast = [[self.forecastController forecasts] objectAtIndex:[indexPath row]];
-    
+        NSString *temp = [[forecast temperature] stringValue];
         [[cell forecastImageView ] setImage: [forecast image]];
-        [[cell forecastLabel] setText: [[forecast temperature] stringValue]];
+        [[cell forecastLabel] setText: temp];
         return cell;
 }
 
