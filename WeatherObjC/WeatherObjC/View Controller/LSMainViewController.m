@@ -7,25 +7,81 @@
 //
 
 #import "LSMainViewController.h"
+#import "LSWeatherController.h"
+#import "LSWeatherCollectionViewCell.h"
+#import "LSWeather.h"
 
 @interface LSMainViewController ()
+
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @end
 
 @implementation LSMainViewController
 
+#pragma mark Initializer
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    
+    if (self) {
+        _weatherController = [[LSWeatherController alloc] init];
+    }
+    return self;
+}
+
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        _weatherController = [[LSWeatherController alloc] init];
+    }
+    return self;
+}
+
+#pragma mark LifeCycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _searchBar.delegate = self;
+    _collectionView.dataSource = self;
+    
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark Collection View Data Source
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return _weatherController.forecasts.count;
 }
-*/
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    LSWeatherCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"WeatherCell" forIndexPath:indexPath];
+    
+    LSWeather *weather = [[_weatherController forecasts] objectAtIndex:indexPath.row];
+    cell.weatherImageView.image = weather.forecastIcon;
+    
+    NSNumber *doubleTemprature = [NSNumber numberWithDouble:weather.temperature];
+    cell.temperatureLabel.text = [doubleTemprature stringValue];
+    
+    return cell;
+}
+
+#pragma mark Search Bar Delegate
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    [_weatherController searchWeatherWithZip:searchBar.text completion:^(NSArray * forecasts, NSError * error) {
+        if (error) {
+            NSLog(@"Error searching for zip %@", error);
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[self collectionView] reloadData];
+        });
+    }];
+}
 
 @end

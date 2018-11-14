@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface LSWeatherController : NSObject
 
 @property (nonatomic) NSArray *forecasts;
+- (void)searchWeatherWithZip:(NSString *)searchTerm completion: (void (^)(NSArray *forecasts, NSError*error))completion;
 
 @end
 

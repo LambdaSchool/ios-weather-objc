@@ -20,14 +20,16 @@
     return self;
 }
 
-static NSString * const baseURLString = @"api.openweathermap.org/data/2.5/forecast/daily";
-static NSString * const apiKEY = @"f051c0fa4e08fb98e909ba16e99e3882";
+static NSString * const baseURLString = @"https://api.openweathermap.org/data/2.5/forecast/daily";
+static NSString * const apiKEYString = @"f051c0fa4e08fb98e909ba16e99e3882";
 
-- (void)searchWeatherWithZip:(NSString *)searchTerm completion: (void (^)(NSArray *, NSError*))completion
+- (void)searchWeatherWithZip:(NSString *)searchTerm completion: (void (^)(NSArray *forecasts, NSError *error))completion
 {
     NSURL *baseURL = [[NSURL alloc] initWithString:baseURLString];
+    
     NSURLQueryItem *zip = [[NSURLQueryItem alloc] initWithName:@"zip" value:searchTerm];
-    NSURLQueryItem *apiKey = [[NSURLQueryItem alloc] initWithName:@"appid" value:apiKEY];
+    NSURLQueryItem *apiKey = [[NSURLQueryItem alloc] initWithName:@"appid" value:apiKEYString];
+    
     NSURLComponents *components = [[NSURLComponents alloc] initWithURL:baseURL resolvingAgainstBaseURL:YES];
     [components setQueryItems:@[zip, apiKey]];
     

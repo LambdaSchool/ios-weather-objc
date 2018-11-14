@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LSWeatherController.h"
+
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LSMainViewController : UIViewController
+@interface LSMainViewController : UIViewController <UISearchBarDelegate, UICollectionViewDataSource>
+
+@property LSWeatherController *weatherController;
 
 @end
 
