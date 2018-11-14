@@ -22,10 +22,9 @@
 
 - (instancetype)initWithCity:(NSString *)city dictionary:(NSDictionary *)dictionary
 {
-    self = [super init];
-    if (self) {
-        
-    }
-    return self;
+    NSString *temperature = dictionary[@"main"][@"temp"];
+    UIImage *forecastImage = [UIImage imageNamed: dictionary[@"weather"][0][@"icon"] ];
+    
+    return [self initWithCity:city temperature:(int)temperature image:forecastImage];
 }
 @end

@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(instancetype) initWithForecasts:(NSMutableArray *)forecasts;
 
+-(void)searchForWeatherWithCity:(NSString *)cityName completion:(void (^)(NSArray *forecasts, NSError *))completion;
+
 @property NSMutableArray *forecasts;
 
 @end
