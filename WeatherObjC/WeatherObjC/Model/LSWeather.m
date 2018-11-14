@@ -10,7 +10,7 @@
 
 @implementation LSWeather
 
-- (instancetype)initWithCity:(NSString *)city temperature:(NSNumber *)temperature forecastImage:(UIImage *)forecastImage
+- (instancetype)initWithCity:(NSString *)city temperature:(double)temperature forecastImage:(UIImage *)forecastImage
 {
     self = [super init];
     
@@ -22,15 +22,18 @@
     return self;
 }
 
-- (instancetype)initWithDictionary:(NSDictionary *)dictionary
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary name:(NSString *)name
 {
-    NSString *city = dictionary[@"city"];
-    NSNumber *temperature = dictionary[@"day"];
-    NSString *forecastIconString = dictionary[@"main"];
+    NSDictionary *temp = dictionary[@"temp"];
+    double temperature = [temp[@"day"] doubleValue];
     
-    UIImage *forecastIcon = [UIImage imageNamed:forecastIconString];
+    NSArray *weather = dictionary[@"weather"];
+    NSDictionary *weatherDict = [weather firstObject];
     
-    return [self initWithCity:city temperature:temperature forecastImage:forecastIcon];
+    NSString *forecastIconString = weatherDict[@"icon"];
+    UIImage *forecastImage = [UIImage imageNamed:forecastIconString];
+    
+    return [self initWithCity:name temperature:temperature forecastImage:forecastImage];
 }
 
 @end

@@ -13,11 +13,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LSWeather : NSObject
 
-- (instancetype)initWithCity: (NSString *)city temperature: (NSNumber *)temperature forecastImage: (UIImage *)forecastImage;
-- (instancetype)initWithDictionary: (NSDictionary *)dictionary;
+- (instancetype)initWithCity: (NSString *)city temperature: (double)temperature forecastImage: (UIImage *)forecastImage;
+- (instancetype)initWithDictionary: (NSDictionary *)dictionary name:(NSString *)name;
 
 @property (nonatomic) NSString *city;
-@property (nonatomic) NSNumber *temperature;
+@property (nonatomic) double temperature;
 @property (nonatomic) UIImage *forecastIcon;
 
 @end
