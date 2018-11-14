@@ -13,6 +13,9 @@
 		467D7F702163767000E7FF73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 467D7F6F2163767000E7FF73 /* Assets.xcassets */; };
 		467D7F732163767000E7FF73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 467D7F712163767000E7FF73 /* LaunchScreen.storyboard */; };
 		467D7F762163767000E7FF73 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 467D7F752163767000E7FF73 /* main.m */; };
+		7B4EAB2A219B8AF2007EE733 /* WeatherCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B4EAB29219B8AF2007EE733 /* WeatherCollectionViewCell.m */; };
+		7BD57CC9219B8D2E004E7232 /* DailyForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD57CC8219B8D2E004E7232 /* DailyForecast.m */; };
+		7BD57CCF219BB254004E7232 /* DailyForecastController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD57CCE219BB254004E7232 /* DailyForecastController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,12 @@
 		467D7F722163767000E7FF73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		467D7F742163767000E7FF73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		467D7F752163767000E7FF73 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7B4EAB28219B8AF2007EE733 /* WeatherCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherCollectionViewCell.h; sourceTree = "<group>"; };
+		7B4EAB29219B8AF2007EE733 /* WeatherCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherCollectionViewCell.m; sourceTree = "<group>"; };
+		7BD57CC7219B8D2E004E7232 /* DailyForecast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DailyForecast.h; sourceTree = "<group>"; };
+		7BD57CC8219B8D2E004E7232 /* DailyForecast.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DailyForecast.m; sourceTree = "<group>"; };
+		7BD57CCD219BB254004E7232 /* DailyForecastController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DailyForecastController.h; sourceTree = "<group>"; };
+		7BD57CCE219BB254004E7232 /* DailyForecastController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DailyForecastController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +71,12 @@
 				467D7F672163766F00E7FF73 /* AppDelegate.m */,
 				467D7F692163766F00E7FF73 /* ViewController.h */,
 				467D7F6A2163766F00E7FF73 /* ViewController.m */,
+				7B4EAB28219B8AF2007EE733 /* WeatherCollectionViewCell.h */,
+				7B4EAB29219B8AF2007EE733 /* WeatherCollectionViewCell.m */,
+				7BD57CC7219B8D2E004E7232 /* DailyForecast.h */,
+				7BD57CC8219B8D2E004E7232 /* DailyForecast.m */,
+				7BD57CCD219BB254004E7232 /* DailyForecastController.h */,
+				7BD57CCE219BB254004E7232 /* DailyForecastController.m */,
 				467D7F6C2163766F00E7FF73 /* Main.storyboard */,
 				467D7F6F2163767000E7FF73 /* Assets.xcassets */,
 				467D7F712163767000E7FF73 /* LaunchScreen.storyboard */,
@@ -141,9 +156,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BD57CCF219BB254004E7232 /* DailyForecastController.m in Sources */,
 				467D7F6B2163766F00E7FF73 /* ViewController.m in Sources */,
+				7B4EAB2A219B8AF2007EE733 /* WeatherCollectionViewCell.m in Sources */,
 				467D7F762163767000E7FF73 /* main.m in Sources */,
 				467D7F682163766F00E7FF73 /* AppDelegate.m in Sources */,
+				7BD57CC9219B8D2E004E7232 /* DailyForecast.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
