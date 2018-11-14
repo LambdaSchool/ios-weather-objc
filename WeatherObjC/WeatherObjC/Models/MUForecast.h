@@ -12,13 +12,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MUForecast : NSObject
 
--(instancetype) initWithCity:(NSString *)city temperature:(int *)temperature image:(UIImage *)image;
+-(instancetype) initWithCity:(NSString *)city temperature:(NSNumber *)temperature image:(UIImage *)image;
 
 -(instancetype) initWithCity:(NSString *)city dictionary:(NSDictionary *)dictionary;
 
 
 @property NSString *city;
-@property int *temperature;
+@property NSNumber *temperature;
 @property UIImage *image;
 @end
 

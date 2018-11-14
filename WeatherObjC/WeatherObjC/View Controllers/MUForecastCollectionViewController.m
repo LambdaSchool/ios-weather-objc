@@ -7,26 +7,73 @@
 //
 
 #import "MUForecastCollectionViewController.h"
-
+#import "MUForecastCollectionViewCell.h"
+#import "../Models/MUForecast.h"
+#import "../Model Controllers/MUForecastController.h"
 @interface MUForecastCollectionViewController ()
 
 @end
 
 @implementation MUForecastCollectionViewController
 
+static NSString * const reuseIdentifier = @"ForecastCell";
+
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        _forecastController = [[MUForecastController alloc] init];
+    }
+    return self;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        _forecastController = [[MUForecastController alloc] init];
+    }
+    return self;
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [[self searchBar] setDelegate:self];
+    [[self collectionView] setDataSource:self];
+    //self.collectionView.dataSource = self;
+    //self.collectionView.delegate = self;
+    //self.collectionView.delegate = self;
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    NSString *searchTerm = [searchBar text];
+    if(!searchTerm) { return; }
+    
+    [self.forecastController searchForWeatherWithCity:searchTerm completion:^(NSArray *forecasts, NSError *error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[self collectionView] reloadData];
+        });
+    }];
 }
-*/
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return [[self.forecastController forecasts] count];
+}
+
+- (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    
+        MUForecastCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ForecastCell" forIndexPath:indexPath];
+    
+        MUForecast *forecast = [[self.forecastController forecasts] objectAtIndex:[indexPath row]];
+    
+        [[cell forecastImageView ] setImage: [forecast image]];
+        [[cell forecastLabel] setText: [[forecast temperature] stringValue]];
+        return cell;
+}
 
 @end

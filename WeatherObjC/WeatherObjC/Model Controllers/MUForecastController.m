@@ -14,12 +14,12 @@
 {
     self = [super init];
     if (self) {
-        _forecasts = [NSMutableArray alloc];
+        _forecasts = [[NSMutableArray alloc] init];
     }
     return self;
 }
 
-- (void)searchForWeatherWithCity:(NSString *)cityName completion:(void (^)(NSArray *, NSError *))completion
+- (void)searchForWeatherWithCity:(NSString *)cityName completion:(void (^)(NSArray *forecasts, NSError *))completion
 {
     NSURL *baseURL = [NSURL URLWithString:baseURLString];
     NSURLComponents *components = [NSURLComponents componentsWithURL:baseURL resolvingAgainstBaseURL:YES];
@@ -27,12 +27,12 @@
     NSURLQueryItem *metricQueryItem = [[NSURLQueryItem alloc] initWithName:@"units" value:@"metric"];
     NSURLQueryItem *cntQueryItem  = [[NSURLQueryItem alloc] initWithName:@"cnt" value:@"7"];
     NSURLQueryItem *appidQueryItem  = [[NSURLQueryItem alloc] initWithName:@"appid" value:apiKey];
-    
     [components setQueryItems: @[cityQueryItem, metricQueryItem , cntQueryItem , appidQueryItem]];
-    
-    NSURLRequest *request = [NSURLRequest requestWithURL:components.URL];
+    NSURL *URL = [components URL];
+    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
     
     [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        
         if (error) {
             NSLog(@"Error searching for person: %@", error);
             completion(nil, error);
@@ -44,7 +44,7 @@
             completion(nil, [[NSError alloc] init]);
         }
         
-        NSDictionary * dictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
         
         if (![dictionary isKindOfClass: [NSDictionary class]]) {
             NSLog(@"JSON is not a dictionary");
@@ -54,20 +54,23 @@
         
         NSString *city = dictionary[@"city"][@"name"];
         NSArray *forecastDictionaries = dictionary[@"list"];
-        
-        NSMutableArray *forecasts = [[NSMutableArray alloc] init];
-        
+        NSMutableArray *localForecasts = [[NSMutableArray alloc] init];
         for (NSDictionary *forecastDictionary in forecastDictionaries) {
+            
             MUForecast *forecast = [[MUForecast alloc] initWithCity:city dictionary:forecastDictionary];
-            [forecasts addObject:forecast];
+            
+            [localForecasts addObject:forecast];
         }
-        completion(forecasts, nil);
+        self.forecasts = localForecasts;
+        
+        completion([self forecasts], nil);
         
     }] resume];
+    
 }
 
 
-static NSString * const baseURLString = @"api.openweathermap.org/data/2.5/forecast";
+static NSString * const baseURLString = @"https://api.openweathermap.org/data/2.5/forecast";
 static NSString * const apiKey = @"f144c855a01a9bd80c692dd246ed42e9";
 static NSString *const URL = @"https://api.openweathermap.org/data/2.5/forecast?q=boston,us&cnt=7&appid=f144c855a01a9bd80c692dd246ed42e9";
 @end

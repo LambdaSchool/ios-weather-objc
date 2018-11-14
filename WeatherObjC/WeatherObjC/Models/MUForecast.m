@@ -9,7 +9,7 @@
 #import "MUForecast.h"
 
 @implementation MUForecast
-- (instancetype)initWithCity:(NSString *)city temperature:(int *)temperature image:(UIImage *)image
+- (instancetype)initWithCity:(NSString *)city temperature:(NSNumber *)temperature image:(UIImage *)image
 {
     self = [super init];
     if (self) {
@@ -22,9 +22,9 @@
 
 - (instancetype)initWithCity:(NSString *)city dictionary:(NSDictionary *)dictionary
 {
-    NSString *temperature = dictionary[@"main"][@"temp"];
+    NSNumber *temperature = dictionary[@"main"][@"temp"];
     UIImage *forecastImage = [UIImage imageNamed: dictionary[@"weather"][0][@"icon"] ];
     
-    return [self initWithCity:city temperature:(int)temperature image:forecastImage];
+    return [self initWithCity:city temperature:temperature image:forecastImage];
 }
 @end
