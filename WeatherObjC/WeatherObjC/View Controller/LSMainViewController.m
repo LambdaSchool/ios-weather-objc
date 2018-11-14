@@ -63,8 +63,8 @@
     LSWeather *weather = [[_weatherController forecasts] objectAtIndex:indexPath.row];
     cell.weatherImageView.image = weather.forecastIcon;
     
-    NSNumber *doubleTemprature = [NSNumber numberWithDouble:weather.temperature];
-    cell.temperatureLabel.text = [doubleTemprature stringValue];
+    double fahrenheitTemp = (weather.temperature - 273.15)* 9.0/5.0 + 32.0;
+    cell.temperatureLabel.text = [NSString stringWithFormat:@"%.0f", fahrenheitTemp];
     
     return cell;
 }
@@ -79,6 +79,7 @@
         }
         
         dispatch_async(dispatch_get_main_queue(), ^{
+            self.weatherController.forecasts = forecasts;
             [[self collectionView] reloadData];
         });
     }];

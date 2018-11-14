@@ -20,8 +20,8 @@
     return self;
 }
 
-static NSString * const baseURLString = @"https://api.openweathermap.org/data/2.5/forecast/daily";
-static NSString * const apiKEYString = @"f051c0fa4e08fb98e909ba16e99e3882";
+static NSString * const baseURLString = @"https://samples.openweathermap.org/data/2.5/forecast/daily";
+static NSString * const apiKEYString = @"b6907d289e10d714a6e88b30761fae22";
 
 - (void)searchWeatherWithZip:(NSString *)searchTerm completion: (void (^)(NSArray *forecasts, NSError *error))completion
 {
