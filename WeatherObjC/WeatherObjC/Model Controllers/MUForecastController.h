@@ -12,6 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MUForecastController : NSObject
 
+-(instancetype) initWithForecasts:(NSMutableArray *)forecasts;
+
+@property NSMutableArray *forecasts;
+
 @end
 
 NS_ASSUME_NONNULL_END

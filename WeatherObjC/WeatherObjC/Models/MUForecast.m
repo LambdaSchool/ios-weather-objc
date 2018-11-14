@@ -9,5 +9,23 @@
 #import "MUForecast.h"
 
 @implementation MUForecast
+- (instancetype)initWithCity:(NSString *)city temperature:(int *)temperature image:(UIImage *)image
+{
+    self = [super init];
+    if (self) {
+        _city = city;
+        _temperature = temperature;
+        _image = image;
+    }
+    return self;
+}
 
+- (instancetype)initWithCity:(NSString *)city dictionary:(NSDictionary *)dictionary
+{
+    self = [super init];
+    if (self) {
+        
+    }
+    return self;
+}
 @end
