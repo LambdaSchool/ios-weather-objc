@@ -14,9 +14,33 @@
 
 @implementation ViewController
 
+-(instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    
+    if(self)
+    {
+        _weatherController = [[NKTWeatherController alloc] init];
+    }
+    return self;
+}
+
+
+-(instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if(self)
+    {
+        _weatherController = [[NKTWeatherController alloc] init];
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.searchBar.delegate = self;
+    self.collectionView.dataSource = self;
+    
 }
 
 
