@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44C2602B21F7C5C100F6CA35 /* YZIWeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C2602A21F7C5C100F6CA35 /* YZIWeatherViewController.m */; };
+		44C2602E21F7C5E400F6CA35 /* YZIWeatherCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C2602D21F7C5E400F6CA35 /* YZIWeatherCollectionViewCell.m */; };
 		467D7F682163766F00E7FF73 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 467D7F672163766F00E7FF73 /* AppDelegate.m */; };
 		467D7F6B2163766F00E7FF73 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 467D7F6A2163766F00E7FF73 /* ViewController.m */; };
 		467D7F6E2163766F00E7FF73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 467D7F6C2163766F00E7FF73 /* Main.storyboard */; };
@@ -16,6 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		44C2602921F7C5C100F6CA35 /* YZIWeatherViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YZIWeatherViewController.h; sourceTree = "<group>"; };
+		44C2602A21F7C5C100F6CA35 /* YZIWeatherViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YZIWeatherViewController.m; sourceTree = "<group>"; };
+		44C2602C21F7C5E400F6CA35 /* YZIWeatherCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YZIWeatherCollectionViewCell.h; sourceTree = "<group>"; };
+		44C2602D21F7C5E400F6CA35 /* YZIWeatherCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YZIWeatherCollectionViewCell.m; sourceTree = "<group>"; };
 		467D7F632163766F00E7FF73 /* WeatherObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		467D7F662163766F00E7FF73 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		467D7F672163766F00E7FF73 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -63,6 +69,10 @@
 				467D7F692163766F00E7FF73 /* ViewController.h */,
 				467D7F6A2163766F00E7FF73 /* ViewController.m */,
 				467D7F6C2163766F00E7FF73 /* Main.storyboard */,
+				44C2602C21F7C5E400F6CA35 /* YZIWeatherCollectionViewCell.h */,
+				44C2602D21F7C5E400F6CA35 /* YZIWeatherCollectionViewCell.m */,
+				44C2602921F7C5C100F6CA35 /* YZIWeatherViewController.h */,
+				44C2602A21F7C5C100F6CA35 /* YZIWeatherViewController.m */,
 				467D7F6F2163767000E7FF73 /* Assets.xcassets */,
 				467D7F712163767000E7FF73 /* LaunchScreen.storyboard */,
 				467D7F742163767000E7FF73 /* Info.plist */,
@@ -97,6 +107,7 @@
 		467D7F5B2163766F00E7FF73 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = YZI;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Lambda School";
 				TargetAttributes = {
@@ -141,9 +152,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44C2602B21F7C5C100F6CA35 /* YZIWeatherViewController.m in Sources */,
 				467D7F6B2163766F00E7FF73 /* ViewController.m in Sources */,
 				467D7F762163767000E7FF73 /* main.m in Sources */,
 				467D7F682163766F00E7FF73 /* AppDelegate.m in Sources */,
+				44C2602E21F7C5E400F6CA35 /* YZIWeatherCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +299,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NH6AR4LY3J;
 				INFOPLIST_FILE = WeatherObjC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -302,6 +316,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NH6AR4LY3J;
 				INFOPLIST_FILE = WeatherObjC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
