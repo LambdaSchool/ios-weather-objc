@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1132D9C821F7C96B0061E6E3 /* NKTWeatherCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1132D9C721F7C96B0061E6E3 /* NKTWeatherCVC.m */; };
 		467D7F682163766F00E7FF73 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 467D7F672163766F00E7FF73 /* AppDelegate.m */; };
 		467D7F6B2163766F00E7FF73 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 467D7F6A2163766F00E7FF73 /* ViewController.m */; };
 		467D7F6E2163766F00E7FF73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 467D7F6C2163766F00E7FF73 /* Main.storyboard */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1132D9C621F7C96B0061E6E3 /* NKTWeatherCVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKTWeatherCVC.h; sourceTree = "<group>"; };
+		1132D9C721F7C96B0061E6E3 /* NKTWeatherCVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKTWeatherCVC.m; sourceTree = "<group>"; };
 		467D7F632163766F00E7FF73 /* WeatherObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		467D7F662163766F00E7FF73 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		467D7F672163766F00E7FF73 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -39,6 +42,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1132D9C921F7C96F0061E6E3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1132D9C621F7C96B0061E6E3 /* NKTWeatherCVC.h */,
+				1132D9C721F7C96B0061E6E3 /* NKTWeatherCVC.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		467D7F5A2163766F00E7FF73 = {
 			isa = PBXGroup;
 			children = (
@@ -63,6 +75,7 @@
 				467D7F692163766F00E7FF73 /* ViewController.h */,
 				467D7F6A2163766F00E7FF73 /* ViewController.m */,
 				467D7F6C2163766F00E7FF73 /* Main.storyboard */,
+				1132D9C921F7C96F0061E6E3 /* View */,
 				467D7F6F2163767000E7FF73 /* Assets.xcassets */,
 				467D7F712163767000E7FF73 /* LaunchScreen.storyboard */,
 				467D7F742163767000E7FF73 /* Info.plist */,
@@ -144,6 +157,7 @@
 				467D7F6B2163766F00E7FF73 /* ViewController.m in Sources */,
 				467D7F762163767000E7FF73 /* main.m in Sources */,
 				467D7F682163766F00E7FF73 /* AppDelegate.m in Sources */,
+				1132D9C821F7C96B0061E6E3 /* NKTWeatherCVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

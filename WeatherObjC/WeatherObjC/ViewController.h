@@ -11,5 +11,10 @@
 @interface ViewController : UIViewController
 
 
+
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+
+
 @end
 
