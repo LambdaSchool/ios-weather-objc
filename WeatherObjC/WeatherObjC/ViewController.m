@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "NKTWeatherCVC.h"
+#import "NKTWeatherController.h"
 
 @interface ViewController ()
 
@@ -40,8 +42,24 @@
     [super viewDidLoad];
     self.searchBar.delegate = self;
     self.collectionView.dataSource = self;
-    
+
 }
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return _weatherController.forecasts.count;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    NKTWeatherCVC *cell = (NKTWeatherCVC *)[collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+    
+    cell.weather = self.weatherController.forecasts[indexPath.row];
+    [cell updateViews];
+    return cell;
+}
+
+
 
 
 @end

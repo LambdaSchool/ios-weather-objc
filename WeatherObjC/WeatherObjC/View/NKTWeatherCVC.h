@@ -10,7 +10,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class NKTWeather;
 @interface NKTWeatherCVC : UICollectionViewCell
+
+@property (nonatomic, strong) NKTWeather *weather;
+@property (weak, nonatomic) IBOutlet UIImageView *image;
+@property (weak, nonatomic) IBOutlet UILabel *temp;
+
+-(void)updateViews;
+
 
 @end
 
