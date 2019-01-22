@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1132D9C821F7C96B0061E6E3 /* NKTWeatherCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1132D9C721F7C96B0061E6E3 /* NKTWeatherCVC.m */; };
 		1132D9CE21F7CBB00061E6E3 /* NKTWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = 1132D9CD21F7CBB00061E6E3 /* NKTWeather.m */; };
+		1132D9D121F7CC250061E6E3 /* NKTWeatherController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1132D9D021F7CC250061E6E3 /* NKTWeatherController.m */; };
 		467D7F682163766F00E7FF73 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 467D7F672163766F00E7FF73 /* AppDelegate.m */; };
 		467D7F6B2163766F00E7FF73 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 467D7F6A2163766F00E7FF73 /* ViewController.m */; };
 		467D7F6E2163766F00E7FF73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 467D7F6C2163766F00E7FF73 /* Main.storyboard */; };
@@ -22,6 +23,8 @@
 		1132D9C721F7C96B0061E6E3 /* NKTWeatherCVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKTWeatherCVC.m; sourceTree = "<group>"; };
 		1132D9CA21F7CACD0061E6E3 /* NKTWeather.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKTWeather.h; sourceTree = "<group>"; };
 		1132D9CD21F7CBB00061E6E3 /* NKTWeather.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKTWeather.m; sourceTree = "<group>"; };
+		1132D9CF21F7CC250061E6E3 /* NKTWeatherController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKTWeatherController.h; sourceTree = "<group>"; };
+		1132D9D021F7CC250061E6E3 /* NKTWeatherController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKTWeatherController.m; sourceTree = "<group>"; };
 		467D7F632163766F00E7FF73 /* WeatherObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		467D7F662163766F00E7FF73 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		467D7F672163766F00E7FF73 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -75,6 +78,8 @@
 			children = (
 				1132D9CA21F7CACD0061E6E3 /* NKTWeather.h */,
 				1132D9CD21F7CBB00061E6E3 /* NKTWeather.m */,
+				1132D9CF21F7CC250061E6E3 /* NKTWeatherController.h */,
+				1132D9D021F7CC250061E6E3 /* NKTWeatherController.m */,
 				467D7F662163766F00E7FF73 /* AppDelegate.h */,
 				467D7F672163766F00E7FF73 /* AppDelegate.m */,
 				467D7F692163766F00E7FF73 /* ViewController.h */,
@@ -159,6 +164,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1132D9D121F7CC250061E6E3 /* NKTWeatherController.m in Sources */,
 				467D7F6B2163766F00E7FF73 /* ViewController.m in Sources */,
 				467D7F762163767000E7FF73 /* main.m in Sources */,
 				1132D9CE21F7CBB00061E6E3 /* NKTWeather.m in Sources */,
