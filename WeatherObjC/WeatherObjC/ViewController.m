@@ -60,6 +60,23 @@
 }
 
 
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    int zipCode = [searchBar.text intValue];
+    
+    if (zipCode != nil)
+    {   
+        [self.weatherController searchForWeatherForZipCode:zipCode completion:^(NSError * _Nonnull error) {
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                [self.collectionView reloadData];
+            });
+        }];
+    }
+}
+
+
 
 
 @end
