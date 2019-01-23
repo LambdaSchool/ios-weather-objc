@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		44C2602B21F7C5C100F6CA35 /* YZIWeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C2602A21F7C5C100F6CA35 /* YZIWeatherViewController.m */; };
 		44C2602E21F7C5E400F6CA35 /* YZIWeatherCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C2602D21F7C5E400F6CA35 /* YZIWeatherCollectionViewCell.m */; };
+		44C2603121F7CC5D00F6CA35 /* YZIWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C2603021F7CC5D00F6CA35 /* YZIWeather.m */; };
+		44C2603421F7DAC200F6CA35 /* YZIWeatherController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C2603321F7DAC200F6CA35 /* YZIWeatherController.m */; };
 		467D7F682163766F00E7FF73 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 467D7F672163766F00E7FF73 /* AppDelegate.m */; };
 		467D7F6B2163766F00E7FF73 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 467D7F6A2163766F00E7FF73 /* ViewController.m */; };
 		467D7F6E2163766F00E7FF73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 467D7F6C2163766F00E7FF73 /* Main.storyboard */; };
@@ -22,6 +24,10 @@
 		44C2602A21F7C5C100F6CA35 /* YZIWeatherViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YZIWeatherViewController.m; sourceTree = "<group>"; };
 		44C2602C21F7C5E400F6CA35 /* YZIWeatherCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YZIWeatherCollectionViewCell.h; sourceTree = "<group>"; };
 		44C2602D21F7C5E400F6CA35 /* YZIWeatherCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YZIWeatherCollectionViewCell.m; sourceTree = "<group>"; };
+		44C2602F21F7CC5D00F6CA35 /* YZIWeather.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YZIWeather.h; sourceTree = "<group>"; };
+		44C2603021F7CC5D00F6CA35 /* YZIWeather.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YZIWeather.m; sourceTree = "<group>"; };
+		44C2603221F7DAC200F6CA35 /* YZIWeatherController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YZIWeatherController.h; sourceTree = "<group>"; };
+		44C2603321F7DAC200F6CA35 /* YZIWeatherController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YZIWeatherController.m; sourceTree = "<group>"; };
 		467D7F632163766F00E7FF73 /* WeatherObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		467D7F662163766F00E7FF73 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		467D7F672163766F00E7FF73 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -70,6 +76,10 @@
 				467D7F6A2163766F00E7FF73 /* ViewController.m */,
 				467D7F6C2163766F00E7FF73 /* Main.storyboard */,
 				44C2602C21F7C5E400F6CA35 /* YZIWeatherCollectionViewCell.h */,
+				44C2602F21F7CC5D00F6CA35 /* YZIWeather.h */,
+				44C2603021F7CC5D00F6CA35 /* YZIWeather.m */,
+				44C2603221F7DAC200F6CA35 /* YZIWeatherController.h */,
+				44C2603321F7DAC200F6CA35 /* YZIWeatherController.m */,
 				44C2602D21F7C5E400F6CA35 /* YZIWeatherCollectionViewCell.m */,
 				44C2602921F7C5C100F6CA35 /* YZIWeatherViewController.h */,
 				44C2602A21F7C5C100F6CA35 /* YZIWeatherViewController.m */,
@@ -153,10 +163,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				44C2602B21F7C5C100F6CA35 /* YZIWeatherViewController.m in Sources */,
+				44C2603421F7DAC200F6CA35 /* YZIWeatherController.m in Sources */,
 				467D7F6B2163766F00E7FF73 /* ViewController.m in Sources */,
 				467D7F762163767000E7FF73 /* main.m in Sources */,
 				467D7F682163766F00E7FF73 /* AppDelegate.m in Sources */,
 				44C2602E21F7C5E400F6CA35 /* YZIWeatherCollectionViewCell.m in Sources */,
+				44C2603121F7CC5D00F6CA35 /* YZIWeather.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

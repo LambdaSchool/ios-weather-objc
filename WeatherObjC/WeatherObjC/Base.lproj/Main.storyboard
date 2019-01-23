@@ -79,7 +79,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="searchZip" destination="qad-X2-iYi" id="I5d-xP-DC3"/>
+                        <outlet property="searchZip" destination="qad-X2-iYi" id="6Ji-tJ-b1v"/>
+                        <outlet property="weatherView" destination="6Xj-cG-l3C" id="eR2-g7-d00"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

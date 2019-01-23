@@ -7,11 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YZIWeatherController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface YZIWeatherViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UISearchBar *searchZip;
+@interface YZIWeatherViewController : UIViewController <UISearchBarDelegate, UICollectionViewDataSource>
+
+@property YZIWeatherController *weatherController ;
+
+
+
+
+
 
 @end
 
