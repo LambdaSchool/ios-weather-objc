@@ -7,8 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NKTWeatherController.h"
 
-@interface ViewController : UIViewController
+
+@interface ViewController : UIViewController <UISearchBarDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
+
+
+@property (nonatomic, copy, readonly) NKTWeatherController *weatherController;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 
 @end
