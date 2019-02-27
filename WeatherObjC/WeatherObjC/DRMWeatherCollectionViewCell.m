@@ -17,4 +17,15 @@
 
 @implementation DRMWeatherCollectionViewCell
 
+- (DRMDailyForecast *)forecast {
+    return [self forecast];
+}
+
+- (void)setForecast:(DRMDailyForecast *)forecast {
+    forecast = forecast;
+    [self.weatherImageView setImage: [forecast icon]];
+    [self.cityLabel setText:[forecast city]];
+    [self.temperatureLabel setText:[NSString stringWithFormat:@"%@", forecast.temperature]];
+}
+
 @end

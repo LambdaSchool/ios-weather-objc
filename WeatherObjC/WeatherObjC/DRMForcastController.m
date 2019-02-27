@@ -7,15 +7,12 @@
 //
 
 #import "DRMForcastController.h"
-#import "DRMDailyForecast.h"
 
-@implementation DRMForcastController {
-    NSString * const baseURL;
-    NSString * const apiKey;
-}
 
-NSString * const baseURL = @"api.openweathermap.org/data/2.5/weather";
-NSString * const apiKey = @"a25d9515f2882a003bf4a6ffb6c32baf";
+@implementation DRMForcastController
+
+static NSString * baseURL = @"https://api.openweathermap.org/data/2.5/forecast/daily";
+static NSString * apiKey = @"a25d9515f2882a003bf4a6ffb6c32baf";
 
 - (instancetype)init {
     self = [super init];
@@ -26,11 +23,12 @@ NSString * const apiKey = @"a25d9515f2882a003bf4a6ffb6c32baf";
 }
 
 - (void)fetchForecastForZipcode: (NSString *)zipcode withCompletion: (CompletionHandler)completion {
-    NSURLComponents *urlComponents = [NSURLComponents  componentsWithString:baseURL];
+    NSURLComponents *urlComponents = [NSURLComponents  componentsWithString: baseURL];
     NSURLQueryItem *zipcodeQuery = [NSURLQueryItem queryItemWithName:@"zip" value: zipcode];
     NSURLQueryItem *unitsQuery = [NSURLQueryItem queryItemWithName:@"units" value:@"imperial"];
+    NSURLQueryItem *countQuery = [NSURLQueryItem queryItemWithName:@"cnt" value:@"7"];
     NSURLQueryItem *appIDQuery = [NSURLQueryItem queryItemWithName:@"appid" value: apiKey];
-    [urlComponents setQueryItems: @[zipcodeQuery, unitsQuery, appIDQuery]];
+    [urlComponents setQueryItems: @[zipcodeQuery, unitsQuery, countQuery, appIDQuery]];
     
     NSURL *requestURL = urlComponents.URL;
     
@@ -56,7 +54,7 @@ NSString * const apiKey = @"a25d9515f2882a003bf4a6ffb6c32baf";
                 }
             }
             [self setForecasts: newForecasts];
-            
+            completion(nil);
         } else {
             // TODO: figure out how to return an error in the case that no data is returned.
         }

@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DRMForcastController.h"
+#import "DRMWeatherCollectionViewCell.h"
 
 @interface DRMWeatherViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate>
 
