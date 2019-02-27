@@ -1,18 +1,18 @@
 //
-//  ViewController.m
+//  DRMWeatherViewController.m
 //  WeatherObjC
 //
 //  Created by Spencer Curtis on 10/2/18.
 //  Copyright © 2018 Lambda School. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "DRMWeatherViewController.h"
 
-@interface ViewController ()
+@interface DRMWeatherViewController ()
 
 @end
 
-@implementation ViewController
+@implementation DRMWeatherViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
