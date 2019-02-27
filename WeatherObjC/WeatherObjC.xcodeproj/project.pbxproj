@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		345F40A922261011007A0501 /* DRMWeatherCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 345F40A822261011007A0501 /* DRMWeatherCollectionViewCell.m */; };
+		345F40AC22261BF2007A0501 /* DRMDailyForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 345F40AB22261BF2007A0501 /* DRMDailyForecast.m */; };
+		34BFFE3E22262BA600964315 /* DRMForcastController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BFFE3D22262BA600964315 /* DRMForcastController.m */; };
 		467D7F682163766F00E7FF73 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 467D7F672163766F00E7FF73 /* AppDelegate.m */; };
 		467D7F6B2163766F00E7FF73 /* DRMWeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 467D7F6A2163766F00E7FF73 /* DRMWeatherViewController.m */; };
 		467D7F6E2163766F00E7FF73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 467D7F6C2163766F00E7FF73 /* Main.storyboard */; };
@@ -19,6 +21,10 @@
 /* Begin PBXFileReference section */
 		345F40A722261011007A0501 /* DRMWeatherCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DRMWeatherCollectionViewCell.h; sourceTree = "<group>"; };
 		345F40A822261011007A0501 /* DRMWeatherCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DRMWeatherCollectionViewCell.m; sourceTree = "<group>"; };
+		345F40AA22261BF2007A0501 /* DRMDailyForecast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DRMDailyForecast.h; sourceTree = "<group>"; };
+		345F40AB22261BF2007A0501 /* DRMDailyForecast.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DRMDailyForecast.m; sourceTree = "<group>"; };
+		34BFFE3C22262BA600964315 /* DRMForcastController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DRMForcastController.h; sourceTree = "<group>"; };
+		34BFFE3D22262BA600964315 /* DRMForcastController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DRMForcastController.m; sourceTree = "<group>"; };
 		467D7F632163766F00E7FF73 /* WeatherObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		467D7F662163766F00E7FF73 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		467D7F672163766F00E7FF73 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -67,6 +73,10 @@
 				467D7F6A2163766F00E7FF73 /* DRMWeatherViewController.m */,
 				345F40A722261011007A0501 /* DRMWeatherCollectionViewCell.h */,
 				345F40A822261011007A0501 /* DRMWeatherCollectionViewCell.m */,
+				345F40AA22261BF2007A0501 /* DRMDailyForecast.h */,
+				345F40AB22261BF2007A0501 /* DRMDailyForecast.m */,
+				34BFFE3C22262BA600964315 /* DRMForcastController.h */,
+				34BFFE3D22262BA600964315 /* DRMForcastController.m */,
 				467D7F6C2163766F00E7FF73 /* Main.storyboard */,
 				467D7F6F2163767000E7FF73 /* Assets.xcassets */,
 				467D7F712163767000E7FF73 /* LaunchScreen.storyboard */,
@@ -146,9 +156,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				345F40AC22261BF2007A0501 /* DRMDailyForecast.m in Sources */,
 				467D7F6B2163766F00E7FF73 /* DRMWeatherViewController.m in Sources */,
 				467D7F762163767000E7FF73 /* main.m in Sources */,
 				467D7F682163766F00E7FF73 /* AppDelegate.m in Sources */,
+				34BFFE3E22262BA600964315 /* DRMForcastController.m in Sources */,
 				345F40A922261011007A0501 /* DRMWeatherCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
