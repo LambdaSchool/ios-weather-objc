@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) double temperature;
 @property (nonatomic, copy) NSString *imageName;
 
-- (instancetype)initWithName:(NSString *)name temperature:(double)temperature imageName:(NSString *)imageName NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithName:(NSString *)name temperature:(double)temperature imageName:(NSString *)imageName;
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary name:(NSString *)name; 
 
 @end

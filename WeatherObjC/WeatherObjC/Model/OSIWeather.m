@@ -22,14 +22,14 @@
     return self;
 }
 
-- (instancetype)initWithDictionary:(NSDictionary *)dictionary nameOfCity:(NSString *)name
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary name:(NSString *)name
 {
     NSDictionary *temp = dictionary[@"temp"];
     double temperature = [temp[@"day"] doubleValue];
     
     NSArray *weather = dictionary[@"weather"];
-    NSDictionary *firstWeather = weather.firstObject;
-    NSString *icon = firstWeather[@"icon"];
+    NSDictionary *weatherForWeek = weather.firstObject;
+    NSString *icon = weatherForWeek[@"icon"];
     
     
     return [self initWithName:name temperature:temperature imageName:icon];

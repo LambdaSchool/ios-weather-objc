@@ -15,7 +15,7 @@
 @implementation OSIWeatherController
 
 static NSString * const baseURL = @"https://api.openweathermap.org/data/2.5/forecast/daily";
-static NSString * const apiKey = @"dc50f2b2273e14b634373b418c89cee5";
+static NSString * const apiKey = @"a25d9515f2882a003bf4a6ffb6c32baf";
 
     - (instancetype)init
     {
@@ -65,8 +65,8 @@ static NSString * const apiKey = @"dc50f2b2273e14b634373b418c89cee5";
           
               return;
           }
-          NSDictionary *city = dict[@"city"];
-          NSString *name = city[@"name"];
+          NSString *name = dict[@"city"][@"name"];
+         // NSString *name = city[@"name"];
           
           NSArray *list = dict[@"list"];
           NSMutableArray *weatherForWeek = [[NSMutableArray alloc] init];
@@ -76,7 +76,7 @@ static NSString * const apiKey = @"dc50f2b2273e14b634373b418c89cee5";
           for (NSDictionary *weatherDict in list) {
               
               
-              OSIWeather *weather = [[OSIWeather alloc] initWithDictionary:weatherDict name:name];
+              OSIWeather *weather = [[OSIWeather alloc] initWithDictionary: weatherDict name:name];
                 [weatherForWeek addObject: weather];
           }
           
@@ -84,7 +84,7 @@ static NSString * const apiKey = @"dc50f2b2273e14b634373b418c89cee5";
           
           //NSLog(self.weatherForWeek);
           
-          block(weatherForWeek, nil);
+          block(nil, nil);
       }] resume];
     
     
