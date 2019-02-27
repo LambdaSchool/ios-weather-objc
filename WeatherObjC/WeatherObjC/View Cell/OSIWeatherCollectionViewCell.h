@@ -11,6 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface OSIWeatherCollectionViewCell : UICollectionViewCell
+@property (weak, nonatomic) IBOutlet UILabel *tempLabel;
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
