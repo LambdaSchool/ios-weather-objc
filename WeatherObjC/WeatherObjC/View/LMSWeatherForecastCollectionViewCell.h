@@ -8,12 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+@class LMSForecast;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LMSWeatherForecastCollectionViewCell : UICollectionViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
 @property (weak, nonatomic) IBOutlet UILabel *tempLabel;
+
+@property (nonatomic, strong) LMSForecast *forecast;
+
+- (void)updateViews;
 
 @end
 

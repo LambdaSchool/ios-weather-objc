@@ -7,6 +7,8 @@
 //
 
 #import "LMSWeatherForecastViewController.h"
+#import "LMSWeatherForecastCollectionViewCell.h"
+#import "LMSForecastController.h"
 
 @interface LMSWeatherForecastViewController ()
 
@@ -14,19 +16,52 @@
 
 @implementation LMSWeatherForecastViewController
 
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self != nil) {
+        _forecastController = [[LMSForecastController alloc] init];
+    }
+    return self;
+}
+
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self != nil) {
+        _forecastController = [[LMSForecastController alloc] init];
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.zipcodeSearchBar.delegate = self;
+    self.weatherCollectionView.dataSource = self;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [_forecastController fetchForecastForZipcode: searchBar.text withCompletion:^(NSError *error) {
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            [self.weatherCollectionView reloadData];
+        }];
+    }];
 }
-*/
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return self.forecastController.forecasts.count;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    LMSWeatherForecastCollectionViewCell *cell = (LMSWeatherForecastCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"WeatherCell" forIndexPath:indexPath];
+    
+    cell.forecast = self.forecastController.forecasts[indexPath.row];
+    
+    [cell updateViews];
+    
+    return cell;
+}
 
 @end

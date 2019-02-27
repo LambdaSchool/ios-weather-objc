@@ -8,13 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@class LMSForecastController;
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LMSWeatherForecastViewController : UIViewController
+@interface LMSWeatherForecastViewController : UIViewController <UISearchBarDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UISearchBar *zipcodeSearchBar;
 @property (weak, nonatomic) IBOutlet UICollectionView *weatherCollectionView;
 
+@property (nonatomic, copy, readonly) LMSForecastController *forecastController;
 
 @end
 

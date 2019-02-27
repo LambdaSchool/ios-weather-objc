@@ -7,7 +7,16 @@
 //
 
 #import "LMSWeatherForecastCollectionViewCell.h"
+#import "LMSForecast.h"
 
 @implementation LMSWeatherForecastCollectionViewCell
+
+- (void)updateViews
+{
+    if (self.forecast != nil) {
+        self.iconImageView.image = self.forecast.image;
+        self.tempLabel.text = [NSString stringWithFormat:@"%@", self.forecast.temperature];
+    }
+}
 
 @end
