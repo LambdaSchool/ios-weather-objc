@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Weather Forecast View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LMSWeatherForecastViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -31,7 +31,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WeatherCell" id="unV-aR-OuQ">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WeatherCell" id="unV-aR-OuQ" customClass="LMSWeatherForecastCollectionViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="146" height="199"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -60,6 +60,10 @@
                                             <constraint firstItem="592-Cp-Zgq" firstAttribute="centerX" secondItem="unV-aR-OuQ" secondAttribute="centerX" id="gOf-Lt-Th4"/>
                                             <constraint firstItem="592-Cp-Zgq" firstAttribute="top" secondItem="unV-aR-OuQ" secondAttribute="topMargin" constant="8" id="jXV-iK-Dfc"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="iconImageView" destination="592-Cp-Zgq" id="5vO-wD-FhM"/>
+                                            <outlet property="tempLabel" destination="ZBq-8T-fDh" id="qyj-6J-FL3"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -76,6 +80,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="weatherCollectionView" destination="uSG-9t-ACy" id="9ME-L5-Jmr"/>
+                        <outlet property="zipcodeSearchBar" destination="haN-RQ-j53" id="R3C-gV-nXc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
