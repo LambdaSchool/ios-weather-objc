@@ -23,7 +23,7 @@
     self = [super init];
     if (self) {
         _forecasts = [[NSArray alloc] init];
-        _baseURLString = @"https://api.openweathermap.org/data/2.5/forecast/daily";
+        _baseURLString = @"https://api.openweathermap.org/data/2.5/forecast";
         _apiKey = @"f6ae4d490fc63a60a03cd46fc1250229";
         
     }

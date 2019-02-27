@@ -80,5 +80,12 @@ static NSString * const reuseIdentifier = @"ForcastCell";
     return YES;
 }
 
-
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [_modelController searchForecastForZip:[searchBar text] withBlock:^(Forecast  * _Nonnull forecast ,NSError * _Nonnull error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[self forecastCollectionView] reloadData];
+        });
+        
+    }];
+}
 @end
