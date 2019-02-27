@@ -9,15 +9,16 @@
 #import <Foundation/Foundation.h>
 #import "Forecast.h"
 
-NS_ASSUME_NONNULL_BEGIN
+typedef void (^CompletionBlock)(Forecast *forecast, NSError *error);
 
-typedef void (^completionBlock)(Forecast *forecast, NSError *error);
+NS_ASSUME_NONNULL_BEGIN
 
 @interface ModelController : NSObject
 
 @property NSArray<Forecast *> *forecasts;
 
--(void)searchForecastForZip: (NSString *)zipCode withBlock:completionBlock;
+-(instancetype)initWithArray:(NSMutableArray *)array;
+-(void)searchForecastForZip: (NSString *)zipCode withBlock:(CompletionBlock)block;
 
 @end
 

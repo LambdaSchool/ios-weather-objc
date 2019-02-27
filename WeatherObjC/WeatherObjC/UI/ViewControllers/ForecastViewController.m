@@ -24,18 +24,25 @@ static NSString * const reuseIdentifier = @"ForcastCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    _modelController = [[ModelController alloc] init];
+    [_forecastCollectionView setDataSource:self];
+    [_searchBarAndSearchDisplayController setDelegate:self];
 }
 
 -(instancetype)initWithCoder:(NSCoder *)aDecoder{
     self = [super initWithCoder:aDecoder];
-    
-    
+    if (self) {
+        NSMutableArray *array = [[NSMutableArray alloc] init];
+        _modelController = [[ModelController alloc] initWithArray:array];
+    }
     return self;
 }
 
 -(instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
      self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        NSMutableArray *array = [[NSMutableArray alloc] init];
+        _modelController = [[ModelController alloc] initWithArray:array];
+    }
     
     return self;
 }
@@ -65,13 +72,9 @@ static NSString * const reuseIdentifier = @"ForcastCell";
 }
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return _modelController.forecasts.count;
+    return [_modelController.forecasts count];
 }
 
-
-- (CGSize)sizeForChildContentContainer:(nonnull id<UIContentContainer>)container withParentContainerSize:(CGSize)parentSize {
-    
-}
 
 - (BOOL)shouldUpdateFocusInContext:(nonnull UIFocusUpdateContext *)context {
     return YES;
