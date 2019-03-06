@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C76FE94222F24250017AC04 /* DailyForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C76FE93222F24250017AC04 /* DailyForecast.m */; };
+		2C76FE98222FB79B0017AC04 /* DailyForecastController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C76FE97222FB79B0017AC04 /* DailyForecastController.m */; };
+		2C76FE9B222FB92A0017AC04 /* Notes.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2C76FE9A222FB92A0017AC04 /* Notes.rtf */; };
 		2C8CA2332225DA9300FD35BF /* WeatherCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C8CA2322225DA9300FD35BF /* WeatherCollectionViewCell.m */; };
 		467D7F682163766F00E7FF73 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 467D7F672163766F00E7FF73 /* AppDelegate.m */; };
 		467D7F6B2163766F00E7FF73 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 467D7F6A2163766F00E7FF73 /* ViewController.m */; };
@@ -17,6 +20,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C76FE92222F24240017AC04 /* DailyForecast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DailyForecast.h; sourceTree = "<group>"; };
+		2C76FE93222F24250017AC04 /* DailyForecast.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DailyForecast.m; sourceTree = "<group>"; };
+		2C76FE96222FB79B0017AC04 /* DailyForecastController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DailyForecastController.h; sourceTree = "<group>"; };
+		2C76FE97222FB79B0017AC04 /* DailyForecastController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DailyForecastController.m; sourceTree = "<group>"; };
+		2C76FE9A222FB92A0017AC04 /* Notes.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Notes.rtf; sourceTree = "<group>"; };
 		2C8CA2312225DA9300FD35BF /* WeatherCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherCollectionViewCell.h; sourceTree = "<group>"; };
 		2C8CA2322225DA9300FD35BF /* WeatherCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherCollectionViewCell.m; sourceTree = "<group>"; };
 		467D7F632163766F00E7FF73 /* WeatherObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,6 +50,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C76FE91222F23CE0017AC04 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2C76FE92222F24240017AC04 /* DailyForecast.h */,
+				2C76FE93222F24250017AC04 /* DailyForecast.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2C76FE95222FB7510017AC04 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2C76FE96222FB79B0017AC04 /* DailyForecastController.h */,
+				2C76FE97222FB79B0017AC04 /* DailyForecastController.m */,
+			);
+			path = "Model Controller";
+			sourceTree = "<group>";
+		};
+		2C76FE99222FB8F80017AC04 /* Notes */ = {
+			isa = PBXGroup;
+			children = (
+				2C76FE9A222FB92A0017AC04 /* Notes.rtf */,
+			);
+			path = Notes;
+			sourceTree = "<group>";
+		};
 		2C8CA22E2225D3D300FD35BF /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +130,9 @@
 				2C8CA22E2225D3D300FD35BF /* Views */,
 				2C8CA22F2225D3E700FD35BF /* Resources */,
 				467D7F752163767000E7FF73 /* main.m */,
+				2C76FE99222FB8F80017AC04 /* Notes */,
+				2C76FE95222FB7510017AC04 /* Model Controller */,
+				2C76FE91222F23CE0017AC04 /* Model */,
 			);
 			path = WeatherObjC;
 			sourceTree = "<group>";
@@ -157,6 +194,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C76FE9B222FB92A0017AC04 /* Notes.rtf in Resources */,
 				467D7F732163767000E7FF73 /* LaunchScreen.storyboard in Resources */,
 				467D7F702163767000E7FF73 /* Assets.xcassets in Resources */,
 				467D7F6E2163766F00E7FF73 /* Main.storyboard in Resources */,
@@ -170,10 +208,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C76FE98222FB79B0017AC04 /* DailyForecastController.m in Sources */,
 				467D7F6B2163766F00E7FF73 /* ViewController.m in Sources */,
 				2C8CA2332225DA9300FD35BF /* WeatherCollectionViewCell.m in Sources */,
 				467D7F762163767000E7FF73 /* main.m in Sources */,
 				467D7F682163766F00E7FF73 /* AppDelegate.m in Sources */,
+				2C76FE94222F24250017AC04 /* DailyForecast.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

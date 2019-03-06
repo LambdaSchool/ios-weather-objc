@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DailyForecastController.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UISearchBarDelegate, UICollectionViewDataSource>
+
+@property DailyForecastController * dailyForecastController;
 
 
 @end
