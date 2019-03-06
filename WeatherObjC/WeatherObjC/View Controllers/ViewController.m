@@ -44,6 +44,8 @@
     // Do any additional setup after loading the view, typically from a nib.
     _searchBar.delegate = self;
     _collectionView.dataSource = self;
+    double width = view.frame.size.width / 3;
+    UICollectionViewFlowLayout layout = _collectionView.collectionViewLayout;
 }
 
 // Collection View Data Source
