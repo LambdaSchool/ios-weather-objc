@@ -26,36 +26,36 @@
                                 <rect key="frame" x="8" y="84" width="359" height="575"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wGY-6v-JFW">
-                                    <size key="itemSize" width="152" height="192"/>
+                                    <size key="itemSize" width="166" height="204"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="P2L-zz-nmd" customClass="ALWCollectionViewCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="152" height="192"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="166" height="204"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="152" height="192"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="166" height="204"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bfn-r6-fyg">
-                                                    <rect key="frame" x="0.0" y="0.0" width="152" height="152"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bfn-r6-fyg">
+                                                    <rect key="frame" x="0.0" y="0.0" width="166" height="166"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Bfn-r6-fyg" secondAttribute="height" id="PNC-ZU-i1F"/>
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="x7c-Fc-bsy">
-                                                    <rect key="frame" x="4" y="156" width="144" height="20.5"/>
+                                                    <rect key="frame" x="4" y="170" width="158" height="20.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9oX-2R-2PL">
-                                                            <rect key="frame" x="0.0" y="0.0" width="114" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--º" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzV-ye-ewN">
-                                                            <rect key="frame" x="122" y="0.0" width="22" height="20.5"/>
+                                                            <rect key="frame" x="136" y="0.0" width="22" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>

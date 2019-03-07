@@ -1,9 +1,5 @@
 //
 //  ALWViewController.m
-//  WeatherObjC
-//
-//  Created by Audrey Welch on 3/4/19.
-//  Copyright © 2019 Lambda School. All rights reserved.
 //
 
 #import "ALWViewController.h"
@@ -20,7 +16,8 @@
     [super viewDidLoad];
     
     [[self searchBar] setDelegate:self];
-    //[[self collectionView] dataSource:self];
+    //[self.collectionView dataSource:self];
+    self.collectionView.dataSource = self;
     
 }
 
@@ -50,7 +47,6 @@
     [self.modelController searchForForecastWithZipCode:searchBar.text completion:^(NSArray * _Nonnull forecasts, NSError * _Nonnull error) {
         dispatch_async(dispatch_get_main_queue(), ^{
             _modelController.forecasts = forecasts;
-            //[self setForecasts:forecasts];
             [[self collectionView] reloadData];
         });
     }];
@@ -64,25 +60,19 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    // Cast as a ColelctionViewCell
+    // Cast as a CollectionViewCell
     ALWCollectionViewCell *cell = (ALWCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
     
     ALWForecast *forecast = [self.modelController.forecasts objectAtIndex:indexPath.row];
     [[cell cityLabel] setText:[forecast name]];
     [[cell imageView] setImage: [UIImage imageNamed:[forecast icon]]];
-    //[[cell temperatureLabel] setText:[forecast temp]];
+    
+    // Currently a primitive number - needs to be a string
+    NSString *tempString = [NSString stringWithFormat: @"%ld", (long)forecast.temp];
+    
+    cell.temperatureLabel.text = tempString;
     
     return cell;
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *name; // "name"
 
 // Inside "weather," which is an array of dictionaries
-@property (nonatomic) NSInteger *temp; // "temp"
+@property (nonatomic) NSInteger temp; // "temp"
 @property (nonatomic, copy) NSString *icon;
 
 @end

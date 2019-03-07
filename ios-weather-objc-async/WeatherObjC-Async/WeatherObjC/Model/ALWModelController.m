@@ -23,7 +23,8 @@
     if (self != nil) {
         _forecasts = [NSArray arrayWithObjects: nil];
         //_forecasts = @[];
-        _baseURLString = @"https://samples.openweathermap.org/data/2.5/weather";
+        _baseURLString = @"https://api.openweathermap.org/data/2.5/weather";
+        //_baseURLString = @"https://samples.openweathermap.org/data/2.5/weather";
         _apiKey = @"b183d7ec4c0c9dcc5178324816716c88";
     }
     return self;
@@ -40,9 +41,10 @@
     
     // Set query items
     NSURLQueryItem *searchItem = [NSURLQueryItem queryItemWithName:@"zip" value:zipCode];
+    NSURLQueryItem *fahrenheitItem = [NSURLQueryItem queryItemWithName:@"units" value:@"imperial"];
     NSURLQueryItem *apiKeyItem = [NSURLQueryItem queryItemWithName:@"appid" value:_apiKey];
     
-    [components setQueryItems:@[searchItem, apiKeyItem]];
+    [components setQueryItems:@[searchItem, fahrenheitItem, apiKeyItem]];
     
     // Get URL from components
     NSURL *url = [components URL];
@@ -74,7 +76,7 @@
         ALWForecast *forecast = [[ALWForecast alloc] init];
         forecast.name = [dictionary objectForKey:@"name"];
         
-        // and then inidcate that our model is one level deep (inside "weather")
+        // and then indicate that our model is one level deep (inside "weather")
         // Get out the "weather" key
         NSArray *weatherResults = [dictionary objectForKey:@"weather"];
         // Make sure it is an array
@@ -102,14 +104,20 @@
             return;
         }
         
-        //forecast.temp = [mainResults objectForKey:@"temp"];
+        forecast.temp = [mainResults objectForKey:@"temp"];
         
         NSMutableArray *forecasts = [[NSMutableArray alloc] init];
+        
+        //_forecasts = forecasts;
+        
+        completion(forecasts, nil);
         
         NSLog(@"%@", forecast);
         
         [forecasts addObject: forecast];
         NSLog(@"%@", forecasts);
+        
+        self.forecasts = forecasts;
         
     }] resume] ;
     

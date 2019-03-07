@@ -13,8 +13,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ALWViewController : UIViewController <UISearchBarDelegate, UICollectionViewDataSource>
 
-//@property (nonatomic, strong, nullable) ALWPerson 
-
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property ALWModelController *modelController;
