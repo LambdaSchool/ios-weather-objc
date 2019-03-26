@@ -15,6 +15,7 @@
 		7AA11AC5224ABDE5009AF2BF /* NELWeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA11AC4224ABDE5009AF2BF /* NELWeatherViewController.m */; };
 		7AA11AC8224ABE23009AF2BF /* NELWeatherCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA11AC7224ABE23009AF2BF /* NELWeatherCollectionViewCell.m */; };
 		7AA11ACC224AC086009AF2BF /* NELWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA11ACB224AC086009AF2BF /* NELWeather.m */; };
+		7AA11AD0224AC3B0009AF2BF /* NELWeatherController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA11ACF224AC3B0009AF2BF /* NELWeatherController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		7AA11AC7224ABE23009AF2BF /* NELWeatherCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NELWeatherCollectionViewCell.m; sourceTree = "<group>"; };
 		7AA11ACA224AC086009AF2BF /* NELWeather.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NELWeather.h; sourceTree = "<group>"; };
 		7AA11ACB224AC086009AF2BF /* NELWeather.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NELWeather.m; sourceTree = "<group>"; };
+		7AA11ACE224AC3B0009AF2BF /* NELWeatherController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NELWeatherController.h; sourceTree = "<group>"; };
+		7AA11ACF224AC3B0009AF2BF /* NELWeatherController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NELWeatherController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,8 +69,8 @@
 			children = (
 				467D7F662163766F00E7FF73 /* AppDelegate.h */,
 				467D7F672163766F00E7FF73 /* AppDelegate.m */,
-				7AA11ACA224AC086009AF2BF /* NELWeather.h */,
-				7AA11ACB224AC086009AF2BF /* NELWeather.m */,
+				7AA11ACD224AC39A009AF2BF /* Model */,
+				7AA11AD1224AC3BA009AF2BF /* Model Controller */,
 				7AA11AC9224ABE26009AF2BF /* Views */,
 				7AA11AC2224ABD1A009AF2BF /* View Controllers */,
 				467D7F6C2163766F00E7FF73 /* Main.storyboard */,
@@ -95,6 +98,24 @@
 				7AA11AC7224ABE23009AF2BF /* NELWeatherCollectionViewCell.m */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		7AA11ACD224AC39A009AF2BF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7AA11ACA224AC086009AF2BF /* NELWeather.h */,
+				7AA11ACB224AC086009AF2BF /* NELWeather.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7AA11AD1224AC3BA009AF2BF /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7AA11ACE224AC3B0009AF2BF /* NELWeatherController.h */,
+				7AA11ACF224AC3B0009AF2BF /* NELWeatherController.m */,
+			);
+			path = "Model Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,6 +191,7 @@
 			files = (
 				467D7F762163767000E7FF73 /* main.m in Sources */,
 				467D7F682163766F00E7FF73 /* AppDelegate.m in Sources */,
+				7AA11AD0224AC3B0009AF2BF /* NELWeatherController.m in Sources */,
 				7AA11AC5224ABDE5009AF2BF /* NELWeatherViewController.m in Sources */,
 				7AA11AC8224ABE23009AF2BF /* NELWeatherCollectionViewCell.m in Sources */,
 				7AA11ACC224AC086009AF2BF /* NELWeather.m in Sources */,
