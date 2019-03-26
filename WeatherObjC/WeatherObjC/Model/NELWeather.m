@@ -21,4 +21,12 @@
     return self;
 }
 
+-(instancetype)initWithCityName:(NSString *)cityName dictionary:(NSDictionary *)dicitionary
+{
+    NSNumber *temperature = dicitionary[@"main"][@"temp"];
+     UIImage *weatherImage = [UIImage imageNamed: dicitionary[@"weather"][0][@"icon"]];
+    
+    return [self initWithCityName:cityName temparature:temperature image:weatherImage];
+}
+
 @end

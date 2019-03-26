@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithCityName:(NSString *)cityName temparature:(NSString *)temperature image:(UIImage *)image;
 
-- (instancetype)intiWithCityName:(NSString *)cityName dictionary:(NSDictionary *)dicitionary;
+- (instancetype)initWithCityName:(NSString *)cityName dictionary:(NSDictionary *)dicitionary;
 
 
 @property NSString *cityName;

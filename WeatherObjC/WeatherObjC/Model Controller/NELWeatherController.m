@@ -39,7 +39,9 @@
     
     NSURL *requestUrl = components.URL;
     
-    NSURLSessionDataTask *dataTask = [[NSURLSession sharedSession] dataTaskWithURL:requestUrl completionHandler:^(NSData * data, NSURLResponse * response, NSError * error) {
+   NSURLRequest *request = [NSURLRequest requestWithURL:requestUrl];
+    
+    NSURLSessionDataTask *dataTask = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * data, NSURLResponse * response, NSError * error) {
         
         if (error) {
             NSLog(@"Error fetching data: %@", error);
@@ -69,10 +71,10 @@
         NSString *theCityName = jsonDictionary[@"city"][@"name"];
         NSArray *forecastDictionary = jsonDictionary[@"list"];
         
-         NSMutableArray *localWeather = [[NSMutableArray alloc] init];
+        NSMutableArray *localWeather = [[NSMutableArray alloc] init];
         
         for (NSDictionary *forecastDict in forecastDictionary) {
-            NELWeather *weather = [[NELWeather alloc] intiWithCityName:theCityName dictionary:forecastDict];
+            NELWeather *weather = [[NELWeather alloc] initWithCityName:theCityName dictionary:forecastDict];
             
             //equivalent of .append
             [localWeather addObject:weather]; //append
@@ -81,7 +83,7 @@
         
     }];
     
-    [dataTask resume];
+      [dataTask resume];
 }
 
 

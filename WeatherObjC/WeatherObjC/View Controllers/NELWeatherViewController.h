@@ -7,10 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NELWeatherController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NELWeatherViewController : UIViewController
+@interface NELWeatherViewController : UIViewController <UISearchBarDelegate>
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+
+
+@property NELWeatherController  *weatherController;
 
 @end
 

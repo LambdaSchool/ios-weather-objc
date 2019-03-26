@@ -7,27 +7,63 @@
 //
 
 #import "NELWeatherViewController.h"
+#import "NELWeatherController.h"
+#import "NELWeather.h"
+#import "NELWeatherCollectionViewCell.h"
 
 @interface NELWeatherViewController ()
-@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+
 
 @end
 
 @implementation NELWeatherViewController
 
+
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    
+    if (self) {
+        
+        _weatherController = [[NELWeatherController alloc] init];
+    
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.searchBar.delegate = self;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    [self.weatherController getWeatherForCity: searchBar.text completion:^(NSArray *forecasts, NSError *error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.collectionView reloadData];
+        });
+    }];
 }
-*/
+
+#pragma mark <UICollectionViewDataSource>
+
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    
+    return _weatherController.forecasts.count;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    NELWeatherCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"weatherCell" forIndexPath:indexPath];
+    
+    NELWeather *weather = [_weatherController.forecasts objectAtIndex:indexPath.row];
+    NSString *temperature = [NSString stringWithFormat: @"%@ - %@", weather.cityName, weather.temperature];
+    cell.weatherLabel.text = temperature;
+    cell.imageView.image = weather.image;
+   
+    return cell;
+}
+
 
 @end

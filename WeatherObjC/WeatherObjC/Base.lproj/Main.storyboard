@@ -50,6 +50,9 @@
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HHc-It-312">
                                                             <rect key="frame" x="0.0" y="92" width="138" height="39"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="39" id="lnc-rN-NSZ"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -85,7 +88,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="searchBar" destination="Iyg-Vo-Hhn" id="q1o-Eq-DVa"/>
+                        <outlet property="collectionView" destination="LEW-xZ-KZ8" id="v1m-el-JNY"/>
+                        <outlet property="searchBar" destination="Iyg-Vo-Hhn" id="QmY-7u-eXK"/>
                     </connections>
                 </viewController>
             </objects>
