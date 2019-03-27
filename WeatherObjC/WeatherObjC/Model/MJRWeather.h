@@ -13,11 +13,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MJRWeather : NSObject
 
+-(instancetype)initWithDictionary:(NSDictionary *)dictionary name:(NSString *)name;
 
+-(instancetype)initWithName:(NSString *)name icon:(UIImage *)icon temp:(NSNumber *)temp;
 
 @property NSString *name;
 @property UIImage *icon;
-@property double *temp;
+@property NSNumber *temp;
 
 @end
 
