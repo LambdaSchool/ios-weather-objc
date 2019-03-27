@@ -8,12 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+@class MJRWeather;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MJRWeatherCollectionViewCell : UICollectionViewCell
 
+- (void)updateViews;
+
 @property (strong, nonatomic) IBOutlet UIImageView *weatherImage;
 @property (strong, nonatomic) IBOutlet UILabel *weatherLabel;
+
+@property MJRWeather *weather;
 
 @end
 

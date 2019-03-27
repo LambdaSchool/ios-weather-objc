@@ -7,7 +7,17 @@
 //
 
 #import "MJRWeatherCollectionViewCell.h"
+#import "MJRWeather.h"
 
 @implementation MJRWeatherCollectionViewCell
+
+- (void)updateViews
+{
+    if (self.weather) {
+        
+        self.weatherLabel.text = [NSString stringWithFormat:@"%@ %@ degrees", self.weather.name, self.weather.temp];
+        self.weatherImage.image = self.weather.icon;
+    }
+}
 
 @end

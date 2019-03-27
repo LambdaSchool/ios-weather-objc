@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@class MJRWeatherController;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MJRViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate>
+
+@property MJRWeatherController *weatherController;
 
 @end
 

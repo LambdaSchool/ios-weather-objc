@@ -12,9 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MJRWeatherController : NSObject
 
+- (void)searchForWeatherWithZipcode:(NSString *)zipcode completion:(void (^)(NSError *error))completion;
 
-
-@property NSMutableArray *forecasts;
+@property NSArray *forecasts;
 
 @end
 
