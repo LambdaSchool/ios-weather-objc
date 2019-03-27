@@ -11,16 +11,6 @@
 
 @implementation NELWeatherController
 
-- (instancetype)initWithWeatherForecasts:(NSMutableArray *)forecasts
-{
-    self = [super init];
-    if (self) {
-        _forecasts = [[NSMutableArray alloc] init];
-    }
-    return self;
-}
-
-
 - (void)getWeatherForCity:(NSString *)cityName completion:(void (^)(NSArray *, NSError *))completion
 {
     NSURL *baseUrl = [NSURL URLWithString:baseURLString];
@@ -29,13 +19,13 @@
     
     NSURLQueryItem *cityQueryItem = [NSURLQueryItem queryItemWithName:@"q" value:cityName];
     
-    NSURLQueryItem *metricQueryItem = [NSURLQueryItem queryItemWithName:@"units" value:@"metric"];
+    NSURLQueryItem *imperialQueryItem = [NSURLQueryItem queryItemWithName:@"units" value:@"imperial"];
     
     NSURLQueryItem *cntQueryItem = [NSURLQueryItem queryItemWithName:@"cnt" value:@"7"];
     
     NSURLQueryItem *apiKeyQueryItem = [NSURLQueryItem queryItemWithName:@"appid" value:apiKey];
     
-    [components setQueryItems:@[cityQueryItem, metricQueryItem, cntQueryItem, apiKeyQueryItem]];
+    [components setQueryItems:@[cityQueryItem, imperialQueryItem, cntQueryItem, apiKeyQueryItem]];
     
     NSURL *requestUrl = components.URL;
     
@@ -70,20 +60,21 @@
         
         NSString *theCityName = jsonDictionary[@"city"][@"name"];
         NSArray *forecastDictionary = jsonDictionary[@"list"];
-        
+
         NSMutableArray *localWeather = [[NSMutableArray alloc] init];
-        
+
         for (NSDictionary *forecastDict in forecastDictionary) {
             NELWeather *weather = [[NELWeather alloc] initWithCityName:theCityName dictionary:forecastDict];
-            
+
             //equivalent of .append
             [localWeather addObject:weather]; //append
         }
-        completion([self forecasts], nil);
-        
+        completion(localWeather, nil);
+
     }];
-    
+
       [dataTask resume];
+    
 }
 
 

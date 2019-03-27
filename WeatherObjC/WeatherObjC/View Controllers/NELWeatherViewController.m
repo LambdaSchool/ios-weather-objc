@@ -18,6 +18,13 @@
 
 @implementation NELWeatherViewController
 
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self != nil) {
+        _weatherController = [[NELWeatherController alloc] init];
+    }
+    return self;
+}
 
 - (instancetype)initWithCoder:(NSCoder *)coder
 {
@@ -27,6 +34,8 @@
         
         _weatherController = [[NELWeatherController alloc] init];
     
+        _forecasts = [[NSMutableArray alloc] init];
+    
     }
     return self;
 }
@@ -35,11 +44,17 @@
     [super viewDidLoad];
     
     self.searchBar.delegate = self;
+    self.collectionView.dataSource = self;
+   
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
+    NSString *text = searchBar.text;
+    if (text.length == 0) { return; }
+    
     [self.weatherController getWeatherForCity: searchBar.text completion:^(NSArray *forecasts, NSError *error) {
+        [self.forecasts setArray:forecasts];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.collectionView reloadData];
         });
@@ -51,14 +66,14 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
-    return _weatherController.forecasts.count;
+    return self.forecasts.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     NELWeatherCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"weatherCell" forIndexPath:indexPath];
     
-    NELWeather *weather = [_weatherController.forecasts objectAtIndex:indexPath.row];
-    NSString *temperature = [NSString stringWithFormat: @"%@ - %@", weather.cityName, weather.temperature];
+    NELWeather *weather = [self.forecasts objectAtIndex:indexPath.row];
+    NSString *temperature = [NSString stringWithFormat: @"%@ - @%@", weather.cityName, weather.temperature];
     cell.weatherLabel.text = temperature;
     cell.imageView.image = weather.image;
    

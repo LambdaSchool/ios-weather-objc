@@ -11,12 +11,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NELWeatherViewController : UIViewController <UISearchBarDelegate>
+@interface NELWeatherViewController : UIViewController <UISearchBarDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 
 @property NELWeatherController  *weatherController;
+@property NSMutableArray *forecasts;
 
 @end
 
