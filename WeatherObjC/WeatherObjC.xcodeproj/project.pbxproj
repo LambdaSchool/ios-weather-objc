@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		397083BA224ABDEE0021B132 /* MJRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 397083B9224ABDEE0021B132 /* MJRViewController.m */; };
 		397083BE224ABFD50021B132 /* MJRWeatherCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 397083BD224ABFD50021B132 /* MJRWeatherCollectionViewCell.m */; };
+		397083C3224B2EF60021B132 /* MJRWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = 397083C2224B2EF60021B132 /* MJRWeather.m */; };
+		397083C6224B2F0B0021B132 /* MJRWeatherController.m in Sources */ = {isa = PBXBuildFile; fileRef = 397083C5224B2F0B0021B132 /* MJRWeatherController.m */; };
 		467D7F682163766F00E7FF73 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 467D7F672163766F00E7FF73 /* AppDelegate.m */; };
 		467D7F6E2163766F00E7FF73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 467D7F6C2163766F00E7FF73 /* Main.storyboard */; };
 		467D7F702163767000E7FF73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 467D7F6F2163767000E7FF73 /* Assets.xcassets */; };
@@ -21,6 +23,10 @@
 		397083B9224ABDEE0021B132 /* MJRViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJRViewController.m; sourceTree = "<group>"; };
 		397083BC224ABFD50021B132 /* MJRWeatherCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJRWeatherCollectionViewCell.h; sourceTree = "<group>"; };
 		397083BD224ABFD50021B132 /* MJRWeatherCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJRWeatherCollectionViewCell.m; sourceTree = "<group>"; };
+		397083C1224B2EF60021B132 /* MJRWeather.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJRWeather.h; sourceTree = "<group>"; };
+		397083C2224B2EF60021B132 /* MJRWeather.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJRWeather.m; sourceTree = "<group>"; };
+		397083C4224B2F0B0021B132 /* MJRWeatherController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJRWeatherController.h; sourceTree = "<group>"; };
+		397083C5224B2F0B0021B132 /* MJRWeatherController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJRWeatherController.m; sourceTree = "<group>"; };
 		467D7F632163766F00E7FF73 /* WeatherObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		467D7F662163766F00E7FF73 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		467D7F672163766F00E7FF73 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -80,6 +86,24 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		397083BF224B2E9C0021B132 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				397083C1224B2EF60021B132 /* MJRWeather.h */,
+				397083C2224B2EF60021B132 /* MJRWeather.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		397083C0224B2EAC0021B132 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				397083C4224B2F0B0021B132 /* MJRWeatherController.h */,
+				397083C5224B2F0B0021B132 /* MJRWeatherController.m */,
+			);
+			path = "Model Controller";
+			sourceTree = "<group>";
+		};
 		467D7F5A2163766F00E7FF73 = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +124,8 @@
 			isa = PBXGroup;
 			children = (
 				397083B6224AB9950021B132 /* Storyboards */,
+				397083BF224B2E9C0021B132 /* Model */,
+				397083C0224B2EAC0021B132 /* Model Controller */,
 				397083B7224ABDC00021B132 /* View Controllers */,
 				397083BB224ABFB00021B132 /* Views */,
 				397083B5224AB97B0021B132 /* Resources */,
@@ -181,6 +207,8 @@
 			files = (
 				467D7F762163767000E7FF73 /* main.m in Sources */,
 				397083BE224ABFD50021B132 /* MJRWeatherCollectionViewCell.m in Sources */,
+				397083C6224B2F0B0021B132 /* MJRWeatherController.m in Sources */,
+				397083C3224B2EF60021B132 /* MJRWeather.m in Sources */,
 				467D7F682163766F00E7FF73 /* AppDelegate.m in Sources */,
 				397083BA224ABDEE0021B132 /* MJRViewController.m in Sources */,
 			);
