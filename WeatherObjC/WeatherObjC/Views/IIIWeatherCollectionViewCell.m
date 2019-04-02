@@ -7,6 +7,7 @@
 //
 
 #import "IIIWeatherCollectionViewCell.h"
+#import "IIIForecast.h"
 
 @interface IIIWeatherCollectionViewCell()
 
@@ -17,5 +18,12 @@
 @end
 
 @implementation IIIWeatherCollectionViewCell
+
+- (void)updateViews {
+    if (self.forecast != nil) {
+        self.weatherImageView.image = self.forecast.icon;
+        self.temperatureLabel.text = [NSString stringWithFormat:@"%.f", self.forecast.temp];
+    }
+}
 
 @end
