@@ -9,8 +9,8 @@
 #import "IIIDailyForecastController.h"
 #import "IIIDailyForecast.h"
 
-static NSString *baseURL = @"https://samples.openweathermap.org/data/2.5/forecast/daily";
-static NSString *apiKey = @"84e6e3f3e59a02ca63f83566562cf881";
+static NSString * const baseURLString = @"https://api.openweathermap.org/data/2.5/forecast/daily";
+static NSString * const apiKey = @"1340d66bb372ff93adebd79d41eea048";
 
 @implementation IIIDailyForecastController
 
@@ -25,18 +25,20 @@ static NSString *apiKey = @"84e6e3f3e59a02ca63f83566562cf881";
 
 - (void)fetchForecastsWithZipCode:(NSString *)zipCode completion:(IIIDailyForecastFetcherCompletionBlock)completionBlock {
     
-    NSURLComponents *components = [[NSURLComponents alloc] initWithString: baseURL];
+    NSURL *baseURL = [NSURL URLWithString: baseURLString];
+    
+    NSURLComponents *components = [[NSURLComponents alloc] initWithURL: baseURL resolvingAgainstBaseURL: true];
     
     NSMutableArray *searchComponents = [@[[NSURLQueryItem queryItemWithName: @"zip" value: zipCode],
-                                          [NSURLQueryItem queryItemWithName: @"apiid" value: apiKey]
+                                          [NSURLQueryItem queryItemWithName: @"appid" value: apiKey]
                                           ] mutableCopy];
     
     components.queryItems = searchComponents;
     
-    NSURL *url = [components URL];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL: [components URL]];
     
-    NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithURL: url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-       
+    NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithRequest: request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+   
         if (error) {
             NSLog(@"Error fetching weaker: %@", error);
             completionBlock(error);
@@ -58,8 +60,9 @@ static NSString *apiKey = @"84e6e3f3e59a02ca63f83566562cf881";
         
         for (NSDictionary *dictionary in list) {
             IIIDailyForecast *dailyForecast = [[IIIDailyForecast alloc] initWithDictionary: dictionary cityName: cityName];
-            [self.forecasts addObject: dailyForecast];
+            [[self forecasts] addObject: dailyForecast];
         }
+        completionBlock(nil);
     }];
     
     [task resume];
