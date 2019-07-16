@@ -30,10 +30,7 @@ static NSString *baseURL = @"https://api.openweathermap.org/data/2.5/forecast/da
     
     //Now that I have a reference to components I can set up the queryItems
     NSArray *queryItems = @[
-                            [NSURLQueryItem queryItemWithName:@"q" value:searchTerm],
-                            [NSURLQueryItem queryItemWithName:@"country code" value:@"us"],
-                            //this might have to be converted into a nsnumber?
-                            [NSURLQueryItem queryItemWithName:@"cnt" value:@"1"],
+                            [NSURLQueryItem queryItemWithName:@"zip" value:searchTerm],
                             [NSURLQueryItem queryItemWithName:@"APPID" value:@"c5ff8a17ab55445062dc61918b6a9241"]
                             ];
     //Still setting up the URL add the queryItems to the components
