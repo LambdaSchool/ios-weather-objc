@@ -10,7 +10,7 @@
 
 @implementation IIIForecastController
 
-static NSString *baseURLString = @"api.openweathermap.org/data/2.5/weather?";
+static NSString *baseURLString = @"https://api.openweathermap.org/data/2.5/forecast/daily";
 
 - (instancetype)init
 {
