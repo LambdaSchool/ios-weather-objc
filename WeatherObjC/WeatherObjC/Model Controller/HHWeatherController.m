@@ -12,7 +12,7 @@
 @implementation HHWeatherController
 
 static NSString * const baseURLString = @"https://api.openweathermap.org/data/2.5/forecast";
-static NSString * const apiKey = @"14cb40aeaa54152e2db5015c9830c260";
+static NSString * const apiKey = @"13ee074e30397859289198d333683a3d";
 
 - (void)fetchWeatherForCity:(NSString *)cityName completionBlock:(HHWeatherControllerCompletionBlock)completionBlock {
     NSURL *baseURL = [NSURL URLWithString:baseURLString];
@@ -34,7 +34,7 @@ static NSString * const apiKey = @"14cb40aeaa54152e2db5015c9830c260";
             return;
         }
         
-        if (data) {
+        if (!data) {
             NSLog(@"No data returned.");
             completionBlock(nil, [[NSError alloc] init]);
             return;

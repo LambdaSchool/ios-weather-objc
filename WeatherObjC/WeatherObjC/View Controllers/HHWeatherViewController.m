@@ -17,19 +17,56 @@
 
 @implementation HHWeatherViewController
 
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        _weatherController = [[HHWeatherController alloc] init];
+    }
+    return self;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        _weatherController = [[HHWeatherController alloc] init];
+        _forecasts = [[NSMutableArray alloc] init];
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.searchBar.delegate = self;
+    self.collectionView.dataSource = self;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    NSString *text = searchBar.text;
+    if (text.length == 0) { return; }
+    
+    [self.weatherController fetchWeatherForCity:searchBar.text completionBlock:^(NSArray * forecasts, NSError * error) {
+        [self.forecasts setArray:forecasts];
+        dispatch_async(dispatch_get_main_queue(), ^ {
+            [self.collectionView reloadData];
+        });
+    }];
 }
-*/
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.forecasts.count;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    HHWeatherCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"WeatherCell" forIndexPath:indexPath];
+    
+    HHWeather *weather = [self.forecasts objectAtIndex:indexPath.row];
+    NSString *temperature = [NSString stringWithFormat:@"%@ - %@", weather.name, weather.temperature];
+    
+    cell.temperatureLabel.text = temperature;
+    cell.weatherImageView.image = weather.image;
+    cell.cityNameLable
+    
+    return cell;
+}
 
 @end
