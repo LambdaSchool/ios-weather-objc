@@ -60,11 +60,10 @@
     HHWeatherCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"WeatherCell" forIndexPath:indexPath];
     
     HHWeather *weather = [self.forecasts objectAtIndex:indexPath.row];
-    NSString *temperature = [NSString stringWithFormat:@"%@ - %@", weather.name, weather.temperature];
+    NSString *temperature = [NSString stringWithFormat:@"%@ : %@", weather.name, weather.temperature];
     
     cell.temperatureLabel.text = temperature;
     cell.weatherImageView.image = weather.image;
-    cell.cityNameLable
     
     return cell;
 }
