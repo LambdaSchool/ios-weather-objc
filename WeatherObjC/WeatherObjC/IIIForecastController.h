@@ -13,8 +13,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface IIIForecastController : NSObject
 
+typedef void (^IIIForcastFetcherCompletionBlock)(NSArray *, NSError *);
 @property NSMutableArray *forecasts;
-
+- (void)fetchForcastWithCityName:(NSString *)cityName
+                 completionBlock:(IIIForcastFetcherCompletionBlock)completionBlock;
 
 @end
 
