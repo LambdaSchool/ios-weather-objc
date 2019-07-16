@@ -26,8 +26,8 @@ static NSString *baseURLString = @"https://api.openweathermap.org/data/2.5/forec
     NSURLComponents *urlComponents = [[NSURLComponents alloc] initWithString:baseURLString];
     
     NSArray *queryItems = @[
-                            [NSURLQueryItem queryItemWithName:@"city name" value:cityName],
-                            [NSURLQueryItem queryItemWithName:@"appid" value:@"a3c0e150f58875d0e5385a9984741de2"],
+                            [NSURLQueryItem queryItemWithName:@"zip" value:cityName],
+                            [NSURLQueryItem queryItemWithName:@"APPID" value:@"a3c0e150f58875d0e5385a9984741de2"],
                             
                             ];
     urlComponents.queryItems = queryItems;
