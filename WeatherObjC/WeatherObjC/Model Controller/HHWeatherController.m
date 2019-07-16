@@ -58,7 +58,7 @@ static NSString * const apiKey = @"14cb40aeaa54152e2db5015c9830c260";
             
             [localWeather addObject:weather];
         }
-        completionBlock([self forecasts], nil);
+        completionBlock(localWeather, nil);
     }];
     [dataTask resume];
 }

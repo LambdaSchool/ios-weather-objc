@@ -1,5 +1,5 @@
 //
-//  IIIWeatherCollectionViewCell.h
+//  HHWeatherCollectionViewCell.h
 //  WeatherObjC
 //
 //  Created by Ilgar Ilyasov on 3/26/19.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface IIIWeatherCollectionViewCell : UICollectionViewCell
+@interface HHWeatherCollectionViewCell : UICollectionViewCell
 
 @end
 

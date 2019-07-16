@@ -6,17 +6,16 @@
 //  Copyright © 2019 Lambda School. All rights reserved.
 //
 
-#import "IIIWeatherViewController.h"
+#import "HHWeatherViewController.h"
+#import "HHWeatherController.h"
+#import "HHWeather.h"
+#import "HHWeatherCollectionViewCell.h"
 
-@interface IIIWeatherViewController ()
-
-@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
-@property (weak, nonatomic) IBOutlet UILabel *cityNameLabel;
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@interface HHWeatherViewController ()
 
 @end
 
-@implementation IIIWeatherViewController
+@implementation HHWeatherViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

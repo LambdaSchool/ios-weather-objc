@@ -12,8 +12,8 @@
 		467D7F702163767000E7FF73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 467D7F6F2163767000E7FF73 /* Assets.xcassets */; };
 		467D7F732163767000E7FF73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 467D7F712163767000E7FF73 /* LaunchScreen.storyboard */; };
 		467D7F762163767000E7FF73 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 467D7F752163767000E7FF73 /* main.m */; };
-		82A6A9EB224AC10200A92D77 /* IIIWeatherCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A6A9EA224AC10200A92D77 /* IIIWeatherCollectionViewCell.m */; };
-		82A6A9EF224AC21300A92D77 /* IIIWeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A6A9EE224AC21300A92D77 /* IIIWeatherViewController.m */; };
+		82A6A9EB224AC10200A92D77 /* HHWeatherCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A6A9EA224AC10200A92D77 /* HHWeatherCollectionViewCell.m */; };
+		82A6A9EF224AC21300A92D77 /* HHWeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A6A9EE224AC21300A92D77 /* HHWeatherViewController.m */; };
 		EF144D4722DE670F004F3143 /* HHWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = EF144D4622DE670F004F3143 /* HHWeather.m */; };
 		EF144D4B22DE6A75004F3143 /* HHWeatherController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF144D4A22DE6A75004F3143 /* HHWeatherController.m */; };
 /* End PBXBuildFile section */
@@ -27,10 +27,10 @@
 		467D7F722163767000E7FF73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		467D7F742163767000E7FF73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		467D7F752163767000E7FF73 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		82A6A9E9224AC10200A92D77 /* IIIWeatherCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IIIWeatherCollectionViewCell.h; sourceTree = "<group>"; };
-		82A6A9EA224AC10200A92D77 /* IIIWeatherCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IIIWeatherCollectionViewCell.m; sourceTree = "<group>"; };
-		82A6A9ED224AC21300A92D77 /* IIIWeatherViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IIIWeatherViewController.h; sourceTree = "<group>"; };
-		82A6A9EE224AC21300A92D77 /* IIIWeatherViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IIIWeatherViewController.m; sourceTree = "<group>"; };
+		82A6A9E9224AC10200A92D77 /* HHWeatherCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHWeatherCollectionViewCell.h; sourceTree = "<group>"; };
+		82A6A9EA224AC10200A92D77 /* HHWeatherCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHWeatherCollectionViewCell.m; sourceTree = "<group>"; };
+		82A6A9ED224AC21300A92D77 /* HHWeatherViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHWeatherViewController.h; sourceTree = "<group>"; };
+		82A6A9EE224AC21300A92D77 /* HHWeatherViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHWeatherViewController.m; sourceTree = "<group>"; };
 		EF144D4522DE670F004F3143 /* HHWeather.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHWeather.h; sourceTree = "<group>"; };
 		EF144D4622DE670F004F3143 /* HHWeather.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHWeather.m; sourceTree = "<group>"; };
 		EF144D4922DE6A75004F3143 /* HHWeatherController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHWeatherController.h; sourceTree = "<group>"; };
@@ -71,7 +71,6 @@
 				EF144D4822DE6A59004F3143 /* Model Controller */,
 				82A6A9EC224AC10600A92D77 /* Views */,
 				82A6A9E8224ABF7E00A92D77 /* View Controllers */,
-				82A6A9E7224ABF7600A92D77 /* Stroyboards */,
 				82A6A9E6224ABF6E00A92D77 /* Resources */,
 			);
 			path = WeatherObjC;
@@ -101,8 +100,9 @@
 		82A6A9E8224ABF7E00A92D77 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				82A6A9ED224AC21300A92D77 /* IIIWeatherViewController.h */,
-				82A6A9EE224AC21300A92D77 /* IIIWeatherViewController.m */,
+				82A6A9ED224AC21300A92D77 /* HHWeatherViewController.h */,
+				82A6A9EE224AC21300A92D77 /* HHWeatherViewController.m */,
+				82A6A9E7224ABF7600A92D77 /* Stroyboards */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -110,8 +110,8 @@
 		82A6A9EC224AC10600A92D77 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				82A6A9E9224AC10200A92D77 /* IIIWeatherCollectionViewCell.h */,
-				82A6A9EA224AC10200A92D77 /* IIIWeatherCollectionViewCell.m */,
+				82A6A9E9224AC10200A92D77 /* HHWeatherCollectionViewCell.h */,
+				82A6A9EA224AC10200A92D77 /* HHWeatherCollectionViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -209,8 +209,8 @@
 				467D7F762163767000E7FF73 /* main.m in Sources */,
 				EF144D4722DE670F004F3143 /* HHWeather.m in Sources */,
 				467D7F682163766F00E7FF73 /* AppDelegate.m in Sources */,
-				82A6A9EB224AC10200A92D77 /* IIIWeatherCollectionViewCell.m in Sources */,
-				82A6A9EF224AC21300A92D77 /* IIIWeatherViewController.m in Sources */,
+				82A6A9EB224AC10200A92D77 /* HHWeatherCollectionViewCell.m in Sources */,
+				82A6A9EF224AC21300A92D77 /* HHWeatherViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

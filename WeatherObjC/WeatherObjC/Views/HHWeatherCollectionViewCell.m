@@ -6,9 +6,9 @@
 //  Copyright © 2019 Lambda School. All rights reserved.
 //
 
-#import "IIIWeatherCollectionViewCell.h"
+#import "HHWeatherCollectionViewCell.h"
 
-@interface IIIWeatherCollectionViewCell()
+@interface HHWeatherCollectionViewCell()
 
 @property (weak, nonatomic) IBOutlet UIImageView *weatherImageView;
 @property (weak, nonatomic) IBOutlet UILabel *temperatureLabel;
@@ -16,6 +16,6 @@
 
 @end
 
-@implementation IIIWeatherCollectionViewCell
+@implementation HHWeatherCollectionViewCell
 
 @end

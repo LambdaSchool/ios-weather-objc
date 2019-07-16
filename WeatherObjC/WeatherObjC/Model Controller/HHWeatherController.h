@@ -13,8 +13,6 @@ NS_ASSUME_NONNULL_BEGIN
 typedef void (^HHWeatherControllerCompletionBlock)(NSArray *forecasts, NSError *error);
 @interface HHWeatherController : NSObject
 
-@property NSMutableArray *forecasts;
-
 - (void)fetchWeatherForCity:(NSString *)cityName completionBlock:(HHWeatherControllerCompletionBlock)completionBlock;
 
 @end
