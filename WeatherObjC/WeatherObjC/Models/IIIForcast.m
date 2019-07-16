@@ -20,20 +20,16 @@
 	return self;
 }
 
-
-- (instancetype)initWithDictionary:(NSDictionary *)dictionary {
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary zipcode:(NSString *)zipCode {
 	self = [super init];
 	if (self) {
-		_zipCode = dictionary[@"zipCode"];
+		_zipCode = zipCode;
 		
 		_temperature = [dictionary[@"temperature"] doubleValue];
 		
 		_icon = dictionary[@"icon"];
-		
 	}
-	
 	return self;
 }
-
 
 @end
