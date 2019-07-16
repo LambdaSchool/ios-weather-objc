@@ -22,6 +22,10 @@ NS_ASSUME_NONNULL_BEGIN
 -(instancetype)initWithCity:(NSString *)city
                 temperature:(double)temperature
                       image:(NSString *)image;
+
+-(instancetype)initWithDictionary:(NSDictionary *)dictionary
+                         city:(NSString *)city;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -33,6 +33,15 @@
     return self;
 }
 
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary city:(NSString *)city{
+    self = [super init];
+    
+    if (self){
+        _city = dictionary[@"city"][@"name"];
+    }
+    return self;
+}
+
 - (instancetype)initWithCity:(NSString *)city temperature:(double)temperature image:(NSString *)image{
     self = [super init];
     
