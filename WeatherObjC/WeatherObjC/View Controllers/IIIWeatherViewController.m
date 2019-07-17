@@ -30,7 +30,11 @@
 	
 	NSString *zip = @"91006";
 	
-	[forcastController fetchForcastFromZipCode:zip completionBlock:^(NSArray * _Nonnull forcast, NSError * _Nonnull error) {
+	[forcastController fetchForcastFromZipCode:zip completionBlock:^(NSArray * _Nonnull fiveForcast, NSError * _Nonnull error) {
+		NSLog(@"%ld", fiveForcast.count);
+		for (IIIForcast *forcast in fiveForcast) {
+			NSLog(@"%@", forcast.name);
+		}
 		
 	}];
 }

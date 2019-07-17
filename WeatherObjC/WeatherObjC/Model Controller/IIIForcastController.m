@@ -15,7 +15,7 @@
 //static NSString *baseUrl = @"https://api.openweathermap.org/data/2.5/forecast?zip=91006&appid=f4af2ee7c05b93312ef2b0f599df55bc";
 
 - (void)fetchForcastFromZipCode:(NSString *)zipCode completionBlock:(IIIForcastFetcherCompletionBlock)completionBlock{
-	NSString *urlString = [[NSString alloc] initWithFormat:@"https://api.openweathermap.org/data/2.5/forecast?zip=%@&&units=imperial&cnt=5&appid=f4af2ee7c05b93312ef2b0f599df55bc", zipCode];
+	NSString *urlString = [[NSString alloc] initWithFormat:@"https://api.openweathermap.org/data/2.5/forecast?zip=%@&&units=imperial&cnt=7&appid=f4af2ee7c05b93312ef2b0f599df55bc", zipCode];
 	NSLog(@"%@", urlString);
 	
 	NSURL *url = [[NSURL alloc] initWithString:urlString];
@@ -57,9 +57,9 @@
 	[task resume];
 }
 
-- (void)fetchForcastWithCompletionBlock:(IIIForcastFetcherCompletionBlock)completionBlock{
-	
-}
+//- (void)fetchForcastWithCompletionBlock:(IIIForcastFetcherCompletionBlock)completionBlock{
+//
+//}
 
 - (void) print_l:(NSString *)str{
 	NSLog(@"%@", str);
