@@ -12,13 +12,9 @@
 
 @implementation IIIForcastController
 
-static NSString *baseUrl = @"https://api.openweathermap.org/data/2.5/forecast?zip=91006&appid=f4af2ee7c05b93312ef2b0f599df55bc";
+//static NSString *baseUrl = @"https://api.openweathermap.org/data/2.5/forecast?zip=91006&appid=f4af2ee7c05b93312ef2b0f599df55bc";
 
 - (void)fetchForcastFromZipCode:(NSString *)zipCode completionBlock:(IIIForcastFetcherCompletionBlock)completionBlock{
-	
-//	NSURL *url = [[NSURL alloc] initWithString:baseUrl];
-//
-	
 	NSString *urlString = [[NSString alloc] initWithFormat:@"https://api.openweathermap.org/data/2.5/forecast?zip=%@&&units=imperial&cnt=5&appid=f4af2ee7c05b93312ef2b0f599df55bc", zipCode];
 	NSLog(@"%@", urlString);
 	
@@ -37,10 +33,22 @@ static NSString *baseUrl = @"https://api.openweathermap.org/data/2.5/forecast?zi
 			completionBlock(nil, jsonError);
 			return;
 		}
+		NSMutableArray *fiveForcast = [[NSMutableArray alloc] init];
 		
-		[self print_l:json[@"city"][@"name"]];
-		[self print_l:json[@"list"][0][@"main"][@"temp"]];
-		[self print_l:json[@"list"][0][@"weather"][0][@"icon"]];
+		NSInteger count = [json[@"list"][0] count];
+		NSLog(@"%ld", count);
+		
+		NSMutableArray *forcastArr = json[@"list"];
+//		[self print_l:forcastArr];
+		
+		for (NSDictionary *items in forcastArr) {
+			[self print_l:items[@"main"][@"temp"]];
+		}
+		
+		
+//		[self print_l:json[@"city"][@"name"]];
+//		[self print_l:forcastArr[0][@"main"][@"temp"]];
+//		[self print_l:forcastArr[0][@"weather"][0][@"icon"]];
 		
 	}];
 	[task resume];

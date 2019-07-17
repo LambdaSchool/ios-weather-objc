@@ -10,31 +10,31 @@
 
 @implementation IIIForcast
 
-- (instancetype)initWithZipCode:(NSString *)zipCode temperature:(double)temperature icon:(UIImage *)icon name:(NSString *)name{
+- (instancetype)initWithName:(NSString *)name temperature:(double)temperature icon:(UIImage *)icon {
 	self = [super init];
 	if (self) {
-		_zipCode = zipCode;
+		_name = name;
 		_temperature = temperature;
 		_icon = icon;
-		_name = name;
 	}
 	return self;
 }
 
-- (instancetype)initWithDictionary:(NSDictionary *)dictionary zipcode:(NSString *)zipCode {
-	self = [super init];
-	if (self) {
-		_zipCode = zipCode;
-		_name = dictionary[@"city"][@"name"];
-		
-		//_temperature = [dictionary[@"temperature"] doubleValue];
-		
-		//_icon = dictionary[@"icon"];
-		
-		//location
-	}
-	return self;
-	//return [self init] initWithZipCode:zipCode temperature:<#(double)#> icon:<#(nonnull UIImage *)#>; //location
-}
+
+//- (instancetype)initWithDictionary:(NSDictionary *)dictionary {
+//	self = [super init];
+//	if (self) {
+//
+//		NSString *name = dictionary[@"city"][@"name"];
+//
+//		double temp = [dictionary[@"main"][@"temp"] doubleValue];
+//
+//		NSString *icon = dictionary[@"main"][@"weather"][@"icon"];
+//
+//	}
+//	return [self init] initWithName:name temperature:doubl icon:<#(nonnull UIImage *)#>
+//	return self;
+//	//return [self init] initWithZipCode:zipCode temperature:<#(double)#> icon:<#(nonnull UIImage *)#>; //location
+//}
 
 @end
