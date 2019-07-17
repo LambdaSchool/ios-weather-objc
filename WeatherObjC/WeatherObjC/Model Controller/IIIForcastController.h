@@ -17,7 +17,7 @@ typedef void (^IIIForcastFetcherCompletionBlock)(NSArray *, NSError *);
 - (void)fetchForcastFromZipCode:(NSString *)zipCode completionBlock:(IIIForcastFetcherCompletionBlock)completionBlock;
 
 - (void)fetchForcastWithCompletionBlock:(IIIForcastFetcherCompletionBlock)completionBlock;
-
+- (void) print_l:(NSString *)str;
 @end
 
 NS_ASSUME_NONNULL_END
