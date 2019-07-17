@@ -14,10 +14,11 @@ NS_ASSUME_NONNULL_BEGIN
 @interface IIIForcast : NSObject
 
 @property NSString *zipCode;
+@property NSString *name;
 @property double temperature;
 @property UIImage *icon;
 
-- (instancetype)initWithZipCode:(NSString *)zipCode temperature:(double)temperature icon:(UIImage *)icon;
+- (instancetype)initWithZipCode:(NSString *)zipCode temperature:(double)temperature icon:(UIImage *)icon name:(NSString *)name;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary zipcode:(NSString *)zipCode;
 

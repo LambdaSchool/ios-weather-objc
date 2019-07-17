@@ -15,9 +15,19 @@
 static NSString *baseUrl = @"https://api.openweathermap.org/data/2.5/forecast?zip=91006&appid=f4af2ee7c05b93312ef2b0f599df55bc";
 
 - (void)fetchForcastFromZipCode:(NSString *)zipCode completionBlock:(IIIForcastFetcherCompletionBlock)completionBlock{
-
-	NSURL *url = [[NSURL alloc] initWithString:baseUrl];
-	NSLog(@"%@", url);
+	
+//	NSURL *url = [[NSURL alloc] initWithString:baseUrl];
+//	NSLog(@"%@", url);
+//
+	
+	
+	
+	NSArray *queryItems = @[
+		[NSURLQueryItem queryItemWithName:@"q" value:zipCode],
+		[NSURLQueryItem queryItemWithName:@"country code" value:@"us"],
+		[NSURLQueryItem queryItemWithName:@"cnt" value:@"5"],
+		[NSURLQueryItem queryItemWithName:@"APPID" value:@"f4af2ee7c05b93312ef2b0f599df55bc"]
+	];
 	
 	NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
 		if (error)
