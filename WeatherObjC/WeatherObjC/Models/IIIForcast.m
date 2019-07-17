@@ -10,7 +10,7 @@
 
 @implementation IIIForcast
 
-- (instancetype)initWithName:(NSString *)name temperature:(double)temperature icon:(UIImage *)icon {
+- (instancetype)initWithName:(NSString *)name temperature:(NSString *)temperature icon:(UIImage *)icon {
 	self = [super init];
 	if (self) {
 		_name = name;
@@ -19,22 +19,5 @@
 	}
 	return self;
 }
-
-
-//- (instancetype)initWithDictionary:(NSDictionary *)dictionary {
-//	self = [super init];
-//	if (self) {
-//
-//		NSString *name = dictionary[@"city"][@"name"];
-//
-//		double temp = [dictionary[@"main"][@"temp"] doubleValue];
-//
-//		NSString *icon = dictionary[@"main"][@"weather"][@"icon"];
-//
-//	}
-//	return [self init] initWithName:name temperature:doubl icon:<#(nonnull UIImage *)#>
-//	return self;
-//	//return [self init] initWithZipCode:zipCode temperature:<#(double)#> icon:<#(nonnull UIImage *)#>; //location
-//}
 
 @end

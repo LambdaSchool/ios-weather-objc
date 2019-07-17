@@ -13,14 +13,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface IIIForcast : NSObject
 
-
 @property NSString *name;
-@property double temperature;
+@property NSString *temperature;
 @property UIImage *icon;
 
-- (instancetype)initWithName:(NSString *)name temperature:(double)temperature icon:(UIImage *)icon;
-
-//- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
+- (instancetype)initWithName:(NSString *)name temperature:(NSString *)temperature icon:(UIImage *)icon;
 
 @end
 

@@ -33,23 +33,26 @@
 			completionBlock(nil, jsonError);
 			return;
 		}
+		
 		NSMutableArray *fiveForcast = [[NSMutableArray alloc] init];
-		
-		NSInteger count = [json[@"list"][0] count];
-		NSLog(@"%ld", count);
-		
 		NSMutableArray *forcastArr = json[@"list"];
-//		[self print_l:forcastArr];
 		
 		for (NSDictionary *items in forcastArr) {
-			[self print_l:items[@"main"][@"temp"]];
+			
+			NSString *name = json[@"city"][@"name"];
+			NSString *temp = items[@"main"][@"temp"];
+			NSString *icon = items[@"weather"][0][@"icon"];
+			
+//			[self print_l:name];
+//			[self print_l:temp];
+//			[self print_l:icon];
+//			NSLog(@"");
+			
+			IIIForcast *forcast = [[IIIForcast alloc] initWithName:name temperature:temp icon:icon];
+			
+			[fiveForcast addObject:forcast];
 		}
-		
-		
-//		[self print_l:json[@"city"][@"name"]];
-//		[self print_l:forcastArr[0][@"main"][@"temp"]];
-//		[self print_l:forcastArr[0][@"weather"][0][@"icon"]];
-		
+		completionBlock(fiveForcast, nil);
 	}];
 	[task resume];
 }
