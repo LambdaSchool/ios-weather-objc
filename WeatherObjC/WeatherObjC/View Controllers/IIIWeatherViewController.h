@@ -11,8 +11,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class  IIIForcastController;
+@class IIIForcast;
 @interface IIIWeatherViewController : UIViewController
 
+@property IIIForcastController *forcastController;
+@property NSArray *sevenForcast;
 
 
 @end

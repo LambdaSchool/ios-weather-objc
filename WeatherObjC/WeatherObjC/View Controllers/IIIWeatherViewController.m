@@ -16,28 +16,41 @@
 @property (weak, nonatomic) IBOutlet UILabel *cityNameLabel;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
+
+
 @end
 
 @implementation IIIWeatherViewController
 
-
-
-
+- (instancetype)initWithCoder:(NSCoder *)aDecoder{
+	self = [super initWithCoder:aDecoder];
+	if (self) {
+		_forcastController = [[IIIForcastController alloc] init];
+	}
+	return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	IIIForcastController *forcastController = [[IIIForcastController alloc] init];
+	
+	
 	
 	NSString *zip = @"91006";
 	
-	[forcastController fetchForcastFromZipCode:zip completionBlock:^(NSArray * _Nonnull fiveForcast, NSError * _Nonnull error) {
+	[_forcastController fetchForcastFromZipCode:zip completionBlock:^(NSArray * _Nonnull fiveForcast, NSError * _Nonnull error) {
 		NSLog(@"%ld", fiveForcast.count);
-		for (IIIForcast *forcast in fiveForcast) {
-			NSLog(@"%@", forcast.name);
-		}
+		self.sevenForcast = fiveForcast;
+		NSLog(@"%@", self.sevenForcast);
+		
+		//dispatchQue
+//		[self.collectionView reloadData];
 		
 	}];
+	
 }
+
+
+
 
 /*
 #pragma mark - Navigation
