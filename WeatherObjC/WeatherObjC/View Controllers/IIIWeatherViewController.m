@@ -7,6 +7,8 @@
 //
 
 #import "IIIWeatherViewController.h"
+#import "../Model Controller/IIIForcastController.h"
+#import "../Models/IIIForcast.h"
 
 @interface IIIWeatherViewController ()
 
@@ -18,9 +20,19 @@
 
 @implementation IIIWeatherViewController
 
+
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+	IIIForcastController *forcastController = [[IIIForcastController alloc] init];
+	
+	NSString *zip = @"91006";
+	
+	[forcastController fetchForcastFromZipCode:zip completionBlock:^(NSArray * _Nonnull forcast, NSError * _Nonnull error) {
+		
+	}];
 }
 
 /*

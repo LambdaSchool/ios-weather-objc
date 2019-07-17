@@ -17,24 +17,23 @@ static NSString *baseUrl = @"https://api.openweathermap.org/data/2.5/forecast?zi
 - (void)fetchForcastFromZipCode:(NSString *)zipCode completionBlock:(IIIForcastFetcherCompletionBlock)completionBlock{
 	
 //	NSURL *url = [[NSURL alloc] initWithString:baseUrl];
-//	NSLog(@"%@", url);
 //
 	
+	NSString *urlString = [[NSString alloc] initWithFormat:@"https://api.openweathermap.org/data/2.5/forecast?zip=%@&appid=f4af2ee7c05b93312ef2b0f599df55bc", zipCode];
+	NSLog(@"%@", urlString);
 	
-	
-	NSArray *queryItems = @[
-		[NSURLQueryItem queryItemWithName:@"q" value:zipCode],
-		[NSURLQueryItem queryItemWithName:@"country code" value:@"us"],
-		[NSURLQueryItem queryItemWithName:@"cnt" value:@"5"],
-		[NSURLQueryItem queryItemWithName:@"APPID" value:@"f4af2ee7c05b93312ef2b0f599df55bc"]
-	];
-	
+	NSURL *url = [[NSURL alloc] initWithString:urlString];
 	NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-		if (error)
+		if (error) {
 			NSLog(@"error with url session: %@", error);
+			completionBlock(nil, error);
+			return;
+		}
 		
+		
+		
+		NSLog(@"%@", data);
 	}];
-	
 	[task resume];
 }
 
