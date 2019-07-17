@@ -30,9 +30,16 @@ static NSString *baseUrl = @"https://api.openweathermap.org/data/2.5/forecast?zi
 			return;
 		}
 		
+		NSError *jsonError = nil;
+		NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
+		if (jsonError){
+			NSLog(@"Error wit jsonSerialization %@", jsonError);
+			completionBlock(nil, jsonError);
+			return;
+		}
+		NSLog(@"%@", json[@"city"][@"name"]);
 		
-		
-		NSLog(@"%@", data);
+
 	}];
 	[task resume];
 }

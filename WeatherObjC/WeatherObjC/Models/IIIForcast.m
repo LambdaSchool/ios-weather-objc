@@ -24,6 +24,8 @@
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary zipcode:(NSString *)zipCode {
 	self = [super init];
 	if (self) {
+		_zipCode = zipCode;
+		_name = dictionary[@"city"][@"name"];
 		
 		//_temperature = [dictionary[@"temperature"] doubleValue];
 		
