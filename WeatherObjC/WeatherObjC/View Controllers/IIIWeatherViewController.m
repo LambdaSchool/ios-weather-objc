@@ -39,29 +39,13 @@
 	self.collectionView.delegate = self;
 	self.collectionView.dataSource = self;
 	self.searchBar.delegate = self;
-	
-	
-	NSString *zip = @"91006";
-	
-	[_forcastController fetchForcastFromZipCode:zip completionBlock:^(NSArray * _Nonnull sevenForcast, NSError * _Nonnull error) {
-		for (IIIForcast *forcast in sevenForcast) {
-			NSLog(@"%@", forcast.temperature);
-			
-			
-		}
-		
-//		[self.collectionView reloadData];
-		
-	}];
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-
 	return 10;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-
 	IIIWeatherCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"WeatherCell" forIndexPath:indexPath];
 	cell.tempLabel.text = @"100";
 //	cell.imageView.image =;
@@ -69,14 +53,17 @@
 }
 
 
-- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar{
 
-	NSString *str = searchBar.text;
-	NSLog(@"%@", str);
-}
+
+
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
-
-	NSLog(@"text did change! %@", searchText);
+	//91006
+	if (searchText.length == 5) {
+		NSLog(@"text did change! %@", searchText);
+		[self.forcastController fetchForcastFromZipCode:searchText completionBlock:^(NSArray * _Nonnull sevenForcast, NSError * _Nonnull error) {
+			NSLog(@"%@", sevenForcast);
+		}];
+	}
 }
 
 
