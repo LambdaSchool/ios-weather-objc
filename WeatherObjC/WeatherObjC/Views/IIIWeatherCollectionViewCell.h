@@ -11,6 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface IIIWeatherCollectionViewCell : UICollectionViewCell
+@property (strong, nonatomic) IBOutlet UILabel *tempLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
 

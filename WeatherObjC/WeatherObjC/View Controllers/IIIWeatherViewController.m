@@ -18,6 +18,8 @@
 
 
 
+
+
 @end
 
 @implementation IIIWeatherViewController
@@ -36,6 +38,8 @@
 	
 	self.collectionView.delegate = self;
 	self.collectionView.dataSource = self;
+	self.searchBar.delegate = self;
+	
 	
 	NSString *zip = @"91006";
 	
@@ -58,10 +62,23 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
 
-	UITableViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"WeatherCell" forIndexPath:indexPath];
-	
+	IIIWeatherCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"WeatherCell" forIndexPath:indexPath];
+	cell.tempLabel.text = @"100";
+//	cell.imageView.image =;
 	return cell;
 }
+
+
+- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar{
+
+	NSString *str = searchBar.text;
+	NSLog(@"%@", str);
+}
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+
+	NSLog(@"text did change! %@", searchText);
+}
+
 
 /*
 #pragma mark - Navigation

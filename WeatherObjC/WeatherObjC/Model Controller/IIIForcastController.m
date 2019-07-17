@@ -53,6 +53,7 @@
 			
 			[fiveForcast addObject:forcast];
 		}
+		
 		completionBlock(fiveForcast, nil);
 	}];
 	[task resume];

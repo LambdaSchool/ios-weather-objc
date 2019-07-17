@@ -8,13 +8,6 @@
 
 #import "IIIWeatherCollectionViewCell.h"
 
-@interface IIIWeatherCollectionViewCell()
-
-@property (weak, nonatomic) IBOutlet UIImageView *weatherImageView;
-@property (weak, nonatomic) IBOutlet UILabel *temperatureLabel;
-
-
-@end
 
 @implementation IIIWeatherCollectionViewCell
 

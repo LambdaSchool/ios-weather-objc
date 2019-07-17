@@ -14,11 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 @class  IIIForcastController;
 @class IIIForcast;
 
-@interface IIIWeatherViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface IIIWeatherViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate>
 
 @property IIIForcastController *forcastController;
-@property NSArray *sevenForcast;
-
 
 @end
 

@@ -15,7 +15,7 @@
 	if (self) {
 		_name = name;
 		_temperature = temperature;
-		_icon = icon;
+		_icon = icon; // needs to be image
 	}
 	return self;
 }
