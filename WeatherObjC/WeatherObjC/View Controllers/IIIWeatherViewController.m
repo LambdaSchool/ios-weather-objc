@@ -9,7 +9,7 @@
 #import "IIIWeatherViewController.h"
 #import "../Model Controller/IIIForcastController.h"
 #import "../Models/IIIForcast.h"
-
+#import "../Views/IIIWeatherCollectionViewCell.h"
 @interface IIIWeatherViewController ()
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
@@ -26,6 +26,7 @@
 	self = [super initWithCoder:aDecoder];
 	if (self) {
 		_forcastController = [[IIIForcastController alloc] init];
+		
 	}
 	return self;
 }
@@ -33,24 +34,34 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	
+	self.collectionView.delegate = self;
+	self.collectionView.dataSource = self;
 	
 	NSString *zip = @"91006";
 	
-	[_forcastController fetchForcastFromZipCode:zip completionBlock:^(NSArray * _Nonnull fiveForcast, NSError * _Nonnull error) {
-		NSLog(@"%ld", fiveForcast.count);
-		self.sevenForcast = fiveForcast;
-		NSLog(@"%@", self.sevenForcast);
+	[_forcastController fetchForcastFromZipCode:zip completionBlock:^(NSArray * _Nonnull sevenForcast, NSError * _Nonnull error) {
+		for (IIIForcast *forcast in sevenForcast) {
+			NSLog(@"%@", forcast.temperature);
+			
+			
+		}
 		
-		//dispatchQue
 //		[self.collectionView reloadData];
 		
 	}];
-	
 }
 
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
 
+	return 10;
+}
 
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+
+	UITableViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"WeatherCell" forIndexPath:indexPath];
+	
+	return cell;
+}
 
 /*
 #pragma mark - Navigation
