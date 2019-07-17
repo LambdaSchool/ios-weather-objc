@@ -7,7 +7,7 @@
 //
 
 #import "IIIWeatherViewController.h"
-
+#import "IIIForcastController.h"
 @interface IIIWeatherViewController ()
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
@@ -21,6 +21,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    IIIForcastController *myFetch = [[IIIForcastController alloc] init];
+    [myFetch fetchForecastsWithSearchTerm:@"89141" CompletionBlock:^(NSArray * _Nonnull days, NSError * _Nonnull error) {
+        
+    }];
 }
 
 /*

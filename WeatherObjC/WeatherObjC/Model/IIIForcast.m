@@ -42,14 +42,14 @@
     return self;
 }
 
-- (instancetype)initWithCity:(NSString *)city temperature:(double)temperature image:(NSString *)image{
-    self = [super init];
-    
-    if (self){
-        _city = city;
-        _temperature = temperature;
-        _image = image;
-    }
-    return self;
-}
+//- (instancetype)initWithCity:(NSString *)city temperature:(double)temperature image:(NSString *)image{
+//    self = [super init];
+//
+//    if (self){
+//        _city = city;
+//        _temperature = temperature;
+//        _image = image;
+//    }
+//    return self;
+//}
 @end
