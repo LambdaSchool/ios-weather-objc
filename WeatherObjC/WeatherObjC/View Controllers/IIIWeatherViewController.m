@@ -16,7 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *cityNameLabel;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
-
+@property NSArray *sevenDayForcast;
 
 
 
@@ -42,7 +42,7 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-	return 10;
+	return self.sevenDayForcast.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -52,29 +52,20 @@
 	return cell;
 }
 
-
-
-
-
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
 	//91006
 	if (searchText.length == 5) {
 		NSLog(@"text did change! %@", searchText);
 		[self.forcastController fetchForcastFromZipCode:searchText completionBlock:^(NSArray * _Nonnull sevenForcast, NSError * _Nonnull error) {
-			NSLog(@"%@", sevenForcast);
+			self.sevenDayForcast = sevenForcast;
+			
+			
+			NSLog(@"%ld", sevenForcast.count);
 		}];
 	}
+	
+	[self.collectionView reloadData];
 }
 
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

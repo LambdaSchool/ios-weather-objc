@@ -15,9 +15,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property NSString *name;
 @property NSString *temperature;
-@property UIImage *icon;
+@property UIImage *image;
 
-- (instancetype)initWithName:(NSString *)name temperature:(NSString *)temperature icon:(UIImage *)icon;
+- (instancetype)initWithName:(NSString *)name temperature:(NSString *)temperature icon:(NSString *)icon;
+
+- (instancetype)initWithName:(NSString *)name dictionary:(NSDictionary *)dictionary;
 
 @end
 

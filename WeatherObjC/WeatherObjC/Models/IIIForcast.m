@@ -10,14 +10,25 @@
 
 @implementation IIIForcast
 
-- (instancetype)initWithName:(NSString *)name temperature:(NSString *)temperature icon:(UIImage *)icon {
+- (instancetype)initWithName:(NSString *)name temperature:(NSString *)temperature icon:(NSString *)icon{
 	self = [super init];
 	if (self) {
 		_name = name;
 		_temperature = temperature;
-		_icon = icon; // needs to be image
+		_image = [UIImage imageNamed:icon];
 	}
 	return self;
 }
+
+
+- (instancetype)initWithName:(NSString *)name dictionary:(NSDictionary *)dictionary{
+	
+	NSString *dict_name = dictionary[@"city"][@"name"];
+	NSString *dict_temp = dictionary[@"main"][@"temp"];
+	NSString *dict_icon = dictionary[@"weather"][0][@"icon"];
+	
+	return [self initWithName:dict_name temperature:dict_temp icon:dict_icon];
+}
+
 
 @end
