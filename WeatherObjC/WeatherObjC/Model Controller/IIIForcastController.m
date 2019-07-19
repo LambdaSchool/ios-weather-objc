@@ -8,9 +8,27 @@
 
 #import "IIIForcastController.h"
 #import "../Models/IIIForcast.h"
+@interface IIIForcastController()
+
+@property (nonatomic, copy) NSMutableArray *InternalForcasts;
+
+@end
+
 
 
 @implementation IIIForcastController
+
+- (instancetype)init
+{
+	self = [super init];
+	if (self) {
+		_InternalForcasts = [[NSMutableArray alloc] init];
+	}
+	return self;
+}
+
+
+
 
 //http://openweathermap.org/img/w/01n.png
 //static NSString *baseUrl = @"https://api.openweathermap.org/data/2.5/forecast?zip=91006&appid=f4af2ee7c05b93312ef2b0f599df55bc";
