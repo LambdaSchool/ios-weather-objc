@@ -18,8 +18,9 @@
 
 @implementation IIIForcastController
 
-- (instancetype)init
-{
+static NSString *baseUrl = @"https://api.openweathermap.org/data/2.5/forecast?zip=91006&appid=f4af2ee7c05b93312ef2b0f599df55bc";
+
+- (instancetype)init{
 	self = [super init];
 	if (self) {
 		_InternalForcasts = [[NSMutableArray alloc] init];
@@ -27,17 +28,16 @@
 	return self;
 }
 
-
-
-
-//http://openweathermap.org/img/w/01n.png
-//static NSString *baseUrl = @"https://api.openweathermap.org/data/2.5/forecast?zip=91006&appid=f4af2ee7c05b93312ef2b0f599df55bc";
+- (NSArray *)forcasts {
+	return self.InternalForcasts;
+}
 
 - (void)fetchForcastFromZipCode:(NSString *)zipCode completionBlock:(IIIForcastFetcherCompletionBlock)completionBlock{
 	NSString *urlString = [[NSString alloc] initWithFormat:@"https://api.openweathermap.org/data/2.5/forecast?zip=%@&&units=imperial&cnt=7&appid=f4af2ee7c05b93312ef2b0f599df55bc", zipCode];
 	NSLog(@"%@", urlString);
 	
 	NSURL *url = [[NSURL alloc] initWithString:urlString];
+	
 	NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
 		if (error) {
 			NSLog(@"error with url session: %@", error);
@@ -53,26 +53,16 @@
 			return;
 		}
 		
-		NSMutableArray *fiveForcast = [[NSMutableArray alloc] init];
 		NSMutableArray *forcastArr = json[@"list"];
 		
 		for (NSDictionary *items in forcastArr) {
-			
 			NSString *name = json[@"city"][@"name"];
 			NSString *temp = items[@"main"][@"temp"];
 			NSString *icon = items[@"weather"][0][@"icon"];
 			
-//			[self print_l:name];
-//			[self print_l:temp];
-//			[self print_l:icon];
-//			NSLog(@"");
-			
 			IIIForcast *forcast = [[IIIForcast alloc] initWithName:name temperature:temp icon:icon];
-			
-			[fiveForcast addObject:forcast];
+			[self.InternalForcasts addObject:forcast];
 		}
-		
-		completionBlock(nil);
 	}];
 	[task resume];
 }
@@ -86,3 +76,8 @@
 }
 
 @end
+
+
+
+//http://openweathermap.org/img/w/01n.png
+//static NSString *baseUrl = @"https://api.openweathermap.org/data/2.5/forecast?zip=91006&appid=f4af2ee7c05b93312ef2b0f599df55bc";
