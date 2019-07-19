@@ -18,4 +18,9 @@
 
 @implementation IIIWeatherCollectionViewCell
 
+- (void)updateTextLabelWithTemp:(NSString *)temperature image:(UIImage *)image {
+    [[self temperatureLabel] setText:temperature];
+    [[self weatherImageView] setImage:image];
+}
+
 @end

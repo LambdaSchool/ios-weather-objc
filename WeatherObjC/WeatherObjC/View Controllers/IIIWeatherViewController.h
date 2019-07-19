@@ -7,10 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DLJForcastController.h"
+
+
+@class DLJForcastController;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface IIIWeatherViewController : UIViewController
+
+@property DLJForcastController *forcastController;
+
+
 
 @end
 

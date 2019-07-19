@@ -11,29 +11,47 @@
 
 @implementation DLJForcast
 
-- (instancetype)initWithCity:(NSString *)city temperature:(NSString *)temperature weatherImage:(UIImage *)weatherIcon
+- (instancetype)initWithCity:(NSString *)city temperature:(NSString *)temperature weatherImage:(UIImage *)weatherImage
 {
     self = [super init];
     if (self) {
         _city = city;
         _temperature = temperature;
-        _weatherImage = weatherIcon;
+        _weatherImage = weatherImage;
     }
     return self;
 }
 
 
--(instancetype)initWithDictionary:(NSDictionary *)dictionary city:(NSString *)city; {
+-(instancetype)initWithDictionary:(NSDictionary *)dictionary {
+    self = [super init];
 
-    NSNumber *temperature = dictionary[@"main"][@"temp"];
-    UIImage *weatherImage = [UIImage imageNamed:dictionary[@"weather"][0][@"icon"]];
+    if (self) {
 
-    return [self initWithCity:city temperature:temperature image:weatherImage];
+        _city = [[dictionary objectForKey:@"city"] objectForKey:@"name"];
+
+        NSArray *list = [dictionary objectForKey:@"list"];
+        NSDictionary *listDictionary = [list objectAtIndex:0];
+        NSDictionary *main = [listDictionary objectForKey:@"main"];
+
+        double temperature = 0.0;
+
+        temperature = [[main objectForKey:@"temp"] doubleValue];
+
+        NSNumber *tempNSNumber = [NSNumber numberWithDouble:temperature];
+        _temperature = [tempNSNumber stringValue];
+
+        NSArray *weather = [listDictionary objectForKey:@"weather"];
+        NSDictionary *weatherInfo = [weather objectAtIndex:0];
+
+        _weatherImage = [UIImage imageNamed: [weatherInfo objectForKey:@"icon"]];
+    }
+
 
     
 
 
-
+    return self;
     }
 
 

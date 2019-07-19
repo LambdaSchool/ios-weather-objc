@@ -15,11 +15,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property NSString *city;
 @property NSString *temperature;
-@property (nonatomic, readonly) UIImage *weatherImage;
+@property UIImage *weatherImage;
 
--(instancetype) initWithDictionary:(NSDictionary *)dictionary city:(NSString *)city;
+-(instancetype) initWithDictionary:(NSDictionary *)dictionary;
 
--(instancetype) initWithCity: (NSString *)city temperature: (NSString *)temperature image:(UIImage *)weatherImage;
+-(instancetype) initWithCity: (NSString *)city temperature: (NSString *)temperature weatherImage:(UIImage *)weatherImage;
 
 @end
 
