@@ -11,17 +11,18 @@
 NS_ASSUME_NONNULL_BEGIN
 
 
-typedef void (^IIIForcastFetcherCompletionBlock)(NSArray *, NSError *);
+typedef void (^IIIForcastFetcherCompletionBlock)(NSError *);
 
 @interface IIIForcastController : NSObject
 
 
+@property (nonatomic, copy, readonly) NSArray *forcasts;
 
-
+- (instancetype)init;
 
 - (void)fetchForcastFromZipCode:(NSString *)zipCode completionBlock:(IIIForcastFetcherCompletionBlock)completionBlock;
 
-- (void) print_l:(NSString *)str;
+//- (void) print_l:(NSString *)str;
 
 
 

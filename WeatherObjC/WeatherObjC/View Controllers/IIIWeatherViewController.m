@@ -55,12 +55,7 @@
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
 	//91006
 	if (searchText.length == 5) {
-		NSLog(@"text did change! %@", searchText);
-		[self.forcastController fetchForcastFromZipCode:searchText completionBlock:^(NSArray * _Nonnull sevenForcast, NSError * _Nonnull error) {
-			self.sevenDayForcast = sevenForcast;
-			
-			
-			NSLog(@"%ld", sevenForcast.count);
+		[self.forcastController fetchForcastFromZipCode:searchText completionBlock:^(NSError * _Nonnull error) {
 		}];
 	}
 	

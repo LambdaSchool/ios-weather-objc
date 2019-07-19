@@ -23,7 +23,7 @@
 	NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
 		if (error) {
 			NSLog(@"error with url session: %@", error);
-			completionBlock(nil, error);
+			completionBlock(error);
 			return;
 		}
 		
@@ -31,7 +31,7 @@
 		NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
 		if (jsonError){
 			NSLog(@"Error wit jsonSerialization %@", jsonError);
-			completionBlock(nil, jsonError);
+			completionBlock(jsonError);
 			return;
 		}
 		
@@ -54,7 +54,7 @@
 			[fiveForcast addObject:forcast];
 		}
 		
-		completionBlock(fiveForcast, nil);
+		completionBlock(nil);
 	}];
 	[task resume];
 }
