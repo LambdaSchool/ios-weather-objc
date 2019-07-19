@@ -13,9 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface IIIForcast : NSObject
 
-@property NSString *name;
-@property NSString *temperature;
-@property UIImage *image;
+@property  (nonatomic, copy, readonly) NSString *name;
+@property (nonatomic, copy ) NSString *temperature;
+@property (nonatomic, copy, readonly) UIImage *image;
 
 - (instancetype)initWithName:(NSString *)name temperature:(NSString *)temperature icon:(NSString *)icon;
 
