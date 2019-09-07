@@ -10,21 +10,30 @@
 
 @implementation IIIForecast
 
+-(instancetype)initWithName:(NSString *)name
+                       temp:(double *)temp
+                       icon:(NSString *)icon {
+    self = [super init];
+    if (self) {
+        
+        _name = name;
+        _temp = temp;
+        _icon = icon;
+
+    }
+    return self;
+}
+
 -(instancetype)initWithDictionary:(NSDictionary *)dictionary {
     self = [super init];
     if (self) {
         
         _name = dictionary[@"city"][@"name"];
         
-        _temp = NSArray[dictionary[@"temp"][@"day"]];
+        // someone else used NSNumber as return type
+        _temp = [NSArray dictionary[@"main"][@"temp"]];
         
         _icon = dictionary[
-        
-        
-        
-        
-        
-        
         
     }
 }
