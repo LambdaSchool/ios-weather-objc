@@ -14,6 +14,8 @@
 		467D7F762163767000E7FF73 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 467D7F752163767000E7FF73 /* main.m */; };
 		82A6A9EB224AC10200A92D77 /* IIIWeatherCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A6A9EA224AC10200A92D77 /* IIIWeatherCollectionViewCell.m */; };
 		82A6A9EF224AC21300A92D77 /* IIIWeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A6A9EE224AC21300A92D77 /* IIIWeatherViewController.m */; };
+		EC3650B722DE87CA0032A9BF /* IIIWeatherController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC3650B622DE87CA0032A9BF /* IIIWeatherController.m */; };
+		EC40569722DEE431006028FD /* IIIWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = EC40569622DEE431006028FD /* IIIWeather.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,10 @@
 		82A6A9EA224AC10200A92D77 /* IIIWeatherCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IIIWeatherCollectionViewCell.m; sourceTree = "<group>"; };
 		82A6A9ED224AC21300A92D77 /* IIIWeatherViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IIIWeatherViewController.h; sourceTree = "<group>"; };
 		82A6A9EE224AC21300A92D77 /* IIIWeatherViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IIIWeatherViewController.m; sourceTree = "<group>"; };
+		EC3650B122DE83960032A9BF /* IIIWeather.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IIIWeather.h; sourceTree = "<group>"; };
+		EC3650B522DE87CA0032A9BF /* IIIWeatherController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IIIWeatherController.h; sourceTree = "<group>"; };
+		EC3650B622DE87CA0032A9BF /* IIIWeatherController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IIIWeatherController.m; sourceTree = "<group>"; };
+		EC40569622DEE431006028FD /* IIIWeather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IIIWeather.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +67,8 @@
 		467D7F652163766F00E7FF73 /* WeatherObjC */ = {
 			isa = PBXGroup;
 			children = (
+				EC3650B422DE87800032A9BF /* Model Controller */,
+				EC3650B022DE83790032A9BF /* Model */,
 				82A6A9EC224AC10600A92D77 /* Views */,
 				82A6A9E8224ABF7E00A92D77 /* View Controllers */,
 				82A6A9E7224ABF7600A92D77 /* Stroyboards */,
@@ -106,6 +114,24 @@
 				82A6A9EA224AC10200A92D77 /* IIIWeatherCollectionViewCell.m */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		EC3650B022DE83790032A9BF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EC3650B122DE83960032A9BF /* IIIWeather.h */,
+				EC40569622DEE431006028FD /* IIIWeather.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EC3650B422DE87800032A9BF /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EC3650B522DE87CA0032A9BF /* IIIWeatherController.h */,
+				EC3650B622DE87CA0032A9BF /* IIIWeatherController.m */,
+			);
+			path = "Model Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +208,8 @@
 				467D7F762163767000E7FF73 /* main.m in Sources */,
 				467D7F682163766F00E7FF73 /* AppDelegate.m in Sources */,
 				82A6A9EB224AC10200A92D77 /* IIIWeatherCollectionViewCell.m in Sources */,
+				EC40569722DEE431006028FD /* IIIWeather.m in Sources */,
+				EC3650B722DE87CA0032A9BF /* IIIWeatherController.m in Sources */,
 				82A6A9EF224AC21300A92D77 /* IIIWeatherViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -325,6 +353,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 66AJPZAPLQ;
 				INFOPLIST_FILE = "$(SRCROOT)/WeatherObjC/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -341,6 +370,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 66AJPZAPLQ;
 				INFOPLIST_FILE = "$(SRCROOT)/WeatherObjC/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
