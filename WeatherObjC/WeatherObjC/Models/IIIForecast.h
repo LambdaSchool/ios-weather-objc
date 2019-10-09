@@ -13,8 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface IIIForecast : NSObject
 
 @property NSString *city;
-@property double dayTemperature;
-@property double nightTemperature;
+@property NSNumber *temperature;
 @property UIImage *icon;
 
 -(instancetype)initWithDict:(NSDictionary *)dictionary andCity:(NSString *)city;
