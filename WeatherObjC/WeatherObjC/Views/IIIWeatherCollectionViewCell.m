@@ -7,15 +7,20 @@
 //
 
 #import "IIIWeatherCollectionViewCell.h"
+#import "IIIForecast.h"
 
 @interface IIIWeatherCollectionViewCell()
 
 @property (weak, nonatomic) IBOutlet UIImageView *weatherImageView;
 @property (weak, nonatomic) IBOutlet UILabel *temperatureLabel;
 
-
 @end
 
 @implementation IIIWeatherCollectionViewCell
+
+- (void)configCell:(IIIForecast *)forecast {
+	[self.weatherImageView setImage:forecast.icon];
+	self.temperatureLabel.text = [forecast.dayTemperature stringValue];
+}
 
 @end

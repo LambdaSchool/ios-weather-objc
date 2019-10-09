@@ -16,6 +16,7 @@
 		82A6A9EF224AC21300A92D77 /* IIIWeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A6A9EE224AC21300A92D77 /* IIIWeatherViewController.m */; };
 		B5308357234D388700B782F5 /* IIIForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = B5308356234D388700B782F5 /* IIIForecast.m */; };
 		B530835B234D43E600B782F5 /* IIIForecastController.m in Sources */ = {isa = PBXBuildFile; fileRef = B530835A234D43E600B782F5 /* IIIForecastController.m */; };
+		B5308362234D4A5900B782F5 /* IIIWeatherApiKey.m in Sources */ = {isa = PBXBuildFile; fileRef = B5308361234D4A5900B782F5 /* IIIWeatherApiKey.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		B5308356234D388700B782F5 /* IIIForecast.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IIIForecast.m; sourceTree = "<group>"; };
 		B5308359234D43E600B782F5 /* IIIForecastController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IIIForecastController.h; sourceTree = "<group>"; };
 		B530835A234D43E600B782F5 /* IIIForecastController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IIIForecastController.m; sourceTree = "<group>"; };
+		B5308360234D4A5900B782F5 /* IIIWeatherApiKey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IIIWeatherApiKey.h; sourceTree = "<group>"; };
+		B5308361234D4A5900B782F5 /* IIIWeatherApiKey.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IIIWeatherApiKey.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +88,8 @@
 				467D7F6F2163767000E7FF73 /* Assets.xcassets */,
 				467D7F742163767000E7FF73 /* Info.plist */,
 				467D7F752163767000E7FF73 /* main.m */,
+				B5308360234D4A5900B782F5 /* IIIWeatherApiKey.h */,
+				B5308361234D4A5900B782F5 /* IIIWeatherApiKey.m */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -205,6 +210,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5308362234D4A5900B782F5 /* IIIWeatherApiKey.m in Sources */,
 				467D7F762163767000E7FF73 /* main.m in Sources */,
 				467D7F682163766F00E7FF73 /* AppDelegate.m in Sources */,
 				B530835B234D43E600B782F5 /* IIIForecastController.m in Sources */,
