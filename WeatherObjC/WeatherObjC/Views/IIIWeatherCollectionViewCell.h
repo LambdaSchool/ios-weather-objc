@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
+@class IIIForecast;
 
 @interface IIIWeatherCollectionViewCell : UICollectionViewCell
 
-@end
+@property IIIForecast *forecast;
+- (void)updateViews;
 
-NS_ASSUME_NONNULL_END
+@end
