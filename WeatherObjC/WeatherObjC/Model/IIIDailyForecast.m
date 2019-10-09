@@ -32,9 +32,9 @@
 + (IIIDailyForecast*)forecastWithCityNamed:(NSString*) name withDictionaryRepresentation:(NSDictionary*) dictionary {
 
 	NSNumber* timestamp = dictionary[@"dt"];
-	NSDictionary* temperatures = dictionary[@"temp"];
-	NSNumber* highTempNumber = temperatures[@"max"];
-	NSNumber* lowTempNumber = temperatures[@"min"];
+	NSDictionary* temperatures = dictionary[@"main"];
+	NSNumber* highTempNumber = temperatures[@"temp_max"];
+	NSNumber* lowTempNumber = temperatures[@"temp_min"];
 
 	if (
 		name != nil &&
