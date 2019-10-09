@@ -9,17 +9,20 @@
 #import <Foundation/Foundation.h>
 
 @class IIIWeatherApiKey;
+@class IIIForecastController;
 
-typedef void (^ForecastCompletionBlock)(NSDictionary *_Nullable, NSError *_Nullable);
+typedef void(^myCompletion)(BOOL);
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface IIIForecastController : NSObject
 
 @property IIIWeatherApiKey *apiKey;
+@property NSString *city;
+@property NSMutableArray *forecastArray;
 
-- (void)fetchForecastForCity:(NSString *)cityId
-completitionBlock:(ForecastCompletionBlock)completionBlock;
+- (void)fetchForecastForZipCode:(NSString *)zip
+completitionBlock:(myCompletion)completionBlock;
 
 @end
 

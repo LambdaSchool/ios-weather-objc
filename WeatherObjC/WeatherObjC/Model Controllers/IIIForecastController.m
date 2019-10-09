@@ -8,11 +8,11 @@
 
 #import "IIIForecastController.h"
 #import "IIIWeatherApiKey.h"
+#import "IIIForecast.h"
 
 @implementation IIIForecastController
 
-static NSString *baseURLString = @"api.openweathermap.org/data/2.5/forecast/daily";
-//?id={city ID}&cnt={cnt}";
+static NSString *baseURLString = @"https://api.openweathermap.org/data/2.5/forecast";
 
 - (instancetype)init
 {
@@ -23,11 +23,12 @@ static NSString *baseURLString = @"api.openweathermap.org/data/2.5/forecast/dail
 	return self;
 }
 
-- (void)fetchForecastForCity:(NSString *)cityId completitionBlock:(ForecastCompletionBlock)completionBlock {
+- (void)fetchForecastForCity:(NSString *)city completitionBlock:(myCompletion)completionBlock {
 	NSURLComponents *urlComponents = [[NSURLComponents alloc] initWithString:baseURLString];
 	
 	NSArray *queryItems = @[
-		[NSURLQueryItem queryItemWithName:@"zip" value:cityId],
+		[NSURLQueryItem queryItemWithName:@"q" value:city],
+		[NSURLQueryItem queryItemWithName:@"cnt" value:@"7"],
 		[NSURLQueryItem queryItemWithName:@"appid" value:self.apiKey.apiKey],
 	];
 	
@@ -41,8 +42,8 @@ static NSString *baseURLString = @"api.openweathermap.org/data/2.5/forecast/dail
 								completionHandler:^(NSData * data, NSURLResponse * response, NSError * error) {
 		
 		if (error) {
-			NSLog(@"Error fetching quakes: %@", error);
-			completionBlock(nil, error);
+			NSLog(@"Error fetching forecast: %@", error);
+			completionBlock(NO);
 			return;
 		}
 		
@@ -51,13 +52,24 @@ static NSString *baseURLString = @"api.openweathermap.org/data/2.5/forecast/dail
 		NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
 		if (jsonError) {
 			NSLog(@"JSON Error: %@", jsonError);
-			completionBlock(nil, jsonError);
+			completionBlock(NO);
 			return;
 		}
 		
 		NSLog(@"JSON: %@", json);
 		
-		completionBlock(json, nil);
+		NSString *city = json[@"city"][@"name"];		
+		NSArray *zipForecast = json[@"list"];
+		
+		for (NSDictionary *dailyForecast in zipForecast) {
+			IIIForecast *forecast = [[IIIForecast alloc] initWithDict:dailyForecast andCity:city];
+			
+			if (forecast) {
+				[self.forecastArray addObject:forecast];
+			}
+		}
+		
+		completionBlock(YES);
 	}];
 	[task resume];
 }
