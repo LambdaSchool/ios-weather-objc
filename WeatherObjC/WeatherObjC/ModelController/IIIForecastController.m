@@ -7,11 +7,12 @@
 //
 
 #import "IIIForecastController.h"
+#import "IIIDailyForecast.h"
 
 @implementation IIIForecastController
 
 static NSString *apiKey = @"bedd2db7595a82b10b2420f192697d45";
-static NSString *baseURLString = @"api.openweathermap.org/data/2.5/forecast?";
+static NSString *baseURLString = @"https://api.openweathermap.org/data/2.5/forecast?";
 
 //http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID={APIKEY}
 //api.openweathermap.org/data/2.5/weather?zip={zip code},{country code}
@@ -72,16 +73,18 @@ static NSString *baseURLString = @"api.openweathermap.org/data/2.5/forecast?";
         // TODO: Parse the data
         NSLog(@"JSON: %@", json);
         //Convert from dictionary to a [Quake] using NSArray
-//        NSArray *earthQuakeFeatures = json[@"features"];
-//        NSMutableArray *quakes = [[NSMutableArray alloc] init];
-//        for (NSDictionary *dictionary in earthQuakeFeatures) {
-//            LSIQuake *quake = [[LSIQuake alloc] initWithDictionary:dictionary];
-//            if (quake) {
-//                [quakes addObject:quake];
-//            }
-//        }
-//        
-//        completionBlock(quakes, nil);
+        NSDictionary *city = json[@"city"];
+        NSString *cityName = city[@"name"];
+        NSArray *forecastsList = json[@"list"];
+        NSMutableArray *forecasts = [[NSMutableArray alloc] init];
+        for (NSDictionary *dictionary in forecastsList) {
+            IIIDailyForecast *forecast = [[IIIDailyForecast alloc] initWithDictionary:dictionary :cityName];
+            if (forecast) {
+                [forecasts addObject:forecast];
+            }
+        }
+        _forecasts = forecasts;
+       completionBlock(forecasts, nil);
 
 
 

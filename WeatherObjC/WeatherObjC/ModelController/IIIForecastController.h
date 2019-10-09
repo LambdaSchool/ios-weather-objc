@@ -10,12 +10,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class IIIDailyForecast;
+
 @interface IIIForecastController : NSObject
 
 typedef void (^IIIForecastFetcherCompletionBlock)(NSArray *, NSError *);
 
 @property NSArray *forecasts;
 
+- (void)fetchForecastsForZip:(int)zipCode completitionBlock:(IIIForecastFetcherCompletionBlock)completionBlock;
 
 @end
 

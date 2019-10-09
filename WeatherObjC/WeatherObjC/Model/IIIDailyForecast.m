@@ -15,8 +15,8 @@
     self = [super self];
     if (self) {
         
-        NSDictionary *temp = dictionary[@"temp"];
-        NSNumber *dayTempNumber = temp[@"day"];
+        NSDictionary *main = dictionary[@"main"];
+        NSNumber *dayTempNumber = main[@"temp"];
         
         NSArray *weatherArray = dictionary[@"weather"];
         NSDictionary *weatherDictionary = weatherArray[0];
