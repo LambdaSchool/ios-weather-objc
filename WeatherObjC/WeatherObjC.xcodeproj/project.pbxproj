@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		33181209234D59C900D1930B /* IIIDailyForecastController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33181208234D59C900D1930B /* IIIDailyForecastController.m */; };
 		33651DB6234D479A00F5D265 /* IIIDailyForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 33651DB5234D479A00F5D265 /* IIIDailyForecast.m */; };
 		33651DBE234D48DF00F5D265 /* WeatherObjCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 33651DBD234D48DF00F5D265 /* WeatherObjCTests.m */; };
 		33651DC7234D490D00F5D265 /* Forecast.json in Resources */ = {isa = PBXBuildFile; fileRef = 33651DC6234D490D00F5D265 /* Forecast.json */; };
@@ -30,6 +31,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		33181207234D59C900D1930B /* IIIDailyForecastController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IIIDailyForecastController.h; sourceTree = "<group>"; };
+		33181208234D59C900D1930B /* IIIDailyForecastController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IIIDailyForecastController.m; sourceTree = "<group>"; };
 		33651DB4234D479A00F5D265 /* IIIDailyForecast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IIIDailyForecast.h; sourceTree = "<group>"; };
 		33651DB5234D479A00F5D265 /* IIIDailyForecast.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IIIDailyForecast.m; sourceTree = "<group>"; };
 		33651DBB234D48DF00F5D265 /* WeatherObjCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherObjCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +72,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		33181206234D599600D1930B /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				33181207234D59C900D1930B /* IIIDailyForecastController.h */,
+				33181208234D59C900D1930B /* IIIDailyForecastController.m */,
+			);
+			path = "Model Controller";
+			sourceTree = "<group>";
+		};
 		33651DB3234D478200F5D265 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +122,7 @@
 		467D7F652163766F00E7FF73 /* WeatherObjC */ = {
 			isa = PBXGroup;
 			children = (
+				33181206234D599600D1930B /* Model Controller */,
 				33651DB3234D478200F5D265 /* Model */,
 				82A6A9EC224AC10600A92D77 /* Views */,
 				82A6A9E8224ABF7E00A92D77 /* View Controllers */,
@@ -272,6 +285,7 @@
 				467D7F682163766F00E7FF73 /* AppDelegate.m in Sources */,
 				82A6A9EB224AC10200A92D77 /* IIIWeatherCollectionViewCell.m in Sources */,
 				82A6A9EF224AC21300A92D77 /* IIIWeatherViewController.m in Sources */,
+				33181209234D59C900D1930B /* IIIDailyForecastController.m in Sources */,
 				33651DB6234D479A00F5D265 /* IIIDailyForecast.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
