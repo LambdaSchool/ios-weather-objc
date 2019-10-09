@@ -13,31 +13,19 @@
 - (instancetype)initWithDict:(NSDictionary *)forecastDict andCity:(NSString *)city {
 	self = [super init];
 	if (self) {
-		_city = city;
-		
-		NSDictionary *tempDict = forecastDict[@"city"];
+		NSDictionary *tempDict = forecastDict[@"temp"];
 		NSDictionary *weatherDict = forecastDict[@"weather"];
 		
 		NSNumber *dayTemp = tempDict[@"day"];
 		NSNumber *nightTemp = tempDict[@"night"];
-		NSString *mainWeather = weatherDict[@"main"];
+		NSString *weatherString = weatherDict[@"icon"];
 		
+		_city = city;
 		_dayTemperature = dayTemp != nil ? [dayTemp doubleValue] : 0;
 		_nightTemperature = nightTemp != nil ? [nightTemp doubleValue] : 0;
-		_weather = mainWeather != nil ? mainWeather : @"N/A";
+		_icon = weatherString != nil ? [UIImage imageNamed:weatherString] : [UIImage imageNamed:@"01d"];
 	}
 	return self;
 }
-
-//- (UIImage *)icon {
-//	switch (<#expression#>) {
-//		case <#constant#>:
-//			<#statements#>
-//			break;
-//
-//		default:
-//			break;
-//	}
-//}
 
 @end

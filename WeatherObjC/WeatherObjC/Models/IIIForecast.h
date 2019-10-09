@@ -15,9 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property NSString *city;
 @property double dayTemperature;
 @property double nightTemperature;
-@property NSString *weather;
-
-@property (assign, nonatomic) UIImage *icon;
+@property UIImage *icon;
 
 -(instancetype)initWithDict:(NSDictionary *)dictionary andCity:(NSString *)city;
 
