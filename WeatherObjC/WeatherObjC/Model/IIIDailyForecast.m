@@ -11,7 +11,7 @@
 
 @implementation IIIDailyForecast
 
-- (instancetype)initWithDictionary:(NSDictionary *)dictionary {
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary :(NSString *)cityName {
     self = [super self];
     if (self) {
         
@@ -25,6 +25,7 @@
         if (dayTempNumber && iconString) {
             _temperature = [dayTempNumber doubleValue];
             _icon = [UIImage imageNamed:iconString];
+            _cityName = cityName;
         } else {
             NSLog(@"Error: unable to parse dailyForecast: %@", dictionary);
             return nil;

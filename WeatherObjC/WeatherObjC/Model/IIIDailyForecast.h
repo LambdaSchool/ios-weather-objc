@@ -14,8 +14,9 @@
 
 @property double temperature;
 @property UIImage *icon;
+@property NSString *cityName;
 
--(instancetype)initWithDictionary:(NSDictionary *)dictionary;
+-(instancetype)initWithDictionary:(NSDictionary *)dictionary :(NSString *)cityName;
 
 @end
 
