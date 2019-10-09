@@ -11,8 +11,8 @@
 @interface IIIDailyForecast : NSObject
 
 @property NSString* cityName;
-@property double highTemperature;
-@property double lowTemperature;
+@property (readonly) double highTemperature;
+@property (readonly) double lowTemperature;
 @property NSData* imageData;
 @property NSDate* date;
 

@@ -7,6 +7,7 @@
 //
 
 #import "IIIWeatherCollectionViewCell.h"
+#import "IIIDailyForecast.h"
 
 @interface IIIWeatherCollectionViewCell()
 
@@ -17,5 +18,16 @@
 @end
 
 @implementation IIIWeatherCollectionViewCell
+
+- (void)setForecast:(IIIDailyForecast *)forecast {
+	_forecast = forecast;
+
+	[self updateViews];
+}
+
+- (void)updateViews {
+	self.temperatureLabel.text = [NSString stringWithFormat:@"%.02f", self.forecast.highTemperature];
+}
+
 
 @end

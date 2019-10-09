@@ -8,6 +8,14 @@
 
 #import "IIIDailyForecast.h"
 
+@interface IIIDailyForecast() {
+	double _highTemperature;
+	double _lowTemperature;
+}
+
+@end
+
+
 @implementation IIIDailyForecast
 
 - (instancetype)initWithCityNamed:(NSString*)name withHighTemperature: (double)highTemperature withLowTemperature:(double)lowTemperature onDate:(NSDate*)date andImageData:(NSData*)imageData {
@@ -28,7 +36,6 @@
 	NSNumber* highTempNumber = temperatures[@"max"];
 	NSNumber* lowTempNumber = temperatures[@"min"];
 
-
 	if (
 		name != nil &&
 		timestamp != nil &&
@@ -45,8 +52,19 @@
 		return nil;
 	}
 
-
 	return nil;
+}
+
+- (double)convertKelvinToFahrenheit:(double) kelvin {
+	return (kelvin - 273.15) * (9.0 / 5.0) + 32;
+}
+
+- (double)highTemperature {
+	return [self convertKelvinToFahrenheit:_highTemperature];
+}
+
+- (double)lowTemperature {
+	return [self convertKelvinToFahrenheit:_lowTemperature];
 }
 
 @end
