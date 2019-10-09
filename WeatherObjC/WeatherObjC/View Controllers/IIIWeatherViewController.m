@@ -47,7 +47,8 @@
 - (UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
 	IIIWeatherCollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"WeatherCell" forIndexPath:indexPath];
 
-//	cell.
+	IIIDailyForecast* forecast = self.forecastController.forecasts[indexPath.item];
+	cell.forecast = forecast;
 
 	return cell;
 }
