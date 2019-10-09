@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+@class IIIDailyForecastController;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface IIIWeatherViewController : UIViewController
+@interface IIIWeatherViewController : UIViewController <UISearchBarDelegate, UICollectionViewDataSource>
+
+@property IIIDailyForecastController* forecastController;
 
 @end
 

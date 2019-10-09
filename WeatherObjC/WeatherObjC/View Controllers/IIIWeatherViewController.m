@@ -7,6 +7,8 @@
 //
 
 #import "IIIWeatherViewController.h"
+#import "IIIDailyForecastController.h"
+#import "IIIWeatherCollectionViewCell.h"
 
 @interface IIIWeatherViewController ()
 
@@ -21,16 +23,45 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+
+//	self.collectionView.delegate = self;
+	self.collectionView.dataSource = self;
+	self.searchBar.delegate = self;
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (instancetype)initWithCoder:(NSCoder *)coder {
+	if (self = [super initWithCoder:coder]) {
+		_forecastController = [[IIIDailyForecastController alloc] init];
+	}
+	return self;
 }
-*/
+
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+	if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]){
+		_forecastController = [[IIIDailyForecastController alloc] init];
+	}
+	return self;
+}
+
+- (UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
+	IIIWeatherCollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"WeatherCell" forIndexPath:indexPath];
+
+//	cell.
+
+	return cell;
+}
+
+- (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+	return self.forecastController.forecasts.count;
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+	[self.forecastController fetchForecastsFrom:searchBar.text completionBlock:^(NSArray *forecasts, NSError *error) {
+		dispatch_async(dispatch_get_main_queue(), ^(void){
+			[self.collectionView reloadData];
+		});
+	}];
+}
 
 @end

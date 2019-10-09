@@ -14,4 +14,6 @@ typedef void (^IIIDailyForecastCompletionBlock)(NSArray *, NSError *);
 
 @property NSArray* forecasts;
 
+- (void)fetchForecastsFrom:(NSString*)zipCode completionBlock:(IIIDailyForecastCompletionBlock)completionBlock;
+
 @end
