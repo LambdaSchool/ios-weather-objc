@@ -62,8 +62,10 @@
 	[self.forecastController fetchForecastsFrom:searchBar.text completionBlock:^(NSArray *forecasts, NSError *error) {
 		dispatch_async(dispatch_get_main_queue(), ^(void){
 			[self.collectionView reloadData];
-			IIIDailyForecast* forecast = self.forecastController.forecasts[0];
-			self.cityNameLabel.text = forecast.cityName;
+			if (self.forecastController.forecasts.count > 0) {
+				IIIDailyForecast* forecast = self.forecastController.forecasts[0];
+				self.cityNameLabel.text = forecast.cityName;
+			}
 		});
 	}];
 }
