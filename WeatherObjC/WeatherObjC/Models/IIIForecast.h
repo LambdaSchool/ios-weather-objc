@@ -12,11 +12,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface IIIForecast : NSObject
 
-@property NSString *city;
+@property NSDate *date;
 @property NSNumber *temperature;
 @property UIImage *icon;
 
--(instancetype)initWithDict:(NSDictionary *)dictionary andCity:(NSString *)city;
+-(instancetype)initWithDict:(NSDictionary *)dictionary;
 
 @end
 

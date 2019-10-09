@@ -19,8 +19,14 @@
 @implementation IIIWeatherCollectionViewCell
 
 - (void)configCell:(IIIForecast *)forecast {
+	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+	[dateFormatter setDateFormat:@"E, MMM dd"];
+	
+	NSString *styledDate = [dateFormatter stringFromDate:forecast.date];
+	int cleanTemp = (int)floor([forecast.temperature doubleValue]);
+	
+	self.temperatureLabel.text = [NSString stringWithFormat:@"%@: %d degrees", styledDate, cleanTemp];
 	[self.weatherImageView setImage:forecast.icon];
-	self.temperatureLabel.text = [forecast.dayTemperature stringValue];
 }
 
 @end

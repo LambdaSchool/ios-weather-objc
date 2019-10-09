@@ -23,12 +23,13 @@ static NSString *baseURLString = @"https://api.openweathermap.org/data/2.5/forec
 	return self;
 }
 
-- (void)fetchForecastForCity:(NSString *)city completitionBlock:(myCompletion)completionBlock {
+- (void)fetchForecastForZipCode:(NSString *)zip completitionBlock:(myCompletion)completionBlock {
 	NSURLComponents *urlComponents = [[NSURLComponents alloc] initWithString:baseURLString];
 	
 	NSArray *queryItems = @[
-		[NSURLQueryItem queryItemWithName:@"q" value:city],
-		[NSURLQueryItem queryItemWithName:@"cnt" value:@"7"],
+		[NSURLQueryItem queryItemWithName:@"zip" value:zip],
+		[NSURLQueryItem queryItemWithName:@"units" value:@"imperial"],
+//		[NSURLQueryItem queryItemWithName:@"cnt" value:@"7"],
 		[NSURLQueryItem queryItemWithName:@"appid" value:self.apiKey.apiKey],
 	];
 	
@@ -58,11 +59,12 @@ static NSString *baseURLString = @"https://api.openweathermap.org/data/2.5/forec
 		
 		NSLog(@"JSON: %@", json);
 		
-		NSString *city = json[@"city"][@"name"];		
+		self.city = json[@"city"][@"name"];
 		NSArray *zipForecast = json[@"list"];
+		self.forecastArray = [[NSMutableArray alloc] init];
 		
 		for (NSDictionary *dailyForecast in zipForecast) {
-			IIIForecast *forecast = [[IIIForecast alloc] initWithDict:dailyForecast andCity:city];
+			IIIForecast *forecast = [[IIIForecast alloc] initWithDict:dailyForecast];
 			
 			if (forecast) {
 				[self.forecastArray addObject:forecast];

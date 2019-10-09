@@ -10,16 +10,20 @@
 
 @implementation IIIForecast
 
-- (instancetype)initWithDict:(NSDictionary *)forecastDict andCity:(NSString *)city {
+- (instancetype)initWithDict:(NSDictionary *)forecastDict {
 	self = [super init];
 	if (self) {
 		NSDictionary *mainDict = forecastDict[@"main"];
 		NSDictionary *weatherDict = [forecastDict[@"weather"] firstObject];
 		
+		NSNumber *timeInMilliSeconds = forecastDict[@"dt"];
 		NSNumber *temp = mainDict[@"temp"];
 		NSString *weatherString = weatherDict[@"icon"];
 		
-		_city = city;
+		if (timeInMilliSeconds != nil) {
+			NSTimeInterval timeInSeconds = (NSTimeInterval)[timeInMilliSeconds longValue] / 1000;
+			_date = [NSDate dateWithTimeIntervalSinceNow:timeInSeconds];
+		}
 		_temperature = temp != nil ? temp : 0;
 		_icon = weatherString != nil ? [UIImage imageNamed:weatherString] : [UIImage imageNamed:@"01d"];
 	}
