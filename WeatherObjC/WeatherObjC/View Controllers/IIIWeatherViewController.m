@@ -31,6 +31,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.cityNameLabel.text = nil;
     self.searchBar.delegate = self;
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
@@ -53,14 +54,14 @@
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
     NSString *zipCodeSearchQuery = self.searchBar.text;
-    [_weatherController searchWeatherWithZipcode:zipCodeSearchQuery completion:^(NSError *error) {
+    [_weatherController searchWeatherWithZipcode:zipCodeSearchQuery completion:^(NSString *cityName, NSError *error) {
         if (error) {
             NSLog(@"Error fetching weather data with zip code: %@", error);
             return;
         }
 
         dispatch_async(dispatch_get_main_queue(), ^{
-            self.cityNameLabel.text = @"";
+            self.cityNameLabel.text = cityName;
             [[self collectionView] reloadData];
             [self.searchBar resignFirstResponder];
         });

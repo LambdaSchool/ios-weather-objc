@@ -14,7 +14,7 @@
 static NSString * const baseURLStr = @"https://api.openweathermap.org/data/2.5/forecast";
 static NSString * const apiKey = @"ada5cb97a548d821e707999a460d3d08";
 
-- (void)searchWeatherWithZipcode:(NSString *)zipcode completion:(void (^)(NSError *))completion
+- (void)searchWeatherWithZipcode:(NSString *)zipcode completion:(void (^)(NSString *cityName, NSError *))completion
 {
     NSURL *baseURL = [NSURL URLWithString:baseURLStr];
 
@@ -32,13 +32,13 @@ static NSString * const apiKey = @"ada5cb97a548d821e707999a460d3d08";
 
         if (error) {
             NSLog(@"error fetching data: %@", error);
-            completion(error);
+            completion(nil, error);
             return;
         }
 
         if (data == nil) {
             NSLog(@"No data was returned from data task");
-            completion([[NSError alloc] init]);
+            completion(nil, [[NSError alloc] init]);
             return;
         }
 
@@ -46,7 +46,7 @@ static NSString * const apiKey = @"ada5cb97a548d821e707999a460d3d08";
 
         if (![jsonDict isKindOfClass:[NSDictionary class]]) {
             NSLog(@"json is not a dictionary");
-            completion([[NSError alloc] init]);
+            completion(nil, [[NSError alloc] init]);
             return;
         }
 
@@ -61,7 +61,7 @@ static NSString * const apiKey = @"ada5cb97a548d821e707999a460d3d08";
             [forecasts addObject:forecastResults];
         }
         self.forecasts = forecasts;
-        completion(nil);
+        completion(cityName, nil);
     }];
     [dataTask resume];
 }

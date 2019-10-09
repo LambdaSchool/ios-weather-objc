@@ -10,7 +10,7 @@
 
 @interface IIIWeatherController : NSObject
 
-- (void)searchWeatherWithZipcode:(NSString *)zipcode completion:(void (^)(NSError *error))completion;
+- (void)searchWeatherWithZipcode:(NSString *)zipcode completion:(void (^)(NSString *cityName, NSError *error))completion;
 
 @property NSArray *forecasts;
 
