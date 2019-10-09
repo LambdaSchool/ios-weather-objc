@@ -12,7 +12,7 @@
 
 
 NSURL* generateImageURL(NSString* iconName) {
-	NSURL* baseURL = [NSURL URLWithString:@"http://openweathermap.org/img/wn/"];
+	NSURL* baseURL = [NSURL URLWithString:@"https://openweathermap.org/img/wn/"];
 //	http://openweathermap.org/img/wn/10d@2x.png
 	NSString* nameFix = [NSString stringWithFormat:@"%@@2x", iconName];
 

@@ -26,7 +26,25 @@
 }
 
 - (void)updateViews {
-	self.temperatureLabel.text = [NSString stringWithFormat:@"%.02f", self.forecast.highTemperature];
+	if (self.forecast) {
+		self.temperatureLabel.text = [NSString stringWithFormat:@"%.02f", self.forecast.highTemperature];
+		[self loadImage];
+	}
+}
+
+- (void)loadImage {
+	NSURLSessionDataTask* imageFetch = [[NSURLSession sharedSession] dataTaskWithURL:self.forecast.imageURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+		if (error) {
+			NSLog(@"Error downloading image: %@", error);
+			return;
+		}
+
+		UIImage* image = [UIImage imageWithData:data];
+		dispatch_async(dispatch_get_main_queue(), ^(void){
+			self.weatherImageView.image = image;
+		});
+	}];
+	[imageFetch resume];
 }
 
 
