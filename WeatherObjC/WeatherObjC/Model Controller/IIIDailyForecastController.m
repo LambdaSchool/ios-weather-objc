@@ -27,7 +27,6 @@ static const NSString* apiKey = @"f641060b2a95d6cca0d96a5230be574b";
 
 	NSString* zipComposed = [NSString stringWithFormat:@"%@,us", zipCode];
 	NSArray* queryItems = @[
-		[NSURLQueryItem queryItemWithName:@"cnt" value:@"7"],
 		[NSURLQueryItem queryItemWithName:@"appid" value:apiKey],
 		[NSURLQueryItem queryItemWithName:@"zip" value:zipComposed],
 		[NSURLQueryItem queryItemWithName:@"units" value:@"imperial"],
