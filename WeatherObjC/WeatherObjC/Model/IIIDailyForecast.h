@@ -11,12 +11,12 @@
 @interface IIIDailyForecast : NSObject
 
 @property NSString* cityName;
-@property (readonly) double highTemperature;
-@property (readonly) double lowTemperature;
-@property NSData* imageData;
+@property double highTemperature;
+@property double lowTemperature;
+@property NSURL* imageURL;
 @property NSDate* date;
 
-- (instancetype)initWithCityNamed:(NSString*)name withHighTemperature: (double)highTemperature withLowTemperature:(double)lowTemperature onDate:(NSDate*)date andImageData:(NSData*)imageData;
+- (instancetype)initWithCityNamed:(NSString*)name withHighTemperature: (double)highTemperature withLowTemperature:(double)lowTemperature onDate:(NSDate*)date andIconName:(NSString*)iconName;
 
 + (IIIDailyForecast*)forecastWithCityNamed:(NSString*) name withDictionaryRepresentation:(NSDictionary*) dictionary;
 

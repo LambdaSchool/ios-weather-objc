@@ -54,11 +54,11 @@
 
 	IIIDailyForecast* forecast = [IIIDailyForecast forecastWithCityNamed:cityName withDictionaryRepresentation:firstForecast];
 
-	NSDate* expectedDate = [NSDate dateWithTimeIntervalSince1970:1519070400];
+	NSDate* expectedDate = [NSDate dateWithTimeIntervalSince1970:1570590000];
 
-	XCTAssertEqualObjects(@"Mountain View", forecast.cityName);
-	XCTAssertEqual(283.99, forecast.highTemperature);
-	XCTAssertEqual(271.86, forecast.lowTemperature);
+	XCTAssertEqualObjects(@"Winona", forecast.cityName);
+	XCTAssertEqual(56.55, forecast.highTemperature);
+	XCTAssertEqual(54.05, forecast.lowTemperature);
 	XCTAssertEqualObjects(expectedDate, forecast.date);
 	
 }

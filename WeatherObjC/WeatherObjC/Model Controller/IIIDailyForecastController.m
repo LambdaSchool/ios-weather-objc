@@ -30,6 +30,7 @@ static const NSString* apiKey = @"f641060b2a95d6cca0d96a5230be574b";
 		[NSURLQueryItem queryItemWithName:@"cnt" value:@"7"],
 		[NSURLQueryItem queryItemWithName:@"appid" value:apiKey],
 		[NSURLQueryItem queryItemWithName:@"zip" value:zipComposed],
+		[NSURLQueryItem queryItemWithName:@"units" value:@"imperial"],
 	];
 	components.queryItems = queryItems;
 
