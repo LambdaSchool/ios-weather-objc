@@ -9,15 +9,25 @@
 #import "IIIWeatherCollectionViewCell.h"
 #import "IIIDailyForecast.h"
 
-@interface IIIWeatherCollectionViewCell()
+@interface IIIWeatherCollectionViewCell() {
+	NSDateFormatter* _timeFormatter;
+}
 
 @property (weak, nonatomic) IBOutlet UIImageView *weatherImageView;
 @property (weak, nonatomic) IBOutlet UILabel *temperatureLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
 
 @end
 
 @implementation IIIWeatherCollectionViewCell
+
+- (void)awakeFromNib {
+	[super awakeFromNib];
+
+	_timeFormatter = [[NSDateFormatter alloc] init];
+	_timeFormatter.dateFormat = @"MM/dd h a";
+}
 
 - (void)setForecast:(IIIDailyForecast *)forecast {
 	_forecast = forecast;
@@ -28,6 +38,7 @@
 - (void)updateViews {
 	if (self.forecast) {
 		self.temperatureLabel.text = [NSString stringWithFormat:@"%.02f", self.forecast.highTemperature];
+		self.timeLabel.text = [_timeFormatter stringFromDate: self.forecast.date];
 		[self loadImage];
 	}
 }

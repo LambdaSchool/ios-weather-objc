@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -50,18 +49,27 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GAN-Tw-o9G">
+                                                    <rect key="frame" x="58.5" y="76" width="33" height="16"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </view>
                                         <constraints>
                                             <constraint firstItem="hq6-BJ-c95" firstAttribute="top" secondItem="H0L-BW-bM6" secondAttribute="bottom" constant="16" id="7jo-ks-G8y"/>
                                             <constraint firstItem="hq6-BJ-c95" firstAttribute="centerX" secondItem="LPd-xO-sQf" secondAttribute="centerX" id="8ih-5h-UZF"/>
                                             <constraint firstItem="H0L-BW-bM6" firstAttribute="leading" secondItem="LPd-xO-sQf" secondAttribute="leading" id="ZJg-W0-w5o"/>
+                                            <constraint firstItem="GAN-Tw-o9G" firstAttribute="bottom" secondItem="H0L-BW-bM6" secondAttribute="bottom" constant="-8" id="Zy6-6Y-ocH"/>
                                             <constraint firstItem="H0L-BW-bM6" firstAttribute="top" secondItem="LPd-xO-sQf" secondAttribute="top" id="aeN-yX-rzp"/>
                                             <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="hq6-BJ-c95" secondAttribute="bottom" constant="2" id="g8F-3p-z0G"/>
+                                            <constraint firstItem="GAN-Tw-o9G" firstAttribute="centerX" secondItem="H0L-BW-bM6" secondAttribute="centerX" id="kHm-hc-DoX"/>
                                             <constraint firstAttribute="trailing" secondItem="H0L-BW-bM6" secondAttribute="trailing" id="l1h-hm-AXR"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="temperatureLabel" destination="hq6-BJ-c95" id="YmD-Uh-AB6"/>
+                                            <outlet property="timeLabel" destination="GAN-Tw-o9G" id="OtS-BH-7Tp"/>
                                             <outlet property="weatherImageView" destination="H0L-BW-bM6" id="dJi-Gd-BCd"/>
                                         </connections>
                                     </collectionViewCell>
