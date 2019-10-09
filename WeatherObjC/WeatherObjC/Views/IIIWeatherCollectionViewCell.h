@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class IIIDailyForecast;
 NS_ASSUME_NONNULL_BEGIN
 
 @interface IIIWeatherCollectionViewCell : UICollectionViewCell
+
+@property (nonatomic) IIIDailyForecast* forecast;
 
 @end
 
