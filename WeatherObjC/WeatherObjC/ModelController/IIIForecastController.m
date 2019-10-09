@@ -83,7 +83,11 @@ static NSString *baseURLString = @"https://api.openweathermap.org/data/2.5/forec
                 [forecasts addObject:forecast];
             }
         }
-        _forecasts = forecasts;
+        NSMutableArray *forecastsDivideByFive = [[NSMutableArray alloc] init];
+        for (int i = 0; i < 40; i += 8) {
+            [forecastsDivideByFive addObject:forecasts[i]];
+        }
+        self->_forecasts = forecastsDivideByFive;
        completionBlock(forecasts, nil);
 
 

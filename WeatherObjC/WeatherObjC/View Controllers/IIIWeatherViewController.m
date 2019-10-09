@@ -44,7 +44,7 @@
     [_forecastController fetchForecastsForZip:zip completitionBlock:^(NSArray * forecasts, NSError * error) {
         dispatch_async(dispatch_get_main_queue(), ^(void){
             self->_collectionView.reloadData;
-            //self->_cityNameLabel.text = [forecasts[0] cityName];
+            self->_cityNameLabel.text = [forecasts[0] cityName];
         });
     }];
 }
@@ -54,7 +54,7 @@
     IIIWeatherCollectionViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"WeatherCell" forIndexPath:indexPath];
     IIIDailyForecast *forecast = _forecastController.forecasts[indexPath.item];
     cell.weatherImageView.image = forecast.icon;
-    cell.weatherLabel.text = [NSString stringWithFormat:@"%lf degree F", forecast.temperature];
+    cell.weatherLabel.text = [NSString stringWithFormat:@"%.2f degree F", forecast.temperature];
     return cell;
 }
 
