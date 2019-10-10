@@ -30,8 +30,6 @@
             NSLog(@"Error: unable to parse dailyForecast: %@", dictionary);
             return nil;
         }
-        
-        
     }
     return self;
 }

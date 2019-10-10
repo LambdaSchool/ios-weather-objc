@@ -54,7 +54,8 @@
     IIIWeatherCollectionViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"WeatherCell" forIndexPath:indexPath];
     IIIDailyForecast *forecast = _forecastController.forecasts[indexPath.item];
     cell.weatherImageView.image = forecast.icon;
-    cell.weatherLabel.text = [NSString stringWithFormat:@"%.2f degree F", forecast.temperature];
+    double tempInC = forecast.temperature - 273.0;
+    cell.weatherLabel.text = [NSString stringWithFormat:@"%.2f degree C", tempInC];
     return cell;
 }
 
