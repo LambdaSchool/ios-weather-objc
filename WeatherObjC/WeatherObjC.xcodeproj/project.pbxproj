@@ -63,7 +63,7 @@
 			children = (
 				82A6A9EC224AC10600A92D77 /* Views */,
 				82A6A9E8224ABF7E00A92D77 /* View Controllers */,
-				82A6A9E7224ABF7600A92D77 /* Stroyboards */,
+				82A6A9E7224ABF7600A92D77 /* Storyboards */,
 				82A6A9E6224ABF6E00A92D77 /* Resources */,
 			);
 			path = WeatherObjC;
@@ -81,13 +81,13 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		82A6A9E7224ABF7600A92D77 /* Stroyboards */ = {
+		82A6A9E7224ABF7600A92D77 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
 				467D7F6C2163766F00E7FF73 /* Main.storyboard */,
 				467D7F712163767000E7FF73 /* LaunchScreen.storyboard */,
 			);
-			path = Stroyboards;
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		82A6A9E8224ABF7E00A92D77 /* View Controllers */ = {
