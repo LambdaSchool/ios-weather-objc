@@ -7,6 +7,7 @@
 //
 
 #import "JACWeatherViewController.h"
+#import "JACWeatherController.h"
 
 @interface JACWeatherViewController ()
 
@@ -18,9 +19,27 @@
 
 @implementation JACWeatherViewController
 
+JACWeatherController *controller;
+
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        controller = [[JACWeatherController alloc] init];
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [controller fetchWeatherByZip:[NSNumber numberWithInt:84655] completion:^(JACWeather *weather, NSError *error) {
+        if (error) {
+            NSLog(@"%@", error);
+        } else {
+            NSLog(@"Name: %@", weather.name);
+        }
+    }];
 }
 
 /*

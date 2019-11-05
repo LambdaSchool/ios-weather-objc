@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JACWeatherController.h"
 
 @interface JACWeatherViewController : UIViewController
-
+@property JACWeatherController *controller;
 @end

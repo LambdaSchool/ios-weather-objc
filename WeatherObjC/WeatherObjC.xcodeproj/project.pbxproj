@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0E7455A723721F22001514B2 /* JACWeatherCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7455A623721F22001514B2 /* JACWeatherCollectionViewCell.m */; };
+		0E8BD36A237221F7002434C7 /* JACWeatherController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8BD369237221F7002434C7 /* JACWeatherController.m */; };
+		0E8BD37223722C02002434C7 /* JACWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8BD37123722C02002434C7 /* JACWeather.m */; };
 		467D7F682163766F00E7FF73 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 467D7F672163766F00E7FF73 /* AppDelegate.m */; };
 		467D7F6E2163766F00E7FF73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 467D7F6C2163766F00E7FF73 /* Main.storyboard */; };
 		467D7F702163767000E7FF73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 467D7F6F2163767000E7FF73 /* Assets.xcassets */; };
@@ -19,6 +21,10 @@
 /* Begin PBXFileReference section */
 		0E7455A523721F22001514B2 /* JACWeatherCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JACWeatherCollectionViewCell.h; sourceTree = "<group>"; };
 		0E7455A623721F22001514B2 /* JACWeatherCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JACWeatherCollectionViewCell.m; sourceTree = "<group>"; };
+		0E8BD368237221F7002434C7 /* JACWeatherController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JACWeatherController.h; sourceTree = "<group>"; };
+		0E8BD369237221F7002434C7 /* JACWeatherController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JACWeatherController.m; sourceTree = "<group>"; };
+		0E8BD37023722C02002434C7 /* JACWeather.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JACWeather.h; sourceTree = "<group>"; };
+		0E8BD37123722C02002434C7 /* JACWeather.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JACWeather.m; sourceTree = "<group>"; };
 		467D7F632163766F00E7FF73 /* WeatherObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		467D7F662163766F00E7FF73 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		467D7F672163766F00E7FF73 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -42,6 +48,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E8BD36B23722201002434C7 /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0E8BD368237221F7002434C7 /* JACWeatherController.h */,
+				0E8BD369237221F7002434C7 /* JACWeatherController.m */,
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		0E8BD36F2372232A002434C7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0E8BD37023722C02002434C7 /* JACWeather.h */,
+				0E8BD37123722C02002434C7 /* JACWeather.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		467D7F5A2163766F00E7FF73 = {
 			isa = PBXGroup;
 			children = (
@@ -65,6 +89,8 @@
 				82A6A9E8224ABF7E00A92D77 /* View Controllers */,
 				82A6A9E7224ABF7600A92D77 /* Stroyboards */,
 				82A6A9E6224ABF6E00A92D77 /* Resources */,
+				0E8BD36B23722201002434C7 /* Model Controllers */,
+				0E8BD36F2372232A002434C7 /* Models */,
 			);
 			path = WeatherObjC;
 			sourceTree = "<group>";
@@ -179,8 +205,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E8BD36A237221F7002434C7 /* JACWeatherController.m in Sources */,
 				467D7F762163767000E7FF73 /* main.m in Sources */,
 				467D7F682163766F00E7FF73 /* AppDelegate.m in Sources */,
+				0E8BD37223722C02002434C7 /* JACWeather.m in Sources */,
 				0E7455A723721F22001514B2 /* JACWeatherCollectionViewCell.m in Sources */,
 				82A6A9EF224AC21300A92D77 /* JACWeatherViewController.m in Sources */,
 			);
