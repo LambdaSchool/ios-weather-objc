@@ -11,6 +11,6 @@
 @implementation JACWeatherCollectionViewCell
 - (void) updateImageWithName:(NSString *)imageName temperature:(NSString *)temperature {
     _weatherImageView.image = [UIImage imageNamed:imageName];
-    _temperatureLabel.text = temperature;
+    _temperatureLabel.text = [NSString stringWithFormat:@"%0.2f f", [temperature floatValue]];
 }
 @end

@@ -29,6 +29,9 @@
         
         for (NSDictionary *dict in list) {
             NSNumber *temp = [dict valueForKeyPath:@"main.temp"];
+            temp = @([temp floatValue] - 273.15);
+            temp = @([temp floatValue] * 9/5);
+            temp = @([temp intValue] + 32);
             NSString *imageString = [[dict valueForKeyPath:@"weather.icon"] objectAtIndex:0];
             [imageNames addObject:imageString];
             [temperatures addObject:temp];
