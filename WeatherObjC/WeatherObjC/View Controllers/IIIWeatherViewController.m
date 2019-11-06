@@ -7,6 +7,9 @@
 //
 
 #import "IIIWeatherViewController.h"
+#import "IIIForecastController.h"
+#import "IIIForecast.h"
+#import "IIIWeatherCollectionViewCell.h"
 
 @interface IIIWeatherViewController ()
 
@@ -18,19 +21,56 @@
 
 @implementation IIIWeatherViewController
 
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+	self = [super initWithCoder:coder];
+	if (self) {
+		_forecastController = [[IIIForecastController alloc] init];
+	}
+	return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+	self.collectionView.dataSource = self;
+	self.searchBar.delegate = self;
+	
+	[self.searchBar becomeFirstResponder];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+	return self.forecastController.forecastArray.count;
 }
-*/
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+	static NSString * identifier = @"WeatherCell";
+	
+	IIIWeatherCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
+	
+	if (cell == nil) {
+		return [[UICollectionViewCell alloc] init];
+	}
+	
+	IIIForecast *forecast = self.forecastController.forecastArray[indexPath.item];
+	[cell configCell:forecast];
+	
+	return cell;
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+	NSString *zipString = searchBar.text;
+	if (zipString != nil || ![zipString  isEqual: @""]) {
+		[self.forecastController fetchForecastForZipCode:zipString completitionBlock:^(BOOL success) {
+			if (success) {
+				dispatch_async(dispatch_get_main_queue(), ^{
+					self.cityNameLabel.text = self.forecastController.city;
+					[self.collectionView reloadData];
+					[self.searchBar resignFirstResponder];
+				});
+			}
+		}];
+	}
+}
 
 @end
