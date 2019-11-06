@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3245299123728CD700AC3963 /* JLCWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = 3245299023728CD700AC3963 /* JLCWeather.m */; };
+		326C401F23727E98009D796D /* JLCWeatherCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 326C401E23727E98009D796D /* JLCWeatherCollectionViewCell.m */; };
 		32CE6C482372306F00343995 /* JLCOneDayForcast.m in Sources */ = {isa = PBXBuildFile; fileRef = 32CE6C472372306F00343995 /* JLCOneDayForcast.m */; };
 		32CE6C4C2372309C00343995 /* JLCWeatherController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32CE6C4B2372309C00343995 /* JLCWeatherController.m */; };
 		467D7F682163766F00E7FF73 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 467D7F672163766F00E7FF73 /* AppDelegate.m */; };
@@ -18,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3245298F23728CD700AC3963 /* JLCWeather.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLCWeather.h; sourceTree = "<group>"; };
+		3245299023728CD700AC3963 /* JLCWeather.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLCWeather.m; sourceTree = "<group>"; };
+		326C401D23727E98009D796D /* JLCWeatherCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLCWeatherCollectionViewCell.h; sourceTree = "<group>"; };
+		326C401E23727E98009D796D /* JLCWeatherCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLCWeatherCollectionViewCell.m; sourceTree = "<group>"; };
 		32CE6C462372306F00343995 /* JLCOneDayForcast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLCOneDayForcast.h; sourceTree = "<group>"; };
 		32CE6C472372306F00343995 /* JLCOneDayForcast.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLCOneDayForcast.m; sourceTree = "<group>"; };
 		32CE6C4A2372309C00343995 /* JLCWeatherController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLCWeatherController.h; sourceTree = "<group>"; };
@@ -50,6 +56,8 @@
 			children = (
 				32CE6C462372306F00343995 /* JLCOneDayForcast.h */,
 				32CE6C472372306F00343995 /* JLCOneDayForcast.m */,
+				3245298F23728CD700AC3963 /* JLCWeather.h */,
+				3245299023728CD700AC3963 /* JLCWeather.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -125,6 +133,8 @@
 		82A6A9EC224AC10600A92D77 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				326C401D23727E98009D796D /* JLCWeatherCollectionViewCell.h */,
+				326C401E23727E98009D796D /* JLCWeatherCollectionViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -201,8 +211,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				467D7F762163767000E7FF73 /* main.m in Sources */,
+				3245299123728CD700AC3963 /* JLCWeather.m in Sources */,
 				467D7F682163766F00E7FF73 /* AppDelegate.m in Sources */,
 				32CE6C482372306F00343995 /* JLCOneDayForcast.m in Sources */,
+				326C401F23727E98009D796D /* JLCWeatherCollectionViewCell.m in Sources */,
 				32CE6C4C2372309C00343995 /* JLCWeatherController.m in Sources */,
 				82A6A9EF224AC21300A92D77 /* JLCWeatherViewController.m in Sources */,
 			);
@@ -347,12 +359,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YM84C6XKT7;
 				INFOPLIST_FILE = "$(SRCROOT)/WeatherObjC/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.LambdaSchool.WeatherObjC;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jakeconnerly.WeatherObjC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -363,12 +376,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YM84C6XKT7;
 				INFOPLIST_FILE = "$(SRCROOT)/WeatherObjC/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.LambdaSchool.WeatherObjC;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jakeconnerly.WeatherObjC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

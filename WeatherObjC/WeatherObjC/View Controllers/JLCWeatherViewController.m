@@ -7,13 +7,14 @@
 //
 
 #import "JLCWeatherViewController.h"
+#import "JLCWeatherController.h"
+#import "JLCWeatherCollectionViewCell.h"
+#import "JLCOneDayForcast.h"
 
 
 @interface JLCWeatherViewController ()
 
-@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
-@property (weak, nonatomic) IBOutlet UILabel *cityNameLabel;
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+#pragma mark - IBOutlets and Properties
 
 @end
 
@@ -23,24 +24,61 @@
 {
     self = [super initWithCoder:coder];
     if (self) {
-        
+        _weatherController = [[JLCWeatherController alloc] init];
     }
     return self;
 }
 
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        _weatherController = [[JLCWeatherController alloc] init];
+    }
+    return self;
+}
+
+#pragma mark - View LifeCycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.searchBar.delegate = self;
+    self.collectionView.dataSource = self;
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [self.weatherController searchForWeatherByCity:searchBar.text completion:^(NSArray *forcasts, NSError *error) {
+        
+        if (error) {
+            NSLog(@"Error: %@", error);
+            return;
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.forcasts = forcasts;
+            
+            [self.collectionView reloadData];
+        });
+    }];
+}
+
+#pragma mark - Collection View Data Source
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
+    return self.weatherController.forcasts.count;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    JLCWeatherCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"WeatherCell" forIndexPath:indexPath];
+    
+    JLCOneDayForcast *forcast = [self.weatherController.forcasts objectAtIndex:indexPath.item];
+    
+    self.cityNameLabel.text = forcast.cityName;
+    cell.forcast = forcast;
+    
+    return cell;
 }
-*/
+
 
 @end

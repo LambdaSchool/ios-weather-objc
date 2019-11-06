@@ -11,7 +11,9 @@
 @interface JLCWeatherController : NSObject
 
 - (void)searchForWeatherByCity:(NSString *) cityName
-                    completion:(void (^)(NSArray *weatherDays, NSError *error))completion;
+                    completion:(void (^)(NSArray *forcasts, NSError *error))completion;
+
+@property NSArray *forcasts;
 
 @end
 

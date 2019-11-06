@@ -16,7 +16,7 @@
 
 - (instancetype)initWithName:(NSString *)cityName
                         temp:(double)temp
-                       image:(NSString *)icon;
+                       imageString:(NSString *)icon;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 @end

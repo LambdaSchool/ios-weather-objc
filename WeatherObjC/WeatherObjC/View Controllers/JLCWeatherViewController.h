@@ -7,9 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JLCWeatherController.h"
 
-@interface JLCWeatherViewController : UIViewController
+@interface JLCWeatherViewController : UIViewController <UISearchBarDelegate, UICollectionViewDataSource, UICollectionViewDelegate> 
 
 
+@property JLCWeatherController *weatherController;
+@property NSArray *forcasts;
+
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+
+@property (weak, nonatomic) IBOutlet UILabel *cityNameLabel;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @end
