@@ -8,10 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface IIIWeatherCollectionViewCell : UICollectionViewCell
 
 @end
-
-NS_ASSUME_NONNULL_END
