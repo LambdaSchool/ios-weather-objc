@@ -7,9 +7,13 @@
 //
 
 #import "JACWeatherViewController.h"
+#import "JACWeatherCollectionViewCell.h"
 #import "JACWeatherController.h"
+#import "JACWeather.h"
 
 @interface JACWeatherViewController ()
+
+@property JACWeather *weather;
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UILabel *cityNameLabel;
@@ -33,23 +37,50 @@ JACWeatherController *controller;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [controller fetchWeatherByZip:[NSNumber numberWithInt:84655] completion:^(JACWeather *weather, NSError *error) {
-        if (error) {
-            NSLog(@"%@", error);
-        } else {
-            NSLog(@"Name: %@", weather.name);
-        }
-    }];
+    [self.collectionView setDelegate:self];
+    [self.searchBar setDelegate:self];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
+    f.numberStyle = NSNumberFormatterDecimalStyle;
+    NSNumber *zipCode = [f numberFromString:[searchBar text]];
+    
+    if (zipCode) {
+        [controller fetchWeatherByZip:[NSNumber numberWithInt:zipCode] completion:^(JACWeather *weather, NSError *error) {
+            if (error) {
+                NSLog(@"%@", error);
+            } else {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    self.weather = weather;
+                    [self.collectionView reloadData];
+                });
+                
+            }
+        }];
+    } else {
+        NSLog(@"zipCode was not valid");
+    }
 }
-*/
+
+#pragma mark <UICollectionViewDataSource>
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return _weather.temperature.count;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    JACWeatherCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"WeatherCell" forIndexPath:indexPath];
+    
+    if (cell == nil) {
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"WeatherCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+    }
+    
+    cell.temperatureLabel.text = [_weather.temperature objectAtIndex:[indexPath row]];
+    cell.weatherImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", _weather.imageName[indexPath.row]]];
+    
+    return cell;
+}
 
 @end

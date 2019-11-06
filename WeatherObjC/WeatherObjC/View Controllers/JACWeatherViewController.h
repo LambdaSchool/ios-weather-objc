@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "JACWeatherController.h"
 
-@interface JACWeatherViewController : UIViewController
+@interface JACWeatherViewController : UIViewController <UISearchBarDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
 @property JACWeatherController *controller;
 @end

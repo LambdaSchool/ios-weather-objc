@@ -24,7 +24,6 @@ NSString *baseURLString = @"https://api.openweathermap.org/data/2.5/forecast";
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
     NSURLSessionDataTask *task = [NSURLSession.sharedSession dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        NSLog(@"Weather results");
         
         if (error) {
             completion(nil, error);
