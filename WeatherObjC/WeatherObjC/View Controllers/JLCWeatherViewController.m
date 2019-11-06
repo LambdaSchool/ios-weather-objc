@@ -6,9 +6,10 @@
 //  Copyright © 2019 Lambda School. All rights reserved.
 //
 
-#import "IIIWeatherViewController.h"
+#import "JLCWeatherViewController.h"
 
-@interface IIIWeatherViewController ()
+
+@interface JLCWeatherViewController ()
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UILabel *cityNameLabel;
@@ -16,11 +17,20 @@
 
 @end
 
-@implementation IIIWeatherViewController
+@implementation JLCWeatherViewController
+
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
 }
 
 /*
