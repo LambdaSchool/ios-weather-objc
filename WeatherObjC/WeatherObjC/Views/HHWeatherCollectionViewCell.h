@@ -1,21 +1,20 @@
 //
-//  IIIWeatherCollectionViewCell.m
+//  HHWeatherCollectionViewCell.h
 //  WeatherObjC
 //
 //  Created by Ilgar Ilyasov on 3/26/19.
 //  Copyright © 2019 Lambda School. All rights reserved.
 //
 
-#import "IIIWeatherCollectionViewCell.h"
+#import <UIKit/UIKit.h>
 
-@interface IIIWeatherCollectionViewCell()
+NS_ASSUME_NONNULL_BEGIN
+
+@interface HHWeatherCollectionViewCell : UICollectionViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *weatherImageView;
 @property (weak, nonatomic) IBOutlet UILabel *temperatureLabel;
 
-
 @end
 
-@implementation IIIWeatherCollectionViewCell
-
-@end
+NS_ASSUME_NONNULL_END
