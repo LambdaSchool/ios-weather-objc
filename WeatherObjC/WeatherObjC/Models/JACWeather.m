@@ -29,7 +29,7 @@
         
         for (NSDictionary *dict in list) {
             NSNumber *temp = [dict valueForKeyPath:@"main.temp"];
-            NSString *imageString = [dict valueForKeyPath:@"main.temp"];
+            NSString *imageString = [[dict valueForKeyPath:@"weather.icon"] objectAtIndex:0];
             [imageNames addObject:imageString];
             [temperatures addObject:temp];
         }

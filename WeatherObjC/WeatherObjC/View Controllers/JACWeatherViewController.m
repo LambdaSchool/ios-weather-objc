@@ -52,6 +52,7 @@ JACWeatherController *controller;
             } else {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     self.weather = weather;
+                    self.cityNameLabel.text = weather.name;
                     [self.collectionView reloadData];
                 });
                 
@@ -65,7 +66,7 @@ JACWeatherController *controller;
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return _weather.temperature.count;
+    return self.weather.temperature.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -76,7 +77,9 @@ JACWeatherController *controller;
         cell = [nib objectAtIndex:0];
     }
     
-    [cell updateImageWithName:[NSString stringWithFormat:@"%@", _weather.imageName[indexPath.row]] temperature:[NSString stringWithFormat:@"%@", [_weather.temperature objectAtIndex:[indexPath row]]]];
+    NSString *imageName = [NSString stringWithFormat:@"%@", [self.weather.imageName objectAtIndex:[indexPath row]]];
+    
+    [cell updateImageWithName:imageName temperature:[NSString stringWithFormat:@"%@", [self.weather.temperature objectAtIndex:[indexPath row]]]];
     
     return cell;
 }
