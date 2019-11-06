@@ -9,5 +9,8 @@
 #import "JACWeatherCollectionViewCell.h"
 
 @implementation JACWeatherCollectionViewCell
-
+- (void) updateImageWithName:(NSString *)imageName temperature:(NSString *)temperature {
+    _weatherImageView.image = [UIImage imageNamed:imageName];
+    _temperatureLabel.text = temperature;
+}
 @end

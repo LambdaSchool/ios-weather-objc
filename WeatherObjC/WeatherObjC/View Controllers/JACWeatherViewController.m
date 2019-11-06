@@ -47,7 +47,7 @@ JACWeatherController *controller;
     NSNumber *zipCode = [f numberFromString:[searchBar text]];
     
     if (zipCode) {
-        [controller fetchWeatherByZip:[NSNumber numberWithInt:zipCode] completion:^(JACWeather *weather, NSError *error) {
+        [controller fetchWeatherByZip:zipCode completion:^(JACWeather *weather, NSError *error) {
             if (error) {
                 NSLog(@"%@", error);
             } else {
@@ -77,8 +77,7 @@ JACWeatherController *controller;
         cell = [nib objectAtIndex:0];
     }
     
-    cell.temperatureLabel.text = [_weather.temperature objectAtIndex:[indexPath row]];
-    cell.weatherImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", _weather.imageName[indexPath.row]]];
+    [cell updateImageWithName:[NSString stringWithFormat:@"%@", _weather.imageName[indexPath.row]] temperature:[_weather.temperature objectAtIndex:[indexPath row]]];
     
     return cell;
 }

@@ -12,4 +12,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *weatherImageView;
 @property (weak, nonatomic) IBOutlet UILabel *temperatureLabel;
 
+- (void) updateImageWithName:(NSString *)imageName temperature:(NSString *)temperature;
+
 @end
