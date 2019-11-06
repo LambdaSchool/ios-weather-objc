@@ -7,6 +7,8 @@
 //
 
 #import "IIIWeatherViewController.h"
+#import "IIIWeatherCollectionViewCell.h"
+#import "IIIWeatherController.h"
 
 @interface IIIWeatherViewController ()
 
@@ -18,19 +20,52 @@
 
 @implementation IIIWeatherViewController
 
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        _weatherController = [[IIIWeatherController alloc] init];
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.cityNameLabel.text = nil;
+    self.searchBar.delegate = self;
+    self.collectionView.delegate = self;
+    self.collectionView.dataSource = self;
+    [self.searchBar becomeFirstResponder];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    IIIWeatherCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ForecastCell" forIndexPath:indexPath];
+    IIIForecast *forecast = _weatherController.forecasts[indexPath.item];
+    cell.forecast = forecast;
+    [cell updateViews];
+    return cell;
 }
-*/
+
+- (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return [[_weatherController forecasts] count];
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    NSString *zipCodeSearchQuery = self.searchBar.text;
+    [_weatherController searchWeatherWithZipcode:zipCodeSearchQuery completion:^(NSString *cityName, NSError *error) {
+        if (error) {
+            NSLog(@"Error fetching weather data with zip code: %@", error);
+            return;
+        }
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.cityNameLabel.text = cityName;
+            [[self collectionView] reloadData];
+            [self.searchBar resignFirstResponder];
+        });
+    }];
+}
 
 @end
