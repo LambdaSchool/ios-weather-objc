@@ -76,6 +76,10 @@
     
     self.cityNameLabel.text = forcast.cityName;
     cell.forcast = forcast;
+    NSString *imageName = forcast.icon;
+    UIImage *image = [UIImage imageNamed:imageName];
+    cell.imageView.image = image;
+    cell.tempLabel.text = [NSString stringWithFormat:@"%.f", forcast.temp];
     
     return cell;
 }
