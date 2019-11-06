@@ -79,7 +79,7 @@
     NSString *imageName = forcast.icon;
     UIImage *image = [UIImage imageNamed:imageName];
     cell.imageView.image = image;
-    cell.tempLabel.text = [NSString stringWithFormat:@"%.f", forcast.temp];
+    cell.tempLabel.text = [NSString stringWithFormat:@"%.f°F with %@", forcast.temp, forcast.weatherDescription];
     
     return cell;
 }

@@ -17,7 +17,7 @@
         NSString *imageName = self.forcast.icon;
         UIImage *image = [UIImage imageNamed:imageName];
         self.imageView.image = image;
-        self.tempLabel.text = [NSString stringWithFormat:@"%.f", self.forcast.temp];
+        self.tempLabel.text = [NSString stringWithFormat:@"%.f°F", self.forcast.temp];
     }
 }
 @end

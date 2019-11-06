@@ -13,10 +13,13 @@
 @property NSString *cityName;
 @property double temp;
 @property NSString *icon;
+@property NSString *weatherDescription;
 
 - (instancetype)initWithName:(NSString *)cityName
                         temp:(double)temp
-                       imageString:(NSString *)icon;
+                 imageString:(NSString *)icon
+          weatherDescription:(NSString *)weatherDescription;
+                
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 @end

@@ -7,16 +7,15 @@
 //
 
 #import "JLCOneDayForcast.h"
-#import "JLCWeather.h"
-
 
 @implementation JLCOneDayForcast
 
-- (instancetype)initWithName:(NSString *)cityName temp:(double)temp imageString:(NSString *)icon {
+- (instancetype)initWithName:(NSString *)cityName temp:(double)temp imageString:(NSString *)icon weatherDescription:(NSString *)weatherDescription {
     if (self = [super init]) {
         _cityName = cityName;
         _temp = temp;
         _icon = icon;
+        _weatherDescription = weatherDescription;
     }
     return self;
 }
@@ -29,9 +28,11 @@
     
     NSArray *weatherArray = dictionary[@"weather"];
     NSDictionary *individualWeatherDay = [weatherArray firstObject];
+    
     NSString *icon = individualWeatherDay[@"icon"];
+    NSString *weatherDescription = individualWeatherDay[@"description"];
     NSLog(@"ICON: %@", icon);
-    return [self initWithName:cityName temp:temp imageString:icon];
+    return [self initWithName:cityName temp:temp imageString:icon weatherDescription:weatherDescription];
 }
 
 @end
