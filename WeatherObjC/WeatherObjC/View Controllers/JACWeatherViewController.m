@@ -37,7 +37,6 @@ JACWeatherController *controller;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.collectionView setDelegate:self];
     [self.searchBar setDelegate:self];
 }
 
@@ -77,7 +76,7 @@ JACWeatherController *controller;
         cell = [nib objectAtIndex:0];
     }
     
-    [cell updateImageWithName:[NSString stringWithFormat:@"%@", _weather.imageName[indexPath.row]] temperature:[_weather.temperature objectAtIndex:[indexPath row]]];
+    [cell updateImageWithName:[NSString stringWithFormat:@"%@", _weather.imageName[indexPath.row]] temperature:[NSString stringWithFormat:@"%@", [_weather.temperature objectAtIndex:[indexPath row]]]];
     
     return cell;
 }

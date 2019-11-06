@@ -60,11 +60,15 @@
                                             <constraint firstAttribute="trailing" secondItem="H0L-BW-bM6" secondAttribute="trailing" id="l1h-hm-AXR"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="temperatureLabel" destination="hq6-BJ-c95" id="YmD-Uh-AB6"/>
-                                            <outlet property="weatherImageView" destination="H0L-BW-bM6" id="dJi-Gd-BCd"/>
+                                            <outlet property="temperatureLabel" destination="hq6-BJ-c95" id="16l-Ol-jvz"/>
+                                            <outlet property="weatherImageView" destination="H0L-BW-bM6" id="CdT-mE-VPZ"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="JPJ-me-L2z"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="UgC-S9-FmO"/>
+                                </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter zip code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PGj-Aa-u93">
                                 <rect key="frame" x="152" y="128" width="110" height="21"/>
