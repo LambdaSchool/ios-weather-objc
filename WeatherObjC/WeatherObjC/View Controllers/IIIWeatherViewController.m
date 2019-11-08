@@ -7,12 +7,15 @@
 //
 
 #import "IIIWeatherViewController.h"
+#import "IIIWeatherCollectionViewCell.h"
+#import "IIIForecastFetcher.h"
+#import "IIIForecast.h"
 
 @interface IIIWeatherViewController ()
 
-@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UILabel *cityNameLabel;
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+
+@property IIIForecastFetcher *forecastFetcher;
 
 @end
 
@@ -20,17 +23,35 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self.searchBar setDelegate:self];
+    [self.collectionView setDataSource:self];
+    
+    _forecastFetcher = [[IIIForecastFetcher alloc] init];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return [[self.forecastFetcher forecasts] count];
 }
-*/
+
+- (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    IIIWeatherCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"WeatherCell" forIndexPath:indexPath];
+    
+    // Configure the cell
+    IIIForecast *forecast = [[self.forecastFetcher forecasts] objectAtIndex:[indexPath row]];
+    [[cell weatherImageView] setImage:[forecast image]];
+    [[cell temperatureLabel] setText:[NSString stringWithFormat:@"%f", forecast.temp]];
+    
+    return cell;
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    NSString *searchTerm = searchBar.text;
+    [_forecastFetcher fetchForecasts:searchTerm completionHandler:^(NSArray *forecasts, NSError *error) {
+        [self.collectionView reloadData];
+    }];
+}
 
 @end
