@@ -14,6 +14,14 @@ static NSString *key = @"96e7fb979b9a0d14d2aee9c916a901fd";
 
 @implementation IIIForecastFetcher
 
+- (instancetype)init
+{
+    if (self = [super init]) {
+        _forecasts = [[NSArray alloc] init];
+    }
+    return self;
+}
+
 - (void)fetchForecasts:(NSString *)city completionHandler:(ForecastFetcherCompletionHandler)completionHandler
 {
     NSURLComponents *URLComponents = [[NSURLComponents alloc] initWithString:ForecastFetcherBaseURLString];
@@ -61,6 +69,8 @@ static NSString *key = @"96e7fb979b9a0d14d2aee9c916a901fd";
             IIIForecast *forecast = [[IIIForecast alloc] initWithDictionary:dictionary Name:city];
             [forecasts addObject:forecast];
         }
+        
+        self.forecasts = forecasts;
         
         dispatch_async(dispatch_get_main_queue(), ^{
             completionHandler(forecasts, nil);

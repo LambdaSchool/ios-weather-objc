@@ -12,6 +12,8 @@ typedef void (^ForecastFetcherCompletionHandler)(NSArray *forecasts, NSError *er
 
 @interface IIIForecastFetcher : NSObject
 
-- (void)fetchForecasts:(id)city completionHandler:(ForecastFetcherCompletionHandler)completionHandler;
+- (void)fetchForecasts:(NSString *)city completionHandler:(ForecastFetcherCompletionHandler)completionHandler;
+
+@property (nonatomic) NSArray *forecasts;
 
 @end

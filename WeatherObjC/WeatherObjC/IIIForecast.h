@@ -13,7 +13,7 @@
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary Name:(NSString *)name;
 
 @property (nonatomic, readonly, copy) NSString *name;
-@property (nonatomic, readonly) NSNumber *temp;
+@property (nonatomic, readonly) double temp;
 @property (nonatomic, readonly) UIImage *image;
 
 @end

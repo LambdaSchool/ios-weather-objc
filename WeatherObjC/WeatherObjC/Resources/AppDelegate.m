@@ -18,10 +18,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    IIIForecastFetcher *forecastFetcher = [[IIIForecastFetcher alloc] init];
-    [forecastFetcher fetchForecasts:@"Delray Beach" completionHandler:^(NSArray *forecasts, NSError *error) {
-        NSLog(@"%@", forecasts);
-    }];
+//    IIIForecastFetcher *forecastFetcher = [[IIIForecastFetcher alloc] init];
+//    [forecastFetcher fetchForecasts:@"Delray Beach" completionHandler:^(NSArray *forecasts, NSError *error) {
+//        NSLog(@"%@", forecasts);
+//    }];
     return YES;
 }
 

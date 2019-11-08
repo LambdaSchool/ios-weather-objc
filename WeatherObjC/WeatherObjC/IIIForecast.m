@@ -14,7 +14,7 @@
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary Name:(NSString *)name
 {
     if (self = [super init]) {
-        NSNumber *temp = [[dictionary objectForKey:@"main"] objectForKey:@"temp"];
+        double temp = [[[dictionary objectForKey:@"main"] objectForKey:@"temp"] doubleValue];
         NSString *icon = [[[dictionary objectForKey:@"weather"] objectAtIndex:0] objectForKey:@"icon"];
         
         _temp = temp;
