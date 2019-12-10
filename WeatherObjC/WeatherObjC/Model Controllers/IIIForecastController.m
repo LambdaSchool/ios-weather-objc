@@ -14,6 +14,15 @@
 static NSString *const baseURLString = @"api.openweathermap.org/data/2.5/forecast";
 static NSString *const defaultApiKey = @"7f0a6369a06918fc7010f1239b0e0d43";
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _forecasts = [[NSMutableArray alloc] init];
+    }
+    return self;
+}
+
 - (void)searchCityWithZipCode:(NSString *)zipCode
                    completion:(void (^)(NSArray *Forecasts, NSError *error))completion {
     
@@ -54,13 +63,15 @@ static NSString *const defaultApiKey = @"7f0a6369a06918fc7010f1239b0e0d43";
         }
 
         NSArray *results = json[@"list"];
-        NSMutableArray *forecasts = [[NSMutableArray alloc] init];
-        
+        NSDictionary *cityContainer = json[@"city"];
+        NSString *cityName = cityContainer[@"name"];
+                
         for (NSDictionary *dictionary in results) {
-            
+            IIIForecast *forecast = [[IIIForecast alloc] initwithDictionary:dictionary cityName:cityName];
+            [self.forecasts addObject:forecast];
         }
-        
-        
+        completion(self.forecasts, nil);
+
     }];
     [task resume];
      

@@ -7,10 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "IIIForecast.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface IIIForecastController : NSObject
+
+@property NSMutableArray *forecasts;
 
 - (void)searchCityWithZipCode:(NSString *)zipCode
                    completion:(void (^)(NSArray *Forecasts, NSError *error))completion;
