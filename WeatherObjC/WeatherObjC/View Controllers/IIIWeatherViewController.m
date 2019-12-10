@@ -8,6 +8,8 @@
 
 #import "IIIWeatherViewController.h"
 #import "IIIForcastController.h"
+#import "IIIWeatherCollectionViewCell.h"
+#import "IIIForcast.h"
 
 @interface IIIWeatherViewController ()
 
@@ -32,19 +34,33 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self.collectionView setDataSource:self];
+    [self.searchBar setDelegate:self];
+    
     [self.controller getForcastForZipCode:@"94102" completion:^(NSError *error) {
         NSLog(@"Forcasts: %@", self.controller.forcasts);
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.collectionView reloadData];
+        });
     }];
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark - Table view data source
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return [[self.controller forcasts] count];
 }
-*/
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    IIIWeatherCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"WeatherCell" forIndexPath:indexPath];
+    
+    IIIForcast *forcast = self.controller.forcasts[indexPath.row];
+    
+    [cell setForcast:forcast];
+    
+    return cell;
+}
 
 @end
