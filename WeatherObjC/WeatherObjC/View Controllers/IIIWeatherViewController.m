@@ -7,6 +7,7 @@
 //
 
 #import "IIIWeatherViewController.h"
+#import "IIIForcastController.h"
 
 @interface IIIWeatherViewController ()
 
@@ -14,13 +15,26 @@
 @property (weak, nonatomic) IBOutlet UILabel *cityNameLabel;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
+@property IIIForcastController *controller;
+
 @end
 
 @implementation IIIWeatherViewController
 
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        _controller = [[IIIForcastController alloc] init];
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self.controller getForcastForZipCode:@"94102" completion:^(NSError *error) {
+        NSLog(@"Forcasts: %@", self.controller.forcasts);
+    }];
 }
 
 /*
