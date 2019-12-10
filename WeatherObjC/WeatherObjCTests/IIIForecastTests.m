@@ -31,7 +31,16 @@
     
     NSLog(@"Forecast: %@", json);
     
-    IIIForecast *forecast = [[IIIForecast alloc] initwithDictionary:json cityName:@"Mountain View"];
+    NSArray *results = json[@"list"];
+    NSDictionary *sample = results[0];
+    
+    IIIForecast *forecast = [[IIIForecast alloc] initwithDictionary:sample cityName:@"Mountain View"];
+    
+    
+    XCTAssertNotNil(forecast.cityName);
+    XCTAssertNotNil(forecast.temperature);
+    XCTAssertNotNil(forecast.date);
+    XCTAssertNotNil(forecast.icon);
     
     
     

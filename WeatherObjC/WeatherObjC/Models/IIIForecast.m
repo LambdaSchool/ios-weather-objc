@@ -35,7 +35,8 @@
     
     NSNumber *dateNumber = dictionary[@"dt"];
     
-    NSDictionary *iconContainer = dictionary[@"weather"];
+    NSArray *iconArrayContainer = dictionary[@"weather"];
+    NSDictionary *iconContainer = iconArrayContainer[0];
     NSString *iconString = iconContainer[@"icon"];
     
     // convert dt into NSDate
@@ -48,7 +49,7 @@
     // Make URL from icon string
     NSString *iconSizeString = @"@2x";
     NSURL *iconBaseURL = [NSURL URLWithString:@"https://openweathermap.org/img/wn/"];
-    NSURL *iconURL = [iconBaseURL URLByAppendingPathComponent:(@"%@%@", iconString, iconSizeString)];
+    NSURL *iconURL = [iconBaseURL URLByAppendingPathComponent:[NSString stringWithFormat:@"%@\%@", iconString, iconSizeString]];
     iconURL = [iconURL URLByAppendingPathExtension:@"png"];
     
     NSLog(@"icon URL: %@", iconURL);
