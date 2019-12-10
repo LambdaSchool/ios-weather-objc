@@ -7,14 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface JLRDailyForecast : NSObject
 
-@property NSString *cityName;
-@property NSNumber *temp;
-@property NSString *forecastImage;
+@property (nonatomic, copy, readonly) NSString *cityName;
+@property (nonatomic, copy, readonly) NSNumber *temp;
+@property (nonatomic, copy, readonly) UIImage *forecastImage;
 
 - (instancetype)initWithName:(NSString *)cityName
                         temp:(NSNumber *)temp

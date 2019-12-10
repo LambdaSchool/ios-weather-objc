@@ -8,9 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@class JLRDailyForecast;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface IIIWeatherCollectionViewCell : UICollectionViewCell
+
+- (void)updateViews;
+
+@property (nonatomic, strong) JLRDailyForecast *forecast;
 
 @end
 

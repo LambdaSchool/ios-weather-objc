@@ -18,7 +18,7 @@
     {
         _cityName = cityName;
         _temp = temp;
-        _forecastImage = forecastImage;
+        _forecastImage = [UIImage imageNamed: forecastImage];
     }
     return self;
 }
