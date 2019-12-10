@@ -7,11 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JLRDailyForecastController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface IIIWeatherViewController : UIViewController
+    <UISearchBarDelegate, UICollectionViewDataSource>
 
+@property JLRDailyForecastController *controller;
+    
 @end
 
 NS_ASSUME_NONNULL_END

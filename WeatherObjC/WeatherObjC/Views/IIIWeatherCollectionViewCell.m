@@ -7,6 +7,7 @@
 //
 
 #import "IIIWeatherCollectionViewCell.h"
+#import "JLRDailyForecast.h"
 
 @interface IIIWeatherCollectionViewCell()
 
@@ -18,4 +19,18 @@
 
 @implementation IIIWeatherCollectionViewCell
 
-@end
+- (void)setForecast:(JLRDailyForecast *)forecast
+{
+    _forecast = forecast;
+    [self updateViews];
+}
+
+- (void)updateViews
+{
+    if (self.forecast)
+    {
+        self.weatherImageView.image = self.forecast.forecastImage;
+        self.temperatureLabel.text = self.forecast.cityName;
+    }
+}
+    @end
