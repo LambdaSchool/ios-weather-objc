@@ -45,6 +45,7 @@
     
     [self.collectionView setDataSource:self];
     [self.searchBar setDelegate:self];
+    [self.cityNameLabel setText:nil];
 }
 
 #pragma mark - Search bar delegate
@@ -60,6 +61,7 @@
         //NSLog(@"Forcasts: %@", self.controller.forcasts);
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.collectionView reloadData];
+            [self.cityNameLabel setText:[self.controller.forcasts[0] city]];
         });
     }];
     
