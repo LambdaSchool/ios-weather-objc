@@ -15,10 +15,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property NSString *cityName;
 @property NSNumber *temperature;
+@property NSString *date;
 @property UIImage *icon;
 
 - (instancetype)initWithCityName:(NSString *)cityName
                      temperature:(NSNumber *)temperature
+                            date:(NSString *)date
                             icon:(UIImage *)icon;
 
 - (instancetype)initwithDictionary:(NSDictionary *)dictionary

@@ -22,6 +22,19 @@
     
     XCTAssertNotNil(data);
     
+    NSError *error = nil;
+    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+    
+    if (error) {
+        XCTFail(@"Error: %@", error);
+    }
+    
+    NSLog(@"Forecast: %@", json);
+    
+    IIIForecast *forecast = [[IIIForecast alloc] initwithDictionary:json cityName:@"Mountain View"];
+    
+    
+    
 }
 
 
