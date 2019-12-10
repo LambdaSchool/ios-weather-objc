@@ -27,7 +27,9 @@
 - (void)updateViews {
     if (!self.forcast) return;
     
-    [self.temperatureLabel setText:[NSString stringWithFormat:@"%0.2f K", self.forcast.temperature]];
+    float fahrenheit = self.forcast.temperature * (9.0/5.0) - 459.67;
+    
+    [self.temperatureLabel setText:[NSString stringWithFormat:@"%0.1f K", fahrenheit]];
 }
 
 @end
