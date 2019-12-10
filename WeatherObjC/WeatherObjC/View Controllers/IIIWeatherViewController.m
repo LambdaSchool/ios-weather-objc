@@ -37,14 +37,24 @@
     
     [self.collectionView setDataSource:self];
     [self.searchBar setDelegate:self];
+}
+
+#pragma mark - Search bar delegate
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     
-    [self.controller getForcastForZipCode:@"94102" completion:^(NSError *error) {
-        NSLog(@"Forcasts: %@", self.controller.forcasts);
+    [self.controller getForcastForZipCode:[searchBar text] completion:^(NSError *error) {
+        if (error) {
+            NSLog(@"Error: %@", error);
+            return;
+        }
         
+        //NSLog(@"Forcasts: %@", self.controller.forcasts);
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.collectionView reloadData];
         });
     }];
+    
 }
 
 #pragma mark - Table view data source
