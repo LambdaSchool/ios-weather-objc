@@ -12,7 +12,7 @@
 @interface IIIForcast : NSObject
 
 @property NSString *city;
-@property Float32 temperature;
+@property float temperature;
 @property UIImage *image;
 
 - (instancetype)initWithCity:(NSString *)city

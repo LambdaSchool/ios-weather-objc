@@ -29,7 +29,9 @@
     
     float fahrenheit = self.forcast.temperature * (9.0/5.0) - 459.67;
     
-    [self.temperatureLabel setText:[NSString stringWithFormat:@"%0.1f K", fahrenheit]];
+    [self.temperatureLabel setText:[NSString stringWithFormat:@"%0.1f F", fahrenheit]];
+    
+    [self.weatherImageView setImage:self.forcast.image];
 }
 
 @end
