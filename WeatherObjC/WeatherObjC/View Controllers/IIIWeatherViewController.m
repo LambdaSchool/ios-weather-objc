@@ -7,6 +7,9 @@
 //
 
 #import "IIIWeatherViewController.h"
+#import "IIIForcastController.h"
+#import "IIIWeatherCollectionViewCell.h"
+#import "IIIForcast.h"
 
 @interface IIIWeatherViewController ()
 
@@ -14,23 +17,70 @@
 @property (weak, nonatomic) IBOutlet UILabel *cityNameLabel;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
+@property IIIForcastController *controller;
+
 @end
 
 @implementation IIIWeatherViewController
 
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        _controller = [[IIIForcastController alloc] init];
+    }
+    return self;
+}
+
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        _controller = [[IIIForcastController alloc] init];
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self.collectionView setDataSource:self];
+    [self.searchBar setDelegate:self];
+    [self.cityNameLabel setText:nil];
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark - Search bar delegate
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    
+    [self.controller getForcastForZipCode:[searchBar text] completion:^(NSError *error) {
+        if (error) {
+            NSLog(@"Error: %@", error);
+            return;
+        }
+        
+        //NSLog(@"Forcasts: %@", self.controller.forcasts);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.collectionView reloadData];
+            [self.cityNameLabel setText:[self.controller.forcasts[0] city]];
+        });
+    }];
+    
 }
-*/
+
+#pragma mark - Table view data source
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return [[self.controller forcasts] count];
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    IIIWeatherCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"WeatherCell" forIndexPath:indexPath];
+    
+    IIIForcast *forcast = self.controller.forcasts[indexPath.row];
+    
+    [cell setForcast:forcast];
+    
+    return cell;
+}
 
 @end
