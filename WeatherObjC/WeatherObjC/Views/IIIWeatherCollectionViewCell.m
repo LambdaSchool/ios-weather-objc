@@ -22,6 +22,7 @@
     
     self.weatherImageView.image = self.forecast.icon;
     self.temperatureLabel.text = [NSString stringWithFormat:@"%0.1f ℉", self.forecast.temperature.floatValue];
+    self.timeLabel.text = self.forecast.date;
     
 }
 

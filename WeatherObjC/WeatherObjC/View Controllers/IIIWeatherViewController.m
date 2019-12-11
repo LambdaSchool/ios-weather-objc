@@ -45,6 +45,16 @@
     [super viewDidLoad];
 
     [self.searchBar setDelegate:self];
+    
+    self.cityNameLabel.text = @"";
+    
+    IIIForecast *firstForecast = [self.forecasts firstObject];
+    if (firstForecast) {
+        if (firstForecast.cityName) {
+            self.cityNameLabel.text = firstForecast.cityName;
+        }
+    }
+    
     [self.collectionView setDataSource:self];
 }
 
@@ -74,10 +84,9 @@
             
         dispatch_async(dispatch_get_main_queue(), ^{
             self.forecasts = forecasts;
+            self.cityNameLabel.text = [[forecasts firstObject] cityName];
             [self.collectionView reloadData];
         });
-        
-        NSLog(@"Search result: %@", forecasts);
         
     }];
 }

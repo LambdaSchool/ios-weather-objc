@@ -41,7 +41,7 @@
     
     // convert dt into NSDate
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss zzz"];
+    [dateFormatter setDateFormat:@"HH : MM/dd"];
     
     NSDate *date = [NSDate dateWithTimeIntervalSince1970:dateNumber.intValue];
     NSString *dateString = [dateFormatter stringFromDate:date];
@@ -52,7 +52,7 @@
     NSURL *iconURL = [iconBaseURL URLByAppendingPathComponent:[NSString stringWithFormat:@"%@\%@", iconString, iconSizeString]];
     iconURL = [iconURL URLByAppendingPathExtension:@"png"];
     
-    NSLog(@"icon URL: %@", iconURL);
+    //NSLog(@"icon URL: %@", iconURL);
     
     // Make UIImage from URL
     NSData *iconData = [[NSData alloc] initWithContentsOfURL:iconURL];

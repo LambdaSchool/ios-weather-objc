@@ -39,7 +39,7 @@ static NSString *const defaultApiKey = @"7f0a6369a06918fc7010f1239b0e0d43";
     [components setQueryItems:@[searchZipCode, apiKey, unit]];
      
     NSURL *url = [components URL];
-    NSLog(@"URL: %@", url);
+    //NSLog(@"URL: %@", url);
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
     NSURLSessionDataTask *task = [NSURLSession.sharedSession dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
