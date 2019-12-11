@@ -10,12 +10,13 @@
 
 @class IIIForecast;
 
-NS_ASSUME_NONNULL_BEGIN
 
 @interface IIIWeatherCollectionViewCell : UICollectionViewCell
 
-@property IIIForecast *forecast;
+@property (weak, nonatomic) IBOutlet UIImageView *weatherImageView;
+@property (weak, nonatomic) IBOutlet UILabel *temperatureLabel;
+
+@property (nonatomic) IIIForecast *forecast;
 
 @end
 
-NS_ASSUME_NONNULL_END

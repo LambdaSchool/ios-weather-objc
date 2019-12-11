@@ -35,7 +35,8 @@ static NSString *const defaultApiKey = @"7f0a6369a06918fc7010f1239b0e0d43";
     
     NSURLQueryItem *searchZipCode = [NSURLQueryItem queryItemWithName:@"zip" value:zipCountryCode];
     NSURLQueryItem *apiKey = [NSURLQueryItem queryItemWithName:@"APPID" value:defaultApiKey];
-    [components setQueryItems:@[searchZipCode, apiKey]];
+    NSURLQueryItem *unit = [NSURLQueryItem queryItemWithName:@"units" value:@"imperial"];
+    [components setQueryItems:@[searchZipCode, apiKey, unit]];
      
     NSURL *url = [components URL];
     NSLog(@"URL: %@", url);
