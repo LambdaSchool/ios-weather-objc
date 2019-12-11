@@ -8,10 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
+@class IIIForecast;
+
 
 @interface IIIWeatherCollectionViewCell : UICollectionViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *weatherImageView;
+@property (weak, nonatomic) IBOutlet UILabel *temperatureLabel;
+
+@property (nonatomic) IIIForecast *forecast;
+
 @end
 
-NS_ASSUME_NONNULL_END
