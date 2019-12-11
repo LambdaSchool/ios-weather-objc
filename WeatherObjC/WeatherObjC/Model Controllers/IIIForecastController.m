@@ -11,7 +11,7 @@
 
 @implementation IIIForecastController
 
-static NSString *const baseURLString = @"api.openweathermap.org/data/2.5/forecast";
+static NSString *const baseURLString = @"https://api.openweathermap.org/data/2.5/forecast";
 static NSString *const defaultApiKey = @"7f0a6369a06918fc7010f1239b0e0d43";
 
 - (instancetype)init
@@ -24,11 +24,16 @@ static NSString *const defaultApiKey = @"7f0a6369a06918fc7010f1239b0e0d43";
 }
 
 - (void)searchCityWithZipCode:(NSString *)zipCode
-                   completion:(void (^)(NSArray *Forecasts, NSError *error))completion {
+                   completion:(void (^)(NSArray *forecasts, NSError *error))completion {
     
     NSURL *baseURL = [NSURL URLWithString:baseURLString];
     NSURLComponents *components = [NSURLComponents componentsWithURL:baseURL resolvingAgainstBaseURL:YES];
-    NSURLQueryItem *searchZipCode = [NSURLQueryItem queryItemWithName:@"zip" value:zipCode];
+    
+    // Add country code to zip query
+    NSString *countryCode = @",us";
+    NSString *zipCountryCode = [NSString stringWithFormat:@"%@\%@", zipCode, countryCode];
+    
+    NSURLQueryItem *searchZipCode = [NSURLQueryItem queryItemWithName:@"zip" value:zipCountryCode];
     NSURLQueryItem *apiKey = [NSURLQueryItem queryItemWithName:@"APPID" value:defaultApiKey];
     [components setQueryItems:@[searchZipCode, apiKey]];
      
