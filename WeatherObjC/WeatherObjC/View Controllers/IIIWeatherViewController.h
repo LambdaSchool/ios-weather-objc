@@ -6,11 +6,15 @@
 //  Copyright © 2019 Lambda School. All rights reserved.
 //
 
+
 #import <UIKit/UIKit.h>
+#import "IIIForecastController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface IIIWeatherViewController : UIViewController
+@interface IIIWeatherViewController : UIViewController<UISearchBarDelegate, UICollectionViewDataSource>
+
+@property IIIForecastController *forecastController;
 
 @end
 

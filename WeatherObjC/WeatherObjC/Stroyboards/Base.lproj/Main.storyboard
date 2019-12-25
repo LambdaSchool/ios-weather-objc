@@ -41,11 +41,15 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H0L-BW-bM6">
                                                     <rect key="frame" x="0.0" y="0.0" width="150" height="100"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="width" secondItem="H0L-BW-bM6" secondAttribute="height" multiplier="3:2" id="SBO-rU-6iH"/>
                                                         <constraint firstAttribute="height" constant="100" id="aXU-Ud-ffM"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hq6-BJ-c95">
-                                                    <rect key="frame" x="54" y="116" width="42" height="21"/>
+                                                    <rect key="frame" x="0.0" y="116" width="150" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="hq6-BJ-c95" secondAttribute="height" multiplier="50:7" id="mOR-NO-3ec"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -61,8 +65,10 @@
                                             <constraint firstAttribute="trailing" secondItem="H0L-BW-bM6" secondAttribute="trailing" id="l1h-hm-AXR"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="temperatureLabel" destination="hq6-BJ-c95" id="YmD-Uh-AB6"/>
-                                            <outlet property="weatherImageView" destination="H0L-BW-bM6" id="dJi-Gd-BCd"/>
+                                            <outlet property="otherTemperatureLabel" destination="hq6-BJ-c95" id="Q6t-Hb-NjY"/>
+                                            <outlet property="temperatureLabel" destination="hq6-BJ-c95" id="0mj-jc-GDj"/>
+                                            <outlet property="weatherIconImageView" destination="H0L-BW-bM6" id="bQ8-1e-6D8"/>
+                                            <outlet property="weatherImageView" destination="H0L-BW-bM6" id="oKz-MM-6aq"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
