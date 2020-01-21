@@ -23,9 +23,18 @@
 
 - (instancetype)initWithNameAndDictionary:(NSString *)name dictionary:(NSDictionary *)dictionary
 {
-    NSString *cityName = dictionary[@"name"];
-    NSNumber *temp = dictionary[@"temp"];
-    NSString *imageName = dictionary[@"icon"];
+    NSString *cityName = name;
+
+    NSDictionary* main = dictionary[@"main"];
+    NSNumber *temp = main[@"temp"];
+
+    NSArray *weatherDictionaries = dictionary[@"weather"];
+    NSString *imageName = nil;
+
+    for (NSDictionary* weatherDictionary in weatherDictionaries) {
+        imageName = weatherDictionary[@"icon"];
+    }
+
     UIImage *image = [UIImage imageNamed:imageName];
 
     return [self initWithName:cityName temp:temp image:image];

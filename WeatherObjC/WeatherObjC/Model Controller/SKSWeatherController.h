@@ -12,6 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SKSWeatherController : NSObject
 
+@property NSMutableArray *forecasts;
+
+- (void)searchForForecastsByZipCode:(NSString *)zipcode completion:(void (^)(NSError *error))completion;
+
 @end
 
 NS_ASSUME_NONNULL_END
