@@ -7,10 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SKSWeather : NSObject
+
+@property NSString* name;
+@property NSNumber* temp;
+@property UIImage *image;
+
+- (instancetype)initWithName:(NSString *)name temp:(NSNumber *)temp image:(UIImage *)image;
+
+- (instancetype)initWithNameAndDictionary:(NSString *)name dictionary:(NSDictionary *)dictionary;
 
 @end
 
