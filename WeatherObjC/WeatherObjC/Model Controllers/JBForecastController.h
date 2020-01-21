@@ -15,4 +15,7 @@
 
 -(instancetype)init;
 
+-(void)fetchForecastsForZipCode:(NSString *)zipCode
+                     completion:(void (^)(NSArray *forecasts, NSError *error))completion;
+
 @end
