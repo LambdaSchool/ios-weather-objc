@@ -18,10 +18,33 @@
 
 @implementation IIIWeatherViewController
 
+- (instancetype)initWithCoder:(NSCoder *)coder {
+    self = [super initWithCoder:coder];
+    if (self) {
+        _forecastController = [[JBForecastController alloc] init];
+    }
+    return self;
+}
+
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        _forecastController = [[JBForecastController alloc] init];
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.collectionView.dataSource = self;
+    self.searchBar.delegate = self;
 }
+
+#pragma mark - Collection View Data Source
+
+
+
+#pragma mark - Search Bar Delegate
 
 /*
 #pragma mark - Navigation
