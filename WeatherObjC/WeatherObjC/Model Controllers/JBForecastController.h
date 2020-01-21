@@ -18,4 +18,7 @@
 -(void)fetchForecastsForZipCode:(NSString *)zipCode
                      completion:(void (^)(NSArray *forecasts, NSError *error))completion;
 
+-(void)fetchIconImageForCode:(NSString *)iconCode
+                  completion:(void (^)(UIImage *image, NSError *error))completion;
+
 @end

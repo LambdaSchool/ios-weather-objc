@@ -67,4 +67,27 @@ static NSString *appID = @"88cbbc399e8121892ebc5e196a66400c";
         completion(forecasts, nil);
     }] resume];
 }
+
+-(void)fetchIconImageForCode:(NSString *)iconCode
+                  completion:(void (^)(UIImage *image, NSError *error))completion {
+    NSString *iconFileString = [NSString stringWithFormat:@"%@@2x.png", iconCode];
+    NSURL *url = [[NSURL URLWithString:baseIconURLString] URLByAppendingPathComponent:iconFileString];
+
+    // TODO: remove debug line below
+    NSLog(@"icon url: %@", url);
+
+    [[NSURLSession.sharedSession dataTaskWithURL:url
+                               completionHandler:^(NSData * _Nullable data,
+                                                   NSURLResponse * _Nullable response,
+                                                   NSError * _Nullable error) {
+        if (error) {
+            completion(nil, error);
+            return;
+        }
+
+        UIImage *image = [[UIImage alloc] initWithData:data];
+        completion(image, nil);
+    }] resume];
+}
+
 @end
