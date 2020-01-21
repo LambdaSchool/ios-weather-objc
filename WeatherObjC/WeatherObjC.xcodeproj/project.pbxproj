@@ -14,6 +14,8 @@
 		467D7F762163767000E7FF73 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 467D7F752163767000E7FF73 /* main.m */; };
 		82A6A9EB224AC10200A92D77 /* IIIWeatherCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A6A9EA224AC10200A92D77 /* IIIWeatherCollectionViewCell.m */; };
 		82A6A9EF224AC21300A92D77 /* IIIWeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A6A9EE224AC21300A92D77 /* IIIWeatherViewController.m */; };
+		C09747C523D7A4F600DD739F /* WeatherList.json in Resources */ = {isa = PBXBuildFile; fileRef = C09747C323D7A4F600DD739F /* WeatherList.json */; };
+		C09747C623D7A4F600DD739F /* Weather.json in Resources */ = {isa = PBXBuildFile; fileRef = C09747C423D7A4F600DD739F /* Weather.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		82A6A9EA224AC10200A92D77 /* IIIWeatherCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IIIWeatherCollectionViewCell.m; sourceTree = "<group>"; };
 		82A6A9ED224AC21300A92D77 /* IIIWeatherViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IIIWeatherViewController.h; sourceTree = "<group>"; };
 		82A6A9EE224AC21300A92D77 /* IIIWeatherViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IIIWeatherViewController.m; sourceTree = "<group>"; };
+		C09747C323D7A4F600DD739F /* WeatherList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = WeatherList.json; sourceTree = "<group>"; };
+		C09747C423D7A4F600DD739F /* Weather.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Weather.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,8 @@
 		82A6A9E6224ABF6E00A92D77 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C09747C423D7A4F600DD739F /* Weather.json */,
+				C09747C323D7A4F600DD739F /* WeatherList.json */,
 				467D7F662163766F00E7FF73 /* AppDelegate.h */,
 				467D7F672163766F00E7FF73 /* AppDelegate.m */,
 				467D7F6F2163767000E7FF73 /* Assets.xcassets */,
@@ -167,7 +173,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				467D7F732163767000E7FF73 /* LaunchScreen.storyboard in Resources */,
+				C09747C523D7A4F600DD739F /* WeatherList.json in Resources */,
 				467D7F702163767000E7FF73 /* Assets.xcassets in Resources */,
+				C09747C623D7A4F600DD739F /* Weather.json in Resources */,
 				467D7F6E2163766F00E7FF73 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
