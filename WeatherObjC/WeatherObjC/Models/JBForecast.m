@@ -31,7 +31,9 @@
     double temp = [[mainDict valueForKey:@"temp"] doubleValue];
     NSString *iconCode = firstWeatherObject[@"icon"];
 
-    return [self initWithCityName:cityName temperatureInF:temp iconCode:iconCode];
+    return [self initWithCityName:cityName
+                   temperatureInF:temp
+                         iconCode:iconCode];
 }
 
 @end

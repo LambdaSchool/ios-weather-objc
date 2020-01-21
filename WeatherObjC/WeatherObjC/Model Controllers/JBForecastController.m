@@ -10,4 +10,15 @@
 
 @implementation JBForecastController
 
+static NSString *baseURLString = @"https://api.openweathermap.org/data/2.5/forecast";
+static NSString *appID = @"88cbbc399e8121892ebc5e196a66400c";
+
+-(instancetype)init {
+    self = [super init];
+    if (self) {
+        _forecasts = @[];
+    }
+    return self;
+}
+
 @end

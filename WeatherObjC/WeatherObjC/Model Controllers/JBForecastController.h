@@ -11,4 +11,8 @@
 
 @interface JBForecastController : NSObject
 
+@property NSArray *forecasts;
+
+-(instancetype)init;
+
 @end
