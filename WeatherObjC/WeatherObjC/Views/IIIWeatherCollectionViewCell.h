@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JBForecast.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface IIIWeatherCollectionViewCell : UICollectionViewCell
+
+@property (nonatomic) JBForecast *forecast;
 
 @end
 

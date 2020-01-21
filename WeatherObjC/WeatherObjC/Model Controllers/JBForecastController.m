@@ -11,7 +11,7 @@
 @implementation JBForecastController
 
 static NSString *baseURLString = @"https://api.openweathermap.org/data/2.5/forecast";
-static NSString *baseIconURLString = @"http://openweathermap.org/img/wn/";
+static NSString *baseIconURLString = @"https://openweathermap.org/img/wn/";
 static NSString *appID = @"88cbbc399e8121892ebc5e196a66400c";
 
 -(instancetype)init {
@@ -63,7 +63,8 @@ static NSString *appID = @"88cbbc399e8121892ebc5e196a66400c";
             [forecasts addObject:[[JBForecast alloc] initWithDictionary:forecastDict
                                                                cityName:cityName]];
         }
-
+        
+        self.forecasts = forecasts;
         completion(forecasts, nil);
     }] resume];
 }
@@ -72,9 +73,6 @@ static NSString *appID = @"88cbbc399e8121892ebc5e196a66400c";
                   completion:(void (^)(UIImage *image, NSError *error))completion {
     NSString *iconFileString = [NSString stringWithFormat:@"%@@2x.png", iconCode];
     NSURL *url = [[NSURL URLWithString:baseIconURLString] URLByAppendingPathComponent:iconFileString];
-
-    // TODO: remove debug line below
-    NSLog(@"icon url: %@", url);
 
     [[NSURLSession.sharedSession dataTaskWithURL:url
                                completionHandler:^(NSData * _Nullable data,

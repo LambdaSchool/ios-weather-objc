@@ -11,11 +11,12 @@
 @interface JBForecast : NSObject
 
 @property NSString *cityName;
-@property double temperatureInF;
+@property NSNumber *temperatureInF;
 @property NSString *iconCode;
+@property UIImage *iconImage;
 
 -(instancetype)initWithCityName:(NSString *)cityName
-                 temperatureInF:(double)temperatureInF
+                 temperatureInF:(NSNumber *)temperatureInF
                       iconCode:(NSString *)iconCode;
 
 -(instancetype)initWithDictionary:(NSDictionary *)resultDict

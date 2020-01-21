@@ -11,13 +11,14 @@
 @implementation JBForecast
 
 -(instancetype)initWithCityName:(NSString *)cityName
-                 temperatureInF:(double)temperatureInF
+                 temperatureInF:(NSNumber *)temperatureInF
                       iconCode:(NSString *)iconCode {
     self = [super init];
     if (self) {
         _cityName = cityName;
         _temperatureInF = temperatureInF;
         _iconCode = iconCode;
+        _iconImage = [UIImage imageNamed:iconCode];
     }
     return self;
 }
@@ -28,7 +29,7 @@
     NSArray *weatherArray = resultDict[@"weather"];
     NSDictionary *firstWeatherObject = [weatherArray firstObject];
 
-    double temp = [[mainDict valueForKey:@"temp"] doubleValue];
+    NSNumber *temp = [mainDict valueForKey:@"temp"];
     NSString *iconCode = firstWeatherObject[@"icon"];
 
     return [self initWithCityName:cityName
