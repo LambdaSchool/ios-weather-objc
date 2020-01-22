@@ -14,6 +14,8 @@
 		467D7F762163767000E7FF73 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 467D7F752163767000E7FF73 /* main.m */; };
 		82A6A9EB224AC10200A92D77 /* IIIWeatherCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A6A9EA224AC10200A92D77 /* IIIWeatherCollectionViewCell.m */; };
 		82A6A9EF224AC21300A92D77 /* IIIWeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A6A9EE224AC21300A92D77 /* IIIWeatherViewController.m */; };
+		958DA30323D7BAC40062FB7F /* IIIForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 958DA30223D7BAC40062FB7F /* IIIForecast.m */; };
+		958DA30723D7CD9E0062FB7F /* IIIForecastController.m in Sources */ = {isa = PBXBuildFile; fileRef = 958DA30623D7CD9E0062FB7F /* IIIForecastController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,10 @@
 		82A6A9EA224AC10200A92D77 /* IIIWeatherCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IIIWeatherCollectionViewCell.m; sourceTree = "<group>"; };
 		82A6A9ED224AC21300A92D77 /* IIIWeatherViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IIIWeatherViewController.h; sourceTree = "<group>"; };
 		82A6A9EE224AC21300A92D77 /* IIIWeatherViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IIIWeatherViewController.m; sourceTree = "<group>"; };
+		958DA30123D7BAC40062FB7F /* IIIForecast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IIIForecast.h; sourceTree = "<group>"; };
+		958DA30223D7BAC40062FB7F /* IIIForecast.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IIIForecast.m; sourceTree = "<group>"; };
+		958DA30523D7CD9E0062FB7F /* IIIForecastController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IIIForecastController.h; sourceTree = "<group>"; };
+		958DA30623D7CD9E0062FB7F /* IIIForecastController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IIIForecastController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +67,8 @@
 		467D7F652163766F00E7FF73 /* WeatherObjC */ = {
 			isa = PBXGroup;
 			children = (
+				958DA30423D7CD640062FB7F /* Model Controllers */,
+				958DA30023D7B9E50062FB7F /* Models */,
 				82A6A9EC224AC10600A92D77 /* Views */,
 				82A6A9E8224ABF7E00A92D77 /* View Controllers */,
 				82A6A9E7224ABF7600A92D77 /* Stroyboards */,
@@ -106,6 +114,24 @@
 				82A6A9EA224AC10200A92D77 /* IIIWeatherCollectionViewCell.m */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		958DA30023D7B9E50062FB7F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				958DA30123D7BAC40062FB7F /* IIIForecast.h */,
+				958DA30223D7BAC40062FB7F /* IIIForecast.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		958DA30423D7CD640062FB7F /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				958DA30523D7CD9E0062FB7F /* IIIForecastController.h */,
+				958DA30623D7CD9E0062FB7F /* IIIForecastController.m */,
+			);
+			path = "Model Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,6 +207,8 @@
 			files = (
 				467D7F762163767000E7FF73 /* main.m in Sources */,
 				467D7F682163766F00E7FF73 /* AppDelegate.m in Sources */,
+				958DA30723D7CD9E0062FB7F /* IIIForecastController.m in Sources */,
+				958DA30323D7BAC40062FB7F /* IIIForecast.m in Sources */,
 				82A6A9EB224AC10200A92D77 /* IIIWeatherCollectionViewCell.m in Sources */,
 				82A6A9EF224AC21300A92D77 /* IIIWeatherViewController.m in Sources */,
 			);
