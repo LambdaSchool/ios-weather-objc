@@ -7,6 +7,9 @@
 //
 
 #import "IIIWeatherViewController.h"
+#import "IIIWeatherCollectionViewCell.h"
+#import "IIIForecastController.h"
+#import "IIIForecast.h"
 
 @interface IIIWeatherViewController ()
 
@@ -18,9 +21,21 @@
 
 @implementation IIIWeatherViewController
 
+- (instancetype)initWithCoder:(NSCoder *)coder {
+
+    self = [super initWithCoder:coder];
+    if (self) {
+        _forecastController = [[IIIForecastController alloc] init];
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [_forecastController searchForForecastsWithZipCode:@"98034" completion:^(NSArray *forcasts, NSError *error) {
+        NSLog(@"VC: %@", error);
+    }];
 }
 
 /*
