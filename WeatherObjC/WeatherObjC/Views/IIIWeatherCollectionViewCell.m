@@ -19,20 +19,31 @@
 @implementation IIIWeatherCollectionViewCell
 
 static NSNumberFormatter *tempFormatter = nil;
+static NSDateFormatter *timeFormatter = nil;
 
 + (void)initialize {
     if (self == [IIIWeatherCollectionViewCell class]) {
         tempFormatter = [[NSNumberFormatter alloc] init];
         tempFormatter.maximumFractionDigits = 0;
         [tempFormatter setRoundingMode:NSNumberFormatterRoundHalfUp];
+
+        timeFormatter = [[NSDateFormatter alloc] init];
+        timeFormatter.calendar = [NSCalendar autoupdatingCurrentCalendar];
+        timeFormatter.timeZone = NSTimeZone.localTimeZone;
+        timeFormatter.dateStyle = NSDateFormatterShortStyle;
+        timeFormatter.timeStyle = NSDateFormatterShortStyle;
     }
 }
 
 -(void)setForecast:(JBForecast *)forecast {
     _forecast = forecast;
-    self.weatherImageView.image = forecast.iconImage;
+
     NSString *formattedTemp = [tempFormatter stringFromNumber:forecast.temperatureInF];
+    NSString *formattedTime = [timeFormatter stringFromDate:forecast.timestamp];
+
+    self.weatherImageView.image = forecast.iconImage;
     self.temperatureLabel.text = [NSString stringWithFormat:@"%@°F", formattedTemp];
+    self.timeLabel.text = formattedTime;
 }
 
 @end
