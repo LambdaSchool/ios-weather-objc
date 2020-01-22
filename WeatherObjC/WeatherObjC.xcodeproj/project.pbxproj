@@ -12,7 +12,9 @@
 		467D7F702163767000E7FF73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 467D7F6F2163767000E7FF73 /* Assets.xcassets */; };
 		467D7F732163767000E7FF73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 467D7F712163767000E7FF73 /* LaunchScreen.storyboard */; };
 		467D7F762163767000E7FF73 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 467D7F752163767000E7FF73 /* main.m */; };
-		82A6A9EB224AC10200A92D77 /* IIIWeatherCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A6A9EA224AC10200A92D77 /* IIIWeatherCollectionViewCell.m */; };
+		4FADBB9C23D7D1C40048BE43 /* IIIWeatherController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FADBB9B23D7D1C40048BE43 /* IIIWeatherController.m */; };
+		4FADBBA223D7D2D10048BE43 /* IIIForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FADBBA123D7D2D10048BE43 /* IIIForecast.m */; };
+		4FADBBA823D7DF300048BE43 /* IIIWeatherCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FADBBA723D7DF300048BE43 /* IIIWeatherCollectionViewCell.m */; };
 		82A6A9EF224AC21300A92D77 /* IIIWeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A6A9EE224AC21300A92D77 /* IIIWeatherViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -25,8 +27,12 @@
 		467D7F722163767000E7FF73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		467D7F742163767000E7FF73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		467D7F752163767000E7FF73 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		82A6A9E9224AC10200A92D77 /* IIIWeatherCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IIIWeatherCollectionViewCell.h; sourceTree = "<group>"; };
-		82A6A9EA224AC10200A92D77 /* IIIWeatherCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IIIWeatherCollectionViewCell.m; sourceTree = "<group>"; };
+		4FADBB9B23D7D1C40048BE43 /* IIIWeatherController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IIIWeatherController.m; sourceTree = "<group>"; };
+		4FADBBA023D7D2420048BE43 /* IIIWeatherController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IIIWeatherController.h; sourceTree = "<group>"; };
+		4FADBBA123D7D2D10048BE43 /* IIIForecast.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IIIForecast.m; sourceTree = "<group>"; };
+		4FADBBA323D7D2DE0048BE43 /* IIIForecast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IIIForecast.h; sourceTree = "<group>"; };
+		4FADBBA623D7DF300048BE43 /* IIIWeatherCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IIIWeatherCollectionViewCell.h; sourceTree = "<group>"; };
+		4FADBBA723D7DF300048BE43 /* IIIWeatherCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IIIWeatherCollectionViewCell.m; sourceTree = "<group>"; };
 		82A6A9ED224AC21300A92D77 /* IIIWeatherViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IIIWeatherViewController.h; sourceTree = "<group>"; };
 		82A6A9EE224AC21300A92D77 /* IIIWeatherViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IIIWeatherViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -45,6 +51,10 @@
 		467D7F5A2163766F00E7FF73 = {
 			isa = PBXGroup;
 			children = (
+				4FADBBA523D7D6740048BE43 /* Models */,
+				4FADBBA423D7D6580048BE43 /* Model Controllers */,
+				4FADBB9B23D7D1C40048BE43 /* IIIWeatherController.m */,
+				4FADBBA023D7D2420048BE43 /* IIIWeatherController.h */,
 				467D7F652163766F00E7FF73 /* WeatherObjC */,
 				467D7F642163766F00E7FF73 /* Products */,
 			);
@@ -67,6 +77,22 @@
 				82A6A9E6224ABF6E00A92D77 /* Resources */,
 			);
 			path = WeatherObjC;
+			sourceTree = "<group>";
+		};
+		4FADBBA423D7D6580048BE43 /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		4FADBBA523D7D6740048BE43 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4FADBBA123D7D2D10048BE43 /* IIIForecast.m */,
+				4FADBBA323D7D2DE0048BE43 /* IIIForecast.h */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		82A6A9E6224ABF6E00A92D77 /* Resources */ = {
@@ -102,8 +128,8 @@
 		82A6A9EC224AC10600A92D77 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				82A6A9E9224AC10200A92D77 /* IIIWeatherCollectionViewCell.h */,
-				82A6A9EA224AC10200A92D77 /* IIIWeatherCollectionViewCell.m */,
+				4FADBBA623D7DF300048BE43 /* IIIWeatherCollectionViewCell.h */,
+				4FADBBA723D7DF300048BE43 /* IIIWeatherCollectionViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -180,9 +206,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				467D7F762163767000E7FF73 /* main.m in Sources */,
+				4FADBBA223D7D2D10048BE43 /* IIIForecast.m in Sources */,
+				4FADBBA823D7DF300048BE43 /* IIIWeatherCollectionViewCell.m in Sources */,
 				467D7F682163766F00E7FF73 /* AppDelegate.m in Sources */,
-				82A6A9EB224AC10200A92D77 /* IIIWeatherCollectionViewCell.m in Sources */,
 				82A6A9EF224AC21300A92D77 /* IIIWeatherViewController.m in Sources */,
+				4FADBB9C23D7D1C40048BE43 /* IIIWeatherController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +353,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BHPNM53Q62;
 				INFOPLIST_FILE = "$(SRCROOT)/WeatherObjC/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -341,6 +370,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BHPNM53Q62;
 				INFOPLIST_FILE = "$(SRCROOT)/WeatherObjC/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
