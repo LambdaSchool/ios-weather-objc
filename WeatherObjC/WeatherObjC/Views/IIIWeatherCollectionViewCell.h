@@ -10,7 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class SKSWeather;
+
 @interface IIIWeatherCollectionViewCell : UICollectionViewCell
+
+- (void)setCell:(SKSWeather *)weather;
 
 @end
 
