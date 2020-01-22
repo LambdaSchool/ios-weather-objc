@@ -11,8 +11,10 @@
 
 @implementation SKSWeatherController
 
-static NSString * const baseURLString = @"api.openweathermap.org/data/2.5/forecast";
+static NSString * const baseURLString = @"https://api.openweathermap.org/data/2.5/forecast";
 static NSString * const apiKey = @"0228a3b4023f7e3a6c1392772f677130";
+
+//api.openweathermap.org/data/2.5/forecast?zip=94040&APPID=0228a3b4023f7e3a6c1392772f677130
 
 - (instancetype)init
 {

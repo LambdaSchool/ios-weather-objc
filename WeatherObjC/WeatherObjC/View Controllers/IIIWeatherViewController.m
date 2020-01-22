@@ -7,6 +7,9 @@
 //
 
 #import "IIIWeatherViewController.h"
+#import "IIIWeatherCollectionViewCell.h"
+#import "SKSWeatherController.h"
+#import "SKSWeather.h"
 
 @interface IIIWeatherViewController ()
 
@@ -18,19 +21,54 @@
 
 @implementation IIIWeatherViewController
 
+static NSString * const reuseIdentifier = @"WeatherCell";
+
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        _weatherController = [[SKSWeatherController alloc] init];
+    }
+    return self;
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self.searchBar setDelegate:self];
+    [self.collectionView setDataSource:self];
 }
 
-/*
-#pragma mark - Navigation
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    [self.weatherController searchForForecastsByZipCode:searchBar.text completion:^(NSError * _Nonnull error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (error) {
+                NSLog(@"Error: %@", error);
+                return;
+            }
+
+            [self.collectionView reloadData];
+        });
+    }];
 }
-*/
+
+
+#pragma mark - Collection view data source
+
+
+- (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    IIIWeatherCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+
+    SKSWeather *weather = self.weatherController.forecasts[indexPath.item];
+    self.cityNameLabel.text = weather.name;
+    [cell setCell:weather];
+
+    return cell;
+}
+
+- (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.weatherController.forecasts.count;
+}
 
 @end

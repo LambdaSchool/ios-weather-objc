@@ -7,6 +7,7 @@
 //
 
 #import "IIIWeatherCollectionViewCell.h"
+#import "SKSWeather.h"
 
 @interface IIIWeatherCollectionViewCell()
 
@@ -17,5 +18,11 @@
 @end
 
 @implementation IIIWeatherCollectionViewCell
+
+- (void)setCell:(SKSWeather *)weather
+{
+    self.weatherImageView.image = weather.image;
+    self.temperatureLabel.text = [weather.temp stringValue];
+}
 
 @end
