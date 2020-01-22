@@ -10,7 +10,7 @@
 
 @class IIIForecastController;
 
-@interface IIIWeatherViewController : UIViewController
+@interface IIIWeatherViewController : UIViewController <UICollectionViewDataSource, UISearchBarDelegate>
 
 @property IIIForecastController *forecastController;
 

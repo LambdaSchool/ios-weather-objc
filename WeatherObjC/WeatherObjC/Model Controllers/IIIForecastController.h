@@ -10,6 +10,8 @@
 
 @interface IIIForecastController : NSObject
 
+@property NSMutableArray *forecasts;
+
 - (void)searchForForecastsWithZipCode:(NSString *)zipCode
                            completion:(void (^)(NSArray *forcasts, NSError *error))completion;
 
