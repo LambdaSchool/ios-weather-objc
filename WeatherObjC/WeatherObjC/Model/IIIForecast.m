@@ -11,17 +11,27 @@
 @implementation IIIForecast
 
 - (instancetype)initWithCityName:(NSString *)cityName
-                     temperature:(int *)temperature
-                    weatherImage:(UIImage *)weatherImage {
+                     temperature:(int)temperature
+                    iconImage:(UIImage *)weatherImage {
     
     self = [super init];
     if (self) {
         
         _cityName = cityName;
         _temperature = temperature;
-        _weatherImage = weatherImage;
+        _iconImage = weatherImage;
     }
     return self;
+}
+
+
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary
+                          cityName:(NSString *)cityName {
+    
+    int temperature = dictionary[@"temp"];
+    UIImage *iconImage = dictionary[@"icon"];
+    
+    return [self initWithCityName:cityName temperature:temperature iconImage:iconImage];
 }
 
 @end

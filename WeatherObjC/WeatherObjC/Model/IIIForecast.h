@@ -14,12 +14,15 @@ NS_ASSUME_NONNULL_BEGIN
 @interface IIIForecast : NSObject
 
 @property NSString *cityName;
-@property int *temperature;
-@property UIImage *weatherImage;
+@property int temperature;
+@property UIImage *iconImage;
 
 - (instancetype)initWithCityName:(NSString *)cityName
-                     temperature:(int *)temperature
-                    weatherImage:(UIImage *)weatherImage;
+                     temperature:(int)temperature
+                    iconImage:(UIImage *)weatherImage;
+
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary
+                          cityName:(NSString *)cityName;
 
 @end
 
