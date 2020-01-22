@@ -14,6 +14,8 @@
 		467D7F762163767000E7FF73 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 467D7F752163767000E7FF73 /* main.m */; };
 		82A6A9EB224AC10200A92D77 /* IIIWeatherCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A6A9EA224AC10200A92D77 /* IIIWeatherCollectionViewCell.m */; };
 		82A6A9EF224AC21300A92D77 /* IIIWeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A6A9EE224AC21300A92D77 /* IIIWeatherViewController.m */; };
+		99AEEC7D23D79D2700CED2FF /* JBForecastController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99AEEC7C23D79D2700CED2FF /* JBForecastController.m */; };
+		99AEEC8023D79D3400CED2FF /* JBForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 99AEEC7F23D79D3400CED2FF /* JBForecast.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,10 @@
 		82A6A9EA224AC10200A92D77 /* IIIWeatherCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IIIWeatherCollectionViewCell.m; sourceTree = "<group>"; };
 		82A6A9ED224AC21300A92D77 /* IIIWeatherViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IIIWeatherViewController.h; sourceTree = "<group>"; };
 		82A6A9EE224AC21300A92D77 /* IIIWeatherViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IIIWeatherViewController.m; sourceTree = "<group>"; };
+		99AEEC7B23D79D2700CED2FF /* JBForecastController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBForecastController.h; sourceTree = "<group>"; };
+		99AEEC7C23D79D2700CED2FF /* JBForecastController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBForecastController.m; sourceTree = "<group>"; };
+		99AEEC7E23D79D3400CED2FF /* JBForecast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBForecast.h; sourceTree = "<group>"; };
+		99AEEC7F23D79D3400CED2FF /* JBForecast.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBForecast.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +69,9 @@
 			children = (
 				82A6A9EC224AC10600A92D77 /* Views */,
 				82A6A9E8224ABF7E00A92D77 /* View Controllers */,
-				82A6A9E7224ABF7600A92D77 /* Stroyboards */,
+				99AEEC7A23D79CEF00CED2FF /* Model Controllers */,
+				99AEEC7923D79CEB00CED2FF /* Models */,
+				82A6A9E7224ABF7600A92D77 /* Storyboards */,
 				82A6A9E6224ABF6E00A92D77 /* Resources */,
 			);
 			path = WeatherObjC;
@@ -81,13 +89,13 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		82A6A9E7224ABF7600A92D77 /* Stroyboards */ = {
+		82A6A9E7224ABF7600A92D77 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
 				467D7F6C2163766F00E7FF73 /* Main.storyboard */,
 				467D7F712163767000E7FF73 /* LaunchScreen.storyboard */,
 			);
-			path = Stroyboards;
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		82A6A9E8224ABF7E00A92D77 /* View Controllers */ = {
@@ -106,6 +114,24 @@
 				82A6A9EA224AC10200A92D77 /* IIIWeatherCollectionViewCell.m */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		99AEEC7923D79CEB00CED2FF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				99AEEC7E23D79D3400CED2FF /* JBForecast.h */,
+				99AEEC7F23D79D3400CED2FF /* JBForecast.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		99AEEC7A23D79CEF00CED2FF /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				99AEEC7B23D79D2700CED2FF /* JBForecastController.h */,
+				99AEEC7C23D79D2700CED2FF /* JBForecastController.m */,
+			);
+			path = "Model Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +206,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				467D7F762163767000E7FF73 /* main.m in Sources */,
+				99AEEC7D23D79D2700CED2FF /* JBForecastController.m in Sources */,
+				99AEEC8023D79D3400CED2FF /* JBForecast.m in Sources */,
 				467D7F682163766F00E7FF73 /* AppDelegate.m in Sources */,
 				82A6A9EB224AC10200A92D77 /* IIIWeatherCollectionViewCell.m in Sources */,
 				82A6A9EF224AC21300A92D77 /* IIIWeatherViewController.m in Sources */,

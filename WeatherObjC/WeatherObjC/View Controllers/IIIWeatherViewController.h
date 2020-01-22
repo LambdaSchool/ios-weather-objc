@@ -7,11 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JBForecastController.h"
 
-NS_ASSUME_NONNULL_BEGIN
+@interface IIIWeatherViewController : UIViewController <UISearchBarDelegate, UICollectionViewDataSource>
 
-@interface IIIWeatherViewController : UIViewController
+@property JBForecastController *forecastController;
 
 @end
-
-NS_ASSUME_NONNULL_END
