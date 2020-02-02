@@ -16,6 +16,7 @@
 		82A6A9EF224AC21300A92D77 /* IIIWeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A6A9EE224AC21300A92D77 /* IIIWeatherViewController.m */; };
 		E3213E1C23E65F5D00FB61D1 /* VVSWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = E3213E1B23E65F5D00FB61D1 /* VVSWeather.m */; };
 		E3213E1F23E713CA00FB61D1 /* VVSTemp.m in Sources */ = {isa = PBXBuildFile; fileRef = E3213E1E23E713CA00FB61D1 /* VVSTemp.m */; };
+		E3213E2323E7619000FB61D1 /* VVSWeatherController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3213E2223E7619000FB61D1 /* VVSWeatherController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		E3213E1B23E65F5D00FB61D1 /* VVSWeather.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VVSWeather.m; sourceTree = "<group>"; };
 		E3213E1D23E713CA00FB61D1 /* VVSTemp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VVSTemp.h; sourceTree = "<group>"; };
 		E3213E1E23E713CA00FB61D1 /* VVSTemp.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VVSTemp.m; sourceTree = "<group>"; };
+		E3213E2123E7619000FB61D1 /* VVSWeatherController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VVSWeatherController.h; sourceTree = "<group>"; };
+		E3213E2223E7619000FB61D1 /* VVSWeatherController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VVSWeatherController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +70,7 @@
 		467D7F652163766F00E7FF73 /* WeatherObjC */ = {
 			isa = PBXGroup;
 			children = (
+				E3213E2023E7612200FB61D1 /* Model Controllers */,
 				E3213E1923E65EF800FB61D1 /* Models */,
 				82A6A9EC224AC10600A92D77 /* Views */,
 				82A6A9E8224ABF7E00A92D77 /* View Controllers */,
@@ -124,6 +128,15 @@
 				E3213E1E23E713CA00FB61D1 /* VVSTemp.m */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		E3213E2023E7612200FB61D1 /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E3213E2123E7619000FB61D1 /* VVSWeatherController.h */,
+				E3213E2223E7619000FB61D1 /* VVSWeatherController.m */,
+			);
+			path = "Model Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				467D7F762163767000E7FF73 /* main.m in Sources */,
+				E3213E2323E7619000FB61D1 /* VVSWeatherController.m in Sources */,
 				E3213E1C23E65F5D00FB61D1 /* VVSWeather.m in Sources */,
 				467D7F682163766F00E7FF73 /* AppDelegate.m in Sources */,
 				82A6A9EB224AC10200A92D77 /* IIIWeatherCollectionViewCell.m in Sources */,

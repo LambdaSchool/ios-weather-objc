@@ -7,6 +7,7 @@
 //
 
 #import "IIIWeatherViewController.h"
+#import "VVSWeatherController.h"
 
 @interface IIIWeatherViewController ()
 
@@ -20,6 +21,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    VVSWeatherController *weatherController = [[VVSWeatherController alloc] init];
+    
+    [weatherController searchForCityWithZipCode:@10003 completion:^(NSArray *cities, NSError *error) {
+        
+    }];
     // Do any additional setup after loading the view.
 }
 
