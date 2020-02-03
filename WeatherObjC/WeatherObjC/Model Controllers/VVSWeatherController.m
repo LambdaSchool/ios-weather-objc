@@ -20,13 +20,14 @@
 
 - (NSString *)urlForZipCode:(NSNumber *)zipCode
 {
+    NSString *unit = @"imperial";
     NSString *key = @"87efdf59a26815f2bc232a3fc783e7dd";
-    
-    return [NSString stringWithFormat:@"https://api.openweathermap.org/data/2.5/forecast?zip=%@,us&appid=%@", zipCode, key];
+
+    return [NSString stringWithFormat:@"https://api.openweathermap.org/data/2.5/forecast?zip=%@,us&units=%@&appid=%@", zipCode, unit, key];
 }
 
 - (void)searchForCityWithZipCode:(NSNumber *)zipCode
-                      completion:(void (^)(NSArray *cities, NSError *error))completion {
+                      completion:(void (^)(VVSWeather *weather, NSError *error))completion {
     NSURL *baseURL = [NSURL URLWithString:[self urlForZipCode:zipCode]];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:baseURL];
@@ -59,6 +60,7 @@
         }
     
         self.currentWeather = [[VVSWeather alloc] initWithDictionary:json];
+        completion(self.currentWeather, nil);
     }];
     [task resume];
 }

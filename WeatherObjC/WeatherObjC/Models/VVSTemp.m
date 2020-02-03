@@ -16,7 +16,7 @@
         
         NSDictionary *main = [dictionary objectForKey:@"main"];
         
-        _temp = [[main objectForKey:@"temp"] doubleValue];
+        _temp = [main objectForKey:@"temp"];
         
         NSArray *weather = [dictionary objectForKey:@"weather"];
         _icon = [[weather firstObject] objectForKey:@"icon"];

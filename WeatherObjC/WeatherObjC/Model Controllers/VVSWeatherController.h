@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+@class VVSWeather;
+
 @interface VVSWeatherController : NSObject
 
 - (void)searchForCityWithZipCode:(NSNumber *)zipCode
-                      completion:(void (^)(NSArray *cities, NSError *error))completion;
+                      completion:(void (^)(VVSWeather *weather, NSError *error))completion;
 
 @end
 

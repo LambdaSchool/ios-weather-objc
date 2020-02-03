@@ -13,7 +13,7 @@
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
 @property (nonatomic, readonly) NSDate *date;
-@property (nonatomic, readonly) double temp;
+@property (nonatomic, readonly) NSNumber *temp;
 @property (nonatomic, readonly, copy) NSString *icon;
 
 
