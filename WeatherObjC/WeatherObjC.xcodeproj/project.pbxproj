@@ -14,8 +14,8 @@
 		467D7F762163767000E7FF73 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 467D7F752163767000E7FF73 /* main.m */; };
 		82A6A9EB224AC10200A92D77 /* IIIWeatherCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A6A9EA224AC10200A92D77 /* IIIWeatherCollectionViewCell.m */; };
 		82A6A9EF224AC21300A92D77 /* IIIWeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A6A9EE224AC21300A92D77 /* IIIWeatherViewController.m */; };
-		E39508F2246EE19C0078EB2B /* DailyForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = E39508F1246EE19C0078EB2B /* DailyForecast.m */; };
-		E39508F5246EED4B0078EB2B /* DaileyForecastControler.m in Sources */ = {isa = PBXBuildFile; fileRef = E39508F4246EED4B0078EB2B /* DaileyForecastControler.m */; };
+		E39508F2246EE19C0078EB2B /* MSKDailyForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = E39508F1246EE19C0078EB2B /* MSKDailyForecast.m */; };
+		E39508F5246EED4B0078EB2B /* DaileyForecastController.m in Sources */ = {isa = PBXBuildFile; fileRef = E39508F4246EED4B0078EB2B /* DaileyForecastController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,10 +31,10 @@
 		82A6A9EA224AC10200A92D77 /* IIIWeatherCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IIIWeatherCollectionViewCell.m; sourceTree = "<group>"; };
 		82A6A9ED224AC21300A92D77 /* IIIWeatherViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IIIWeatherViewController.h; sourceTree = "<group>"; };
 		82A6A9EE224AC21300A92D77 /* IIIWeatherViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IIIWeatherViewController.m; sourceTree = "<group>"; };
-		E39508F0246EE19C0078EB2B /* DailyForecast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DailyForecast.h; sourceTree = "<group>"; };
-		E39508F1246EE19C0078EB2B /* DailyForecast.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DailyForecast.m; sourceTree = "<group>"; };
-		E39508F3246EED4B0078EB2B /* DaileyForecastControler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DaileyForecastControler.h; sourceTree = "<group>"; };
-		E39508F4246EED4B0078EB2B /* DaileyForecastControler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DaileyForecastControler.m; sourceTree = "<group>"; };
+		E39508F0246EE19C0078EB2B /* MSKDailyForecast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSKDailyForecast.h; sourceTree = "<group>"; };
+		E39508F1246EE19C0078EB2B /* MSKDailyForecast.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSKDailyForecast.m; sourceTree = "<group>"; };
+		E39508F3246EED4B0078EB2B /* DaileyForecastController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DaileyForecastController.h; sourceTree = "<group>"; };
+		E39508F4246EED4B0078EB2B /* DaileyForecastController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DaileyForecastController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,10 +118,10 @@
 		E39508EF246EE1230078EB2B /* Model and Controller */ = {
 			isa = PBXGroup;
 			children = (
-				E39508F0246EE19C0078EB2B /* DailyForecast.h */,
-				E39508F1246EE19C0078EB2B /* DailyForecast.m */,
-				E39508F3246EED4B0078EB2B /* DaileyForecastControler.h */,
-				E39508F4246EED4B0078EB2B /* DaileyForecastControler.m */,
+				E39508F0246EE19C0078EB2B /* MSKDailyForecast.h */,
+				E39508F1246EE19C0078EB2B /* MSKDailyForecast.m */,
+				E39508F3246EED4B0078EB2B /* DaileyForecastController.h */,
+				E39508F4246EED4B0078EB2B /* DaileyForecastController.m */,
 			);
 			path = "Model and Controller";
 			sourceTree = "<group>";
@@ -200,9 +200,9 @@
 				467D7F762163767000E7FF73 /* main.m in Sources */,
 				467D7F682163766F00E7FF73 /* AppDelegate.m in Sources */,
 				82A6A9EB224AC10200A92D77 /* IIIWeatherCollectionViewCell.m in Sources */,
-				E39508F5246EED4B0078EB2B /* DaileyForecastControler.m in Sources */,
+				E39508F5246EED4B0078EB2B /* DaileyForecastController.m in Sources */,
 				82A6A9EF224AC21300A92D77 /* IIIWeatherViewController.m in Sources */,
-				E39508F2246EE19C0078EB2B /* DailyForecast.m in Sources */,
+				E39508F2246EE19C0078EB2B /* MSKDailyForecast.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

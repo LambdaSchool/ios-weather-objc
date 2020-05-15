@@ -6,9 +6,9 @@
 //  Copyright © 2020 Lambda School. All rights reserved.
 //
 
-#import "DailyForecast.h"
+#import "MSKDailyForecast.h"
 
-@implementation DailyForecast
+@implementation MSKDailyForecast
 
 -(instancetype) init {
     self = [super init];

@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface DailyForecast : NSObject
+@interface MSKDailyForecast : NSObject
 
 @property (nonatomic, assign) NSString *city;
 @property (nonatomic, assign) NSNumber *temperature;
