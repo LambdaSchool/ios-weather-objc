@@ -12,12 +12,12 @@
 NS_ASSUME_NONNULL_BEGIN
 // Stub
 //typedef void (^LSIQuakeFetcherCompletion)(NSArray<LSIQuake *> * _Nullable quakes, NSError * _Nullable error);
-typedef void (^MSKForecastCompletionBlock)(NSMutableArray<MSKDailyForecast *> *_Nullable forecasts, NSError *_Nullable error);
-@interface DailyForecastController : NSObject
+typedef void (^MSKForecastCompletionBlock)(NSArray<MSKDailyForecast *> *_Nullable forecasts, NSError *_Nullable error);
+@interface MSKDailyForecastController : NSObject
 
 @property (nonatomic, assign) NSArray *forecasts;
 
--(void)fetchForecastsUsingSearch:(NSString *)search CompletionBlock:(MSKForecastCompletionBlock)completionBlock;
+-(void)fetchForecastsUsingZip:(NSString *)zip CompletionBlock:(MSKForecastCompletionBlock)completionBlock;
 
 @end
 
