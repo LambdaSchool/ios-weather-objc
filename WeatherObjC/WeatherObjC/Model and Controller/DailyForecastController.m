@@ -6,17 +6,19 @@
 //  Copyright © 2020 Lambda School. All rights reserved.
 //
 
-#import "DaileyForecastController.h"
+#import "DailyForecastController.h"
 
 
-@implementation DaileyForecastController
+@implementation DailyForecastController
 
 -(instancetype)init {
    _forecasts = @[];
     return self;
 }
 
-- (void)fetchForecastsUsingSearch:(NSString *)search CompletionBlock:(MSKForecastCompletionBlock)completionBlock {
+- (void)fetchForecastsUsingZip:(NSString *)zip CompletionBlock:(MSKForecastCompletionBlock)completionBlock {
+    
+    
     
 }
 @end

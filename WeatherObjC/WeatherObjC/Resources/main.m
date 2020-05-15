@@ -13,8 +13,8 @@ static NSString *APIkey;
 
 int main(int argc, char * argv[]) {
     @autoreleasepool {
-        baseURL = [NSURL URLWithString:@"api.openweathermap.org/data/2.5/forecast?q="];
-        APIkey = @"867846b2a999753af04cf07ca01eae10";
+        static NSString *baseURLString = @"api.openweathermap.org/data/2.5/forecast?";
+        static NSString *APIKey = @"867846b2a999753af04cf07ca01eae10";
         
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }

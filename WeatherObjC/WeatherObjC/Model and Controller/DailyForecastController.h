@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 // Stub
 //typedef void (^LSIQuakeFetcherCompletion)(NSArray<LSIQuake *> * _Nullable quakes, NSError * _Nullable error);
 typedef void (^MSKForecastCompletionBlock)(NSMutableArray<MSKDailyForecast *> *_Nullable forecasts, NSError *_Nullable error);
-@interface DaileyForecastController : NSObject
+@interface DailyForecastController : NSObject
 
 @property (nonatomic, assign) NSArray *forecasts;
 
