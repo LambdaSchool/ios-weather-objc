@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
+@class IIIForecastController;
+@class IIIWeatherCollectionViewCell;
 
-@interface IIIWeatherViewController : UIViewController
+@interface IIIWeatherViewController : UIViewController <UICollectionViewDataSource, UISearchBarDelegate>
+@property IIIForecastController *forecastController;
 
 @end
 
