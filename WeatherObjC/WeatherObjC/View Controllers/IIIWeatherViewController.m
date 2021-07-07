@@ -8,6 +8,7 @@
 
 #import "IIIWeatherViewController.h"
 
+
 @interface IIIWeatherViewController ()
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
@@ -20,7 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
 }
 
 /*
