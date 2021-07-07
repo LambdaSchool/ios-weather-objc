@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface IIIWeatherCollectionViewCell : UICollectionViewCell
 
+-(void)updateTextLabelWithTemp:(NSString *)temperature image:(UIImage *)image;
+
 @end
 
 NS_ASSUME_NONNULL_END
