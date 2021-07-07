@@ -61,7 +61,9 @@
                                             <constraint firstAttribute="trailing" secondItem="H0L-BW-bM6" secondAttribute="trailing" id="l1h-hm-AXR"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="temperatureCityTextLabel" destination="hq6-BJ-c95" id="mVs-oi-S7J"/>
                                             <outlet property="temperatureLabel" destination="hq6-BJ-c95" id="YmD-Uh-AB6"/>
+                                            <outlet property="weatherIconImageView" destination="H0L-BW-bM6" id="6y4-Ax-HIy"/>
                                             <outlet property="weatherImageView" destination="H0L-BW-bM6" id="dJi-Gd-BCd"/>
                                         </connections>
                                     </collectionViewCell>

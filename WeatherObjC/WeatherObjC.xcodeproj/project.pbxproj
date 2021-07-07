@@ -12,6 +12,8 @@
 		467D7F702163767000E7FF73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 467D7F6F2163767000E7FF73 /* Assets.xcassets */; };
 		467D7F732163767000E7FF73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 467D7F712163767000E7FF73 /* LaunchScreen.storyboard */; };
 		467D7F762163767000E7FF73 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 467D7F752163767000E7FF73 /* main.m */; };
+		770642692253F13800C5778C /* IIIDailyForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 770642682253F13800C5778C /* IIIDailyForecast.m */; };
+		7706426D22540D8800C5778C /* IIIDailyForecastController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7706426C22540D8800C5778C /* IIIDailyForecastController.m */; };
 		82A6A9EB224AC10200A92D77 /* IIIWeatherCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A6A9EA224AC10200A92D77 /* IIIWeatherCollectionViewCell.m */; };
 		82A6A9EF224AC21300A92D77 /* IIIWeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A6A9EE224AC21300A92D77 /* IIIWeatherViewController.m */; };
 /* End PBXBuildFile section */
@@ -25,6 +27,10 @@
 		467D7F722163767000E7FF73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		467D7F742163767000E7FF73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		467D7F752163767000E7FF73 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		770642672253F13800C5778C /* IIIDailyForecast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IIIDailyForecast.h; sourceTree = "<group>"; };
+		770642682253F13800C5778C /* IIIDailyForecast.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IIIDailyForecast.m; sourceTree = "<group>"; };
+		7706426B22540D8800C5778C /* IIIDailyForecastController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IIIDailyForecastController.h; sourceTree = "<group>"; };
+		7706426C22540D8800C5778C /* IIIDailyForecastController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IIIDailyForecastController.m; sourceTree = "<group>"; };
 		82A6A9E9224AC10200A92D77 /* IIIWeatherCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IIIWeatherCollectionViewCell.h; sourceTree = "<group>"; };
 		82A6A9EA224AC10200A92D77 /* IIIWeatherCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IIIWeatherCollectionViewCell.m; sourceTree = "<group>"; };
 		82A6A9ED224AC21300A92D77 /* IIIWeatherViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IIIWeatherViewController.h; sourceTree = "<group>"; };
@@ -65,8 +71,28 @@
 				82A6A9E8224ABF7E00A92D77 /* View Controllers */,
 				82A6A9E7224ABF7600A92D77 /* Stroyboards */,
 				82A6A9E6224ABF6E00A92D77 /* Resources */,
+				7706426A2253F13E00C5778C /* Models */,
+				7706426E22540D8C00C5778C /* Model Controllers */,
 			);
 			path = WeatherObjC;
+			sourceTree = "<group>";
+		};
+		7706426A2253F13E00C5778C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				770642672253F13800C5778C /* IIIDailyForecast.h */,
+				770642682253F13800C5778C /* IIIDailyForecast.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7706426E22540D8C00C5778C /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7706426B22540D8800C5778C /* IIIDailyForecastController.h */,
+				7706426C22540D8800C5778C /* IIIDailyForecastController.m */,
+			);
+			path = "Model Controllers";
 			sourceTree = "<group>";
 		};
 		82A6A9E6224ABF6E00A92D77 /* Resources */ = {
@@ -183,6 +209,8 @@
 				467D7F682163766F00E7FF73 /* AppDelegate.m in Sources */,
 				82A6A9EB224AC10200A92D77 /* IIIWeatherCollectionViewCell.m in Sources */,
 				82A6A9EF224AC21300A92D77 /* IIIWeatherViewController.m in Sources */,
+				7706426D22540D8800C5778C /* IIIDailyForecastController.m in Sources */,
+				770642692253F13800C5778C /* IIIDailyForecast.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +353,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HBKK7B5HAP;
 				INFOPLIST_FILE = "$(SRCROOT)/WeatherObjC/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -341,6 +370,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HBKK7B5HAP;
 				INFOPLIST_FILE = "$(SRCROOT)/WeatherObjC/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
