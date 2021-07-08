@@ -61,8 +61,8 @@
                                             <constraint firstAttribute="trailing" secondItem="H0L-BW-bM6" secondAttribute="trailing" id="l1h-hm-AXR"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="temperatureLabel" destination="hq6-BJ-c95" id="YmD-Uh-AB6"/>
-                                            <outlet property="weatherImageView" destination="H0L-BW-bM6" id="dJi-Gd-BCd"/>
+                                            <outlet property="imageView" destination="H0L-BW-bM6" id="lC8-2b-eQk"/>
+                                            <outlet property="tempLabel" destination="hq6-BJ-c95" id="Uo1-q2-YZu"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -91,7 +91,7 @@
                     <connections>
                         <outlet property="cityNameLabel" destination="PGj-Aa-u93" id="s7c-vI-1ON"/>
                         <outlet property="collectionView" destination="CMK-VZ-Phu" id="BTV-80-imA"/>
-                        <outlet property="searchBar" destination="f8R-AN-Kv7" id="g5R-DL-ho6"/>
+                        <outlet property="searchBar" destination="f8R-AN-Kv7" id="wts-4D-Wcb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

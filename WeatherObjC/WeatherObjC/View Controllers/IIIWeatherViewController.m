@@ -7,30 +7,60 @@
 //
 
 #import "IIIWeatherViewController.h"
-
+#import "../Model Controller/IIIForcastController.h"
+#import "../Models/IIIForcast.h"
+#import "../Views/IIIWeatherCollectionViewCell.h"
 @interface IIIWeatherViewController ()
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UILabel *cityNameLabel;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
+@property NSArray *sevenDayForcast;
+
+
+
 @end
 
 @implementation IIIWeatherViewController
 
+- (instancetype)initWithCoder:(NSCoder *)aDecoder{
+	self = [super initWithCoder:aDecoder];
+	if (self) {
+		_forcastController = [[IIIForcastController alloc] init];
+		
+	}
+	return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+	
+	self.collectionView.delegate = self;
+	self.collectionView.dataSource = self;
+	self.searchBar.delegate = self;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+	return self.sevenDayForcast.count;
 }
-*/
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+	IIIWeatherCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"WeatherCell" forIndexPath:indexPath];
+	cell.tempLabel.text = @"100";
+//	cell.imageView.image =;
+	return cell;
+}
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+	//91006
+	if (searchText.length == 5) {
+		[self.forcastController fetchForcastFromZipCode:searchText completionBlock:^(NSError * _Nonnull error) {
+		}];
+	}
+	
+	[self.collectionView reloadData];
+}
+
 
 @end
